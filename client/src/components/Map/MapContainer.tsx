@@ -15,19 +15,21 @@ const MapContainer = () => {
     }
 
     return (
-        <div className="h-full">
-            <Map
-                ref={mapRef}
-                mapboxAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-                initialViewState={{
-                    longitude: -170.79921,
-                    latitude: 42.436391,
-                    zoom: 2,
-                }}
-                onLoad={handleOnMapLoad}
-                style={{ width: "80vw", height: "80vh" }}
-                mapStyle="mapbox://styles/mapbox/outdoors-v12"
-            ></Map>
+        <div className="flex items-center justify-center h-full">
+            <div className="h-[90vh] w-[95vw] rounded-xl overflow-hidden">
+                <Map
+                    ref={mapRef}
+                    mapboxAccessToken={import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
+                    initialViewState={{
+                        longitude: -170.79921,
+                        latitude: 42.436391,
+                        zoom: 2,
+                    }}
+                    onLoad={handleOnMapLoad}
+                    style={{ width: "100%", height: "100%" }}
+                    mapStyle="mapbox://styles/mapbox/outdoors-v12"
+                ></Map>
+            </div>
         </div>
     );
 };

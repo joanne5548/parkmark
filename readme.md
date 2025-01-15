@@ -9,7 +9,7 @@
 - [ ] Display user information upon login
 
 #### Mapbox
-- [ ] Get environment variable to be working
+- [x] Get environment variable to be working
 - [ ] Pin all parks
 - [ ] Move over all css data for popup
 
