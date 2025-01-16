@@ -1,6 +1,7 @@
 import React, { RefObject, useEffect, useRef, useState } from "react";
 import { LuMapPin } from "react-icons/lu";
 import { MapRef, Marker } from "react-map-gl";
+import CustomPopup from "./CustomPopup";
 
 interface CustomMarkerProps {
     longitude: number;
@@ -8,10 +9,16 @@ interface CustomMarkerProps {
     mapRef: RefObject<MapRef>;
 }
 
-const CustomMarker: React.FC<CustomMarkerProps> = ({ longitude, latitude, mapRef }) => {
+const CustomMarker: React.FC<CustomMarkerProps> = ({
+    longitude,
+    latitude,
+    mapRef,
+}) => {
     const [markerHovered, setMarkerHovered] = useState<boolean>(false);
     const [markerClicked, setMarkerClicked] = useState<boolean>(false);
-    const [pinClassName, setPinClassName] = useState<string>("text-red-500 size-6");
+    const [pinClassName, setPinClassName] = useState<string>(
+        "text-red-500 size-6"
+    );
 
     const handleMarkerClick = () => {
         setMarkerClicked(!markerClicked);
@@ -23,22 +30,39 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({ longitude, latitude, mapRef
 
     const handleMouseLeave = () => {
         setMarkerHovered(false);
-    }
+    };
 
     useEffect(() => {
-        console.log('zoom has changed');
-        
-        const zoomCheck = mapRef.current?.getZoom();
-        if (zoomCheck !== undefined) {
-            let zoom: number = Math.round(zoomCheck);
-            console.log(zoom);
+        const updateMarkerSize = () => {
+            const zoomCheck = mapRef.current?.getZoom();
+            if (zoomCheck !== undefined) {
+                let zoom: number = Math.round(zoomCheck);
+                console.log(zoom);
 
-            if (zoom <= 3) { zoom = 3; }
-            else if (zoom > 3) { zoom = 4; }
+                let size: number;
+                if (zoom < 4) {
+                    size = 5;
+                } else if (zoom < 6) {
+                    size = 6;
+                } else {
+                    size = 7;
+                }
 
-            setPinClassName(`size-${zoom + 2} text-red-500`);
+                setPinClassName(`size-${size} text-red-500`);
+            }
+        };
+
+        updateMarkerSize();
+
+        const map = mapRef.current;
+        if (map) {
+            map.on("zoom", updateMarkerSize);
+
+            return () => {
+                map.off('zoom', updateMarkerSize);
+            }
         }
-    }, [mapRef.current?.getZoom()]);
+    }, [mapRef.current]);
 
     return (
         <Marker
@@ -53,14 +77,14 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({ longitude, latitude, mapRef
                 }}
             >
                 <LuMapPin className={pinClassName} />
-                {/* {(markerClicked || markerHovered) && (
+                {(markerClicked || markerHovered) && (
                     <CustomPopup
                         longitude={longitude}
                         latitude={latitude}
                         setMarkerHovered={setMarkerHovered}
                         setMarkerClicked={setMarkerClicked}
                     />
-                )} */}
+                )}
             </div>
         </Marker>
     );

@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-import "mapbox-gl/dist/mapbox-gl.css";
+// import "mapbox-gl/dist/mapbox-gl.css";
 import { Map, MapRef, MapEvent } from "react-map-gl";
 import CustomMarker from "./CustomMarker";
-import parkList from "../../../../scripts/parkLocationList.json";
-// import parkList from "../../../../scripts/test.json";
+// import parkList from "../../../../scripts/parkLocationList.json";
+import parkList from "../../../../scripts/test.json";
 
 const MapContainer = () => {
     const mapRef = useRef<MapRef>(null);
