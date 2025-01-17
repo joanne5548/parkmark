@@ -41,3 +41,5 @@
         - Query [boundary=national_park](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dnational_park)
         - Update: This one didn't work since boundary returns the locations of encompassing area
     - [Nominatim](https://nominatim.org/)'s geocoding API - search by name and get longitude & latitude
+- Ended up using data from [NPS official website](https://home1.nps.gov/maps/tools/npmap.js/examples/geojson-layer/)
+    - API: [download data](https://www.nps.gov/lib/npmap.js/4.0.0/examples/data/national-parks.geojson)
