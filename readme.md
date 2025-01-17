@@ -1,5 +1,7 @@
 # ParkMark - Rate Your National Park Experience!
 
+![frontpage](./FrontPage.png)
+
 ## Progress (To-Do)
 ### Front Page
 #### Navbar
@@ -25,7 +27,7 @@
 - [ ] Build national park page layout
 - [ ] Build reviews tab layout
 
-## Development Info
+## Development Notes
 ### Google OAuth Info
 - [Youtube Tutorial](https://www.youtube.com/watch?v=GuHN_ZqHExs)
 

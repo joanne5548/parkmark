@@ -9,7 +9,7 @@ const MapContainer = () => {
 
     const handleOnMapLoad = (event: MapEvent) => {
         event.target.flyTo({
-            center: [-97.544713, 37.739463],
+            center: [-98.618002, 38.724452],
             zoom: 3.85,
             duration: 2000,
             essential: true,
@@ -18,7 +18,7 @@ const MapContainer = () => {
 
     return (
         <div className="flex items-center justify-center h-full">
-            <div className="h-[88vh] xl:h-[90vh] w-[97vw] rounded-xl overflow-hidden">
+            <div className="h-[88vh] 3xl:h-[90vh] w-[97vw] rounded-xl overflow-hidden">
                 <Map
                     ref={mapRef}
                     mapboxAccessToken={import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
