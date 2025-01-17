@@ -8,16 +8,25 @@
 - [ ] Implement Login
 - [ ] Display user information upon login
 - [ ] Implement easier hovering over user information box popup
+- [ ] Implement search functionality
 
 #### Mapbox
 - [x] Complete layout
 - [x] Get environment variable to be working
 - [x] Pin all parks
-- [ ] Spend time in getting good location data
-- [ ] Move over all css data for popup
+- [x] Spend time in getting good location data
+    - Ended up using NPS API data - see filterJson.py for more info
+- [x] Move over all css data for popup
+- [ ] Fix marker dynamic sizing issue
+
+#### Next Steps...
+- [ ] Implement Google OAuth
+- [ ] Establish database (create tables based on schema)
+- [ ] Build national park page layout
+- [ ] Build reviews tab layout
 
 ## Development Info
-### OAuth Info
+### Google OAuth Info
 - [Youtube Tutorial](https://www.youtube.com/watch?v=GuHN_ZqHExs)
 
 ### Map Services

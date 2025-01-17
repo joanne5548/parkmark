@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import logoImg from "../../assets/logo.jpg";
 import { IoSearch } from "react-icons/io5";
 import UserInfoTile from "./UserInfoTile";
 
 const NavBar = () => {
     const [logIn, setLogIn] = useState<boolean>(false);
+
+    const handleLogoClick = () => {
+        window.location.reload();
+    };
 
     return (
         <div className="flex flex-row justify-between gap-4 my-4 mx-5">
@@ -13,7 +17,10 @@ const NavBar = () => {
                     src={logoImg}
                     className="size-8 md:size-10 bg-cover rounded-md"
                 />
-                <div className="font-semibold text-2xl md:text-4xl font-sriracha">
+                <div
+                    onClick={handleLogoClick}
+                    className="font-semibold text-2xl md:text-4xl font-sriracha hover:underline underline-offset-4 hover:cursor-pointer"
+                >
                     ParkMark
                 </div>
             </div>
@@ -23,11 +30,11 @@ const NavBar = () => {
                     What's your favoriate park?
                 </div>
             </div>
-            {true ? (
+            {false ? (
                 <UserInfoTile />
             ) : (
                 <div className="flex flex-row gap-2 items-center">
-                    <button className="flex justify-center items-center px-4 py-2 rounded-md bg-slate-100 hover:bg-slate-200 font-semibold">
+                    <button className="flex justify-center items-center px-4 py-2 rounded-md bg-slate-100 hover:bg-slate-200 font-[550]">
                         Login
                     </button>
                 </div>

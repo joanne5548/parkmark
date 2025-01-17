@@ -8,9 +8,20 @@
     font-family: "Red Hat Text", serif;
 }
 
+.mapboxgl-marker {
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    /* border-color: 10px solid #64748b; */
+}
+
 .mapboxgl-popup-content {
-    padding: 10px 17px 10px 15px;
+    padding: 1rem 2rem 1rem 1.25rem;
+    /* fix border on popup tip */
+    border: solid 1px #d4d4d4;
     border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .mapboxgl-popup-close-button {
@@ -23,31 +34,8 @@
     background-color: transparent;
 }
 
-.mapboxgl-popup-anchor-top {
-    padding-top: 0.75rem;
-}
-
-.mapboxgl-popup-anchor-top-left {
-    padding-top: 1rem;
-    padding-left: 0.2rem;
-}
-
-.mapboxgl-popup-anchor-top-right {
-    padding-top: 1rem;
-}
-
-.mapboxgl-popup-anchor-right {
-    padding-right: 0.5rem;
-}
-
-.mapboxgl-popup-anchor-left {
-    padding-left: 0.6rem;
-}
-
-.mapboxgl-popup-anchor-bottom,
-.mapboxgl-popup-anchor-bottom-left,
-.mapboxgl-popup-anchor-bottom-right {
-    padding-bottom: 0.4rem;
+.mapboxgl-popup-close-button:focus {
+    border: none;
 }
 
 .mapbox-gl-marker:hover {

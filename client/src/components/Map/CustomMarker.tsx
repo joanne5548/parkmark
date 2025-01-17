@@ -2,23 +2,27 @@ import React, { RefObject, useEffect, useRef, useState } from "react";
 import { LuMapPin } from "react-icons/lu";
 import { MapRef, Marker } from "react-map-gl";
 import CustomPopup from "./CustomPopup";
+import { FaMapPin } from "react-icons/fa";
+import { HiMapPin } from "react-icons/hi2";
 
 interface CustomMarkerProps {
-    longitude: number;
-    latitude: number;
+    parkInfoJson: {
+        name: string;
+        coordiantes: {
+            longitude: number;
+            latitude: number;
+        };
+    };
     mapRef: RefObject<MapRef>;
 }
 
 const CustomMarker: React.FC<CustomMarkerProps> = ({
-    longitude,
-    latitude,
+    parkInfoJson,
     mapRef,
 }) => {
     const [markerHovered, setMarkerHovered] = useState<boolean>(false);
     const [markerClicked, setMarkerClicked] = useState<boolean>(false);
-    const [pinClassName, setPinClassName] = useState<string>(
-        "text-red-500 size-6"
-    );
+    const [pinClassName, setPinClassName] = useState<string>("");
 
     const handleMarkerClick = () => {
         setMarkerClicked(!markerClicked);
@@ -48,7 +52,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
                     size = 7;
                 }
 
-                setPinClassName(`size-${size} text-red-500`);
+                setPinClassName(`size-${size} text-red-500 stroke-1 stroke-slate-800`);
             }
         };
 
@@ -66,8 +70,8 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
 
     return (
         <Marker
-            longitude={longitude}
-            latitude={latitude}
+            longitude={parkInfoJson.coordiantes.longitude}
+            latitude={parkInfoJson.coordiantes.latitude}
             onClick={handleMarkerClick}
         >
             <div
@@ -76,11 +80,10 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
                     setTimeout(handleMouseLeave, 20);
                 }}
             >
-                <LuMapPin className={pinClassName} />
+                <HiMapPin className={pinClassName} />
                 {(markerClicked || markerHovered) && (
                     <CustomPopup
-                        longitude={longitude}
-                        latitude={latitude}
+                        parkInfoJson={parkInfoJson}
                         setMarkerHovered={setMarkerHovered}
                         setMarkerClicked={setMarkerClicked}
                     />

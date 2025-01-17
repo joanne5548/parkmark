@@ -1,0 +1,77 @@
+{
+    "type": "FeatureCollection",
+    "geocoding": {
+        "version": "0.1.0",
+        "attribution": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "licence": "ODbL",
+        "query": "*national park*"
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "geocoding": {
+                    "place_id": 321269619,
+                    "osm_type": "relation",
+                    "osm_id": 12008635,
+                    "osm_key": "boundary",
+                    "osm_value": "administrative",
+                    "type": "city",
+                    "label": "National Park, Gloucester County, New Jersey, 08063, United States",
+                    "name": "National Park"
+                }
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.1796351,
+                    39.865968
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "geocoding": {
+                    "place_id": 343584929,
+                    "osm_type": "relation",
+                    "osm_id": 5944514,
+                    "osm_key": "boundary",
+                    "osm_value": "administrative",
+                    "type": "locality",
+                    "label": "National Park, Milwaukee, Milwaukee County, Wisconsin, United States",
+                    "name": "National Park"
+                }
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.9502344,
+                    43.0212431
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "geocoding": {
+                    "place_id": 344673566,
+                    "osm_type": "way",
+                    "osm_id": 330797943,
+                    "osm_key": "landuse",
+                    "osm_value": "residential",
+                    "type": "locality",
+                    "label": "National Park, Des Moines, Polk County, Iowa, United States",
+                    "name": "National Park"
+                }
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.70093197697034,
+                    41.57308315
+                ]
+            }
+        }
+    ]
+}
