@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Map, MapRef, MapEvent } from "react-map-gl";
 import CustomMarker from "./CustomMarker";
+// path alias doesn't work! @json_data/...
 import parkList from "../../../../scripts/json_data/filtered_national_parks_nps.json";
 // import parkList from "../../../../scripts/json_data/test.json";
 
@@ -37,7 +38,6 @@ const MapContainer = () => {
                         const longitude: number = Number(park.coordiantes.longitude);
                         const latitude: number = Number(park.coordiantes.latitude);
                         if (!isNaN(longitude) && isFinite(longitude) && !isNaN(latitude) && isFinite(latitude)) {
-                            console.log(longitude);
                             return <CustomMarker
                                 key={`[${longitude}, ${latitude}]`}
                                 parkInfoJson={park}

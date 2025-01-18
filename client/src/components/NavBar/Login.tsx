@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import UserInfoTile from "./UserInfoTile";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
@@ -7,7 +7,7 @@ const Login = () => {
     const [userIsLoggedIn, setUserIsLoggedIn] = useState<boolean>(false);
 
     const handleLoginSuccess = (response: CredentialResponse) => {
-        // console.log(response);
+        console.log(response);
         console.log(jwtDecode(response.credential!));
         setUserIsLoggedIn(true);
     };

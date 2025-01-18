@@ -1,30 +1,33 @@
 CREATE TABLE User(
-    id CHAR(36) PRIMARY KEY,
-    refreshToken VARCHAR(512)
+    sub_id INTEGER PRIMARY KEY, /* Google's unique ID given to each user */
+    name VARCHAR(255),
+    email VARCHAR(255),
+    profile_picture_url VARCHAR(255),
+    created_at DATETIME
 );
 
 CREATE TABLE Review (
-    id CHAR(36) PRIMARY KEY,
-    userId CHAR(36) REFERENCES User(id)
+    id UUID PRIMARY KEY,
+    user_id UUID REFERENCES User(id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
-    parkID CHAR(36) REFERENCES NationalPark(id)
+    park_id UUID REFERENCES NationalPark(id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
-    rating INTEGER CHECK (rating >= 0 AND rating <= 5),
-    date DATE,
-    content VARCHAR(512),
-    imgList JSONB
+    rating INTEGER CHECK (rating >= 1 AND rating <= 5),
+    created_at DATETIME,
+    content VARCHAR(2048),
+    img_url_list JSONB
 );
 
 CREATE TABLE ThumbsUpList (
-    id?
-    userId CHAR(36) REFERENCES User(id),
-    reviewId CHAR(36) REFERENCES Review(id)
+    id UUID PRIMARY KEY,
+    user_id UUID REFERENCES User(id),
+    review_id UUID REFERENCES Review(id)
 );
 
 CREATE TABLE NationalPark (
-    id CHAR(36),
+    id UUID,
     name VARCHAR(255),
-    parkInfo JSONB
+    park_info JSONB
 );

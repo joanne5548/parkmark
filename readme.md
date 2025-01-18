@@ -19,8 +19,9 @@
 - [x] Spend time in getting good location data
     - Ended up using NPS API data - see filterJson.py for more info
 - [x] Move over all css data for popup
-- [ ] Fix marker dynamic sizing issue
+- [x] Fix marker dynamic sizing issue
     - Check heights of the mapbox-pin div
+    - Bruh. It just got fixed on its own. I have no idea how or why this happened
 
 #### Next Steps...
 - [x] Implement Google OAuth
@@ -31,9 +32,13 @@
 ## Development Notes
 ### Google OAuth Info
 - [Youtube Tutorial](https://www.youtube.com/watch?v=GuHN_ZqHExs)
+- [Jwt Fields Description](https://developers.google.com/assistant/identity/google-sign-in-oauth)
 
 ### Redux (Global Store)
 - [Website](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
+
+### Backend in TypeScript
+- [A good tutorial with extra tips/info on TS compilation to JS](https://blog.logrocket.com/how-to-set-up-node-typescript-express/#creating-minimal-server-express)
 
 ### Map Services
 - [Mapbox](https://docs.mapbox.com/mapbox-gl-js/guides/install/)

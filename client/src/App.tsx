@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import FrontPage from "./components/FrontPage";
-import NationalParkPage from "./components/NationalParkPage/NationalParkPage";
-import ErrorPage from "./components/ErrorPage";
+import FrontPage from "./components/Pages/FrontPage";
+import NationalParkPage from "./components/Pages/NationalParkPage";
+import ErrorPage from "./components/Pages/ErrorPage";
 
 function App() {
     return (

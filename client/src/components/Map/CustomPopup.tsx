@@ -35,7 +35,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
                 <Link
                     to={`/nationalpark/${parkInfoJson.name.replace(/\s/g, "").toLowerCase()}`}
                     // this keeps highlighting when mouse hovers over marker
-                    className="text-center text-2xl font-medium hover:text-lime-900 hover:underline border-none hover:border-none"
+                    className="text-center text-2xl font-medium hover:underline border-none hover:border-none"
                 >
                     {parkInfoJson.name}
                 </Link>

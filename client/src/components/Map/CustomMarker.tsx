@@ -41,7 +41,6 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
             const zoomCheck = mapRef.current?.getZoom();
             if (zoomCheck !== undefined) {
                 let zoom: number = Math.round(zoomCheck);
-                console.log(zoom);
 
                 let size: number;
                 if (zoom < 4) {
