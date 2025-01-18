@@ -8,7 +8,7 @@ function App() {
         <>
             <Routes>
                 <Route path="/" element={<FrontPage />} />
-                <Route path="/nationalpark/:parkname" element={<NationalParkPage />} />
+                <Route path="/park/:parkname" element={<NationalParkPage />} />
                 <Route path="/error" element={<ErrorPage />} />
             </Routes>
         </>

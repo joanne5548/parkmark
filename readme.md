@@ -7,7 +7,7 @@
 #### Navbar
 - [x] Complete layout
 - [x] Complete responsive design
-- [ ] Implement Login
+- [x] Implement Login
 - [ ] Display user information upon login
 - [ ] Implement easier hovering over user information box popup
 - [ ] Implement search functionality
@@ -20,9 +20,10 @@
     - Ended up using NPS API data - see filterJson.py for more info
 - [x] Move over all css data for popup
 - [ ] Fix marker dynamic sizing issue
+    - Check heights of the mapbox-pin div
 
 #### Next Steps...
-- [ ] Implement Google OAuth
+- [x] Implement Google OAuth
 - [ ] Establish database (create tables based on schema)
 - [ ] Build national park page layout
 - [ ] Build reviews tab layout
@@ -30,6 +31,9 @@
 ## Development Notes
 ### Google OAuth Info
 - [Youtube Tutorial](https://www.youtube.com/watch?v=GuHN_ZqHExs)
+
+### Redux (Global Store)
+- [Website](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
 
 ### Map Services
 - [Mapbox](https://docs.mapbox.com/mapbox-gl-js/guides/install/)

@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import { googleLogout } from "@react-oauth/google";
+import React, { Dispatch, useState } from "react";
 import { PiUserCircle } from "react-icons/pi";
 
-interface UserInfoTileProps {}
+interface UserInfoTileProps {
+    setUserIsLoggedIn: Dispatch<React.SetStateAction<boolean>>;
+}
 
-const UserInfoTile: React.FC<UserInfoTileProps> = () => {
+const UserInfoTile: React.FC<UserInfoTileProps> = ({ setUserIsLoggedIn }) => {
     const [displayUserInfo, setDisplayUserInfo] = useState<boolean>(false);
 
     const handleIconMouseHover = () => {
         setDisplayUserInfo(!displayUserInfo);
     };
+
+    const handleSignOut = () => {
+        googleLogout();
+        setUserIsLoggedIn(false);
+    }
 
     return (
         <div className="flex flex-row gap-2 relative group">
@@ -36,7 +44,7 @@ const UserInfoTile: React.FC<UserInfoTileProps> = () => {
                     <button className="pb-4 font-medium text-center w-full border-b border-slate-400">
                         Settings
                     </button>
-                    <button className="font-medium self-center">
+                    <button onClick={handleSignOut} className="font-medium self-center">
                         Sign Out
                     </button>
                 </div>

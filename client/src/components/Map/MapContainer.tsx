@@ -4,6 +4,8 @@ import CustomMarker from "./CustomMarker";
 import parkList from "../../../../scripts/json_data/filtered_national_parks_nps.json";
 // import parkList from "../../../../scripts/json_data/test.json";
 
+const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
+
 const MapContainer = () => {
     const mapRef = useRef<MapRef>(null);
 
@@ -21,7 +23,7 @@ const MapContainer = () => {
             <div className="h-[88vh] 3xl:h-[90vh] w-[97vw] rounded-xl overflow-hidden">
                 <Map
                     ref={mapRef}
-                    mapboxAccessToken={import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
+                    mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
                     initialViewState={{
                         longitude: -170.79921,
                         latitude: 42.436391,
