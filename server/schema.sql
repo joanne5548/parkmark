@@ -1,12 +1,10 @@
 CREATE TABLE UserData(
-    sub_id INTEGER PRIMARY KEY, /* Google's unique ID given to each user */
+    sub_id VARCHAR(255) PRIMARY KEY, /* Google's unique ID given to each user */
     name VARCHAR(255),
-    email VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
     profile_picture_url VARCHAR(255),
-    created_at timestamp with time zone
+    created_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
-
-INSERT INTO UserData(sub_id, name, email, profile_picture_url, created_at) VALUES(12345678, 'Joanne Kim', 'email@domain.com', 'https://url/example', '2004-10-19 10:23:54+02');
 
 CREATE TABLE Review (
     id UUID PRIMARY KEY,
@@ -17,7 +15,7 @@ CREATE TABLE Review (
         ON UPDATE CASCADE
         ON DELETE CASCADE,
     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
-    created_at timestamp with time zone,
+    created_at timestamptz,
     content VARCHAR(2048),
     img_url_list JSONB
 );
@@ -33,5 +31,3 @@ CREATE TABLE NationalPark (
     name VARCHAR(255),
     park_info JSONB
 );
-
-SET timezone = 'America/New_York';

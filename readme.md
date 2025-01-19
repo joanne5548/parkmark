@@ -25,28 +25,38 @@
 
 #### Next Steps...
 - [x] Implement Google OAuth
-- [ ] Establish database (create tables based on schema)
+- [x] Establish database (create tables based on schema)
     - [x] Implement REST API for user data
-    - [ ] Insert user data upon google login
+    - [x] Insert user data upon google login
 - [ ] Build national park page layout
 - [ ] Build reviews tab layout
 
+### Backend
+#### UserData
+- [ ] Check & update if user data has changed on every login
+
 ## Development Notes
-### Google OAuth Info
-- [Youtube Tutorial](https://www.youtube.com/watch?v=GuHN_ZqHExs)
-- [Jwt Fields Description](https://developers.google.com/assistant/identity/google-sign-in-oauth)
+### Dealing with Timezones
+- [Detailed StackOverflow post on storing timezone in user database and maintaining post created times](https://stackoverflow.com/questions/44965545/best-practices-with-saving-datetime-timezone-info-in-database-when-data-is-dep)
 
 ### Redux (Global Store)
 - [Website](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
-
-### Backend in TypeScript
-- [A good tutorial with extra tips/info on TS compilation to JS](https://blog.logrocket.com/how-to-set-up-node-typescript-express/#creating-minimal-server-express)
 
 ### Map Services
 - [Mapbox](https://docs.mapbox.com/mapbox-gl-js/guides/install/)
     - Has 50,000 load limits per month
 - [MapLibre](https://maplibre.org/)
     - Free
+
+<details>
+<summary>Past Notes (Resolved)</summary>
+<br>
+### Google OAuth Info
+- [Youtube Tutorial](https://www.youtube.com/watch?v=GuHN_ZqHExs)
+- [Jwt Fields Description](https://developers.google.com/assistant/identity/google-sign-in-oauth)
+
+### Backend in TypeScript
+- [A good tutorial with extra tips/info on TS compilation to JS](https://blog.logrocket.com/how-to-set-up-node-typescript-express/#creating-minimal-server-express)
 
 ### Better Coordinates for the Park
 - API From OpenStreetMap
@@ -56,3 +66,4 @@
     - [Nominatim](https://nominatim.org/)'s geocoding API - search by name and get longitude & latitude
 - Ended up using data from [NPS official website](https://home1.nps.gov/maps/tools/npmap.js/examples/geojson-layer/)
     - API: [download data](https://www.nps.gov/lib/npmap.js/4.0.0/examples/data/national-parks.geojson)
+</details>
