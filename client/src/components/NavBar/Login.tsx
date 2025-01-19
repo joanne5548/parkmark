@@ -2,63 +2,60 @@ import { useState } from "react";
 import UserInfoTile from "./UserInfoTile";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-
-interface GoogleLoginCredential {
-    sub: string;
-    name: string;
-    email: string;
-    picture: string;
-}
-
-interface UserData {
-    sub_id: string;
-    name: string;
-    email: string;
-    profile_picture_url: string;
-}
+import { GoogleLoginCredential, UserData } from "../../lib/Interfaces";
+import { getUser, handleApiError, postNewUser } from "../../lib/UserDataApi";
 
 const Login = () => {
-    const [userIsLoggedIn, setUserIsLoggedIn] = useState<boolean>(false);
+    const [logInUserData, setLogInUserData] = useState<UserData | null>(null);
 
     const handleLoginSuccess = async (response: CredentialResponse) => {
-        const credentialJson: GoogleLoginCredential = jwtDecode(response.credential!);
+        const credentialJson: GoogleLoginCredential = jwtDecode(
+            response.credential!
+        );
         console.log(credentialJson);
-        
+
+        const sub_id = credentialJson.sub;
+
+        try {
+            const userData: UserData = await getUser(sub_id);
+
+            setLogInUserData(userData);
+            return;
+        } catch (error) {
+            // How do I MAKE SURE that the error is from duplicate key?
+            console.log(
+                "user possibly does not exist in database. try creating new user"
+            );
+        }
+
         const userData: UserData = {
-            sub_id: credentialJson.sub,
+            sub_id: sub_id,
             name: credentialJson.name,
             email: credentialJson.email,
-            profile_picture_url: credentialJson.picture
+            profile_picture_url: credentialJson.picture,
         };
         console.log(userData);
-        
+
         try {
-            const response = await fetch("http://localhost:5000/userdata", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(userData)
-            });
+            await postNewUser(userData);
 
-            if (!response.ok) {
-                throw new Error(`Network response error: ${response.status}`);
-            }
+            setLogInUserData(userData);
+        } catch (error) {
+            handleApiError(error);
+        }
+    };
 
-            setUserIsLoggedIn(true);
-        }
-        catch (error) {
-            console.error({
-                error:
-                    error instanceof Error
-                        ? error.message
-                        : "Default error message",
-            });
-        }
+    const resetLogInUser = () => {
+        setLogInUserData(null);
     };
 
     return (
         <div>
-            {userIsLoggedIn ? (
-                <UserInfoTile setUserIsLoggedIn={setUserIsLoggedIn} />
+            {logInUserData ? (
+                <UserInfoTile
+                    logInUserData={logInUserData}
+                    resetLogInUser={resetLogInUser}
+                />
             ) : (
                 <div>
                     <GoogleLogin

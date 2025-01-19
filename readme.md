@@ -8,7 +8,7 @@
 - [x] Complete layout
 - [x] Complete responsive design
 - [x] Implement Login
-- [ ] Display user information upon login
+- [x] Display user information upon login
 - [ ] Implement easier hovering over user information box popup
 - [ ] Implement search functionality
 
@@ -33,6 +33,8 @@
 
 ### Backend
 #### UserData
+- [ ] Modify get request to throw 404 error if user does not exist
+    - [ ] Identify what and where the 500 (or something else) error is coming from
 - [ ] Check & update if user data has changed on every login
 
 ## Development Notes
