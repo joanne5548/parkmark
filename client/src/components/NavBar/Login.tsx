@@ -6,10 +6,37 @@ import { jwtDecode } from "jwt-decode";
 const Login = () => {
     const [userIsLoggedIn, setUserIsLoggedIn] = useState<boolean>(false);
 
-    const handleLoginSuccess = (response: CredentialResponse) => {
+    const handleLoginSuccess = async (response: CredentialResponse) => {
         console.log(response);
-        console.log(jwtDecode(response.credential!));
-        setUserIsLoggedIn(true);
+        const credentialJson: JSON = jwtDecode(response.credential!);
+        console.log(credentialJson);
+
+        // const userData: JSON = {
+        //     sub_id: credentialJson.sub_id,
+
+        // }
+
+        // try {
+        //     const response = await fetch("http://localhost:5000/userdata", {
+        //         method: "POST",
+        //         headers: { "Content-Type": "application/json" },
+        //         body: JSON.stringify(userData)
+        //     });
+
+        //     if (!response.ok) {
+        //         throw new Error(`Network response error: ${response.status}`);
+        //     }
+
+        //     setUserIsLoggedIn(true);
+        // }
+        // catch (error) {
+        //     console.error({
+        //         error:
+        //             error instanceof Error
+        //                 ? error.message
+        //                 : "Default error message",
+        //     });
+        // }
     };
 
     return (

@@ -2,7 +2,6 @@ import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import pool from './db'
-import { profile } from "console";
 
 dotenv.config();
 

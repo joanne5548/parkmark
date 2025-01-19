@@ -26,6 +26,8 @@
 #### Next Steps...
 - [x] Implement Google OAuth
 - [ ] Establish database (create tables based on schema)
+    - [x] Implement REST API for user data
+    - [ ] Insert user data upon google login
 - [ ] Build national park page layout
 - [ ] Build reviews tab layout
 
