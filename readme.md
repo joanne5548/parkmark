@@ -12,6 +12,19 @@
 - [ ] Implement easier hovering over user information box popup
 - [ ] Implement search functionality
 
+#### Next Steps...
+- [x] Implement Google OAuth
+- [x] Establish database (create tables based on schema)
+    - [x] Implement REST API for user data
+    - [x] Insert user data upon google login
+- [ ] Build national park page layout
+- [ ] Build reviews tab layout
+
+
+<details>
+<summary>Past To-dos (Completed)</summary>
+<br>
+
 #### Mapbox
 - [x] Complete layout
 - [x] Get environment variable to be working
@@ -22,19 +35,14 @@
 - [x] Fix marker dynamic sizing issue
     - Check heights of the mapbox-pin div
     - Bruh. It just got fixed on its own. I have no idea how or why this happened
+</details>
 
-#### Next Steps...
-- [x] Implement Google OAuth
-- [x] Establish database (create tables based on schema)
-    - [x] Implement REST API for user data
-    - [x] Insert user data upon google login
-- [ ] Build national park page layout
-- [ ] Build reviews tab layout
 
 ### Backend
 #### UserData
-- [ ] Modify get request to throw 404 error if user does not exist
-    - [ ] Identify what and where the 500 (or something else) error is coming from
+- [x] Modify get request to throw 404 error if user does not exist
+    - [x] Identify what and where the 500 (or something else) error is coming from
+- [ ] Look for a way to mute 404 error or find out a better way to deal with new user
 - [ ] Check & update if user data has changed on every login
 
 ## Development Notes
@@ -50,9 +58,11 @@
 - [MapLibre](https://maplibre.org/)
     - Free
 
+
 <details>
 <summary>Past Notes (Resolved)</summary>
 <br>
+
 ### Google OAuth Info
 - [Youtube Tutorial](https://www.youtube.com/watch?v=GuHN_ZqHExs)
 - [Jwt Fields Description](https://developers.google.com/assistant/identity/google-sign-in-oauth)

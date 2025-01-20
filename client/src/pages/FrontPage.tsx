@@ -1,5 +1,6 @@
-import NavBar from "../NavBar/NavBar";
-import MapContainer from "../Map/MapContainer";
+
+import MapContainer from "../components/Map/MapContainer";
+import NavBar from "../components/NavBar/NavBar";
 
 const FrontPage = () => {
     return (
