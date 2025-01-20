@@ -27,10 +27,10 @@ const handleError = (error: any, res: Response) => {
 // UserData
 app.post("/userdata", async (req: Request, res: Response) => {
     try {
-        const { sub_id, name, email, profile_picture_url, created_at } = req.body;
+        const { sub_id, name, email, profile_picture_url } = req.body;
         const newUserData = await pool.query(
-            "INSERT INTO UserData(sub_id, name, email, profile_picture_url, created_at) VALUES($1, $2, $3, $4, $5) RETURNING *",
-            [sub_id, name, email, profile_picture_url, created_at]
+            "INSERT INTO UserData(sub_id, name, email, profile_picture_url) VALUES($1, $2, $3, $4) RETURNING *",
+            [sub_id, name, email, profile_picture_url]
         );
         
         res.json(newUserData.rows[0]);
@@ -58,6 +58,11 @@ app.get("/userdata/:sub_id", async (req: Request, res: Response) => {
             "SELECT * FROM UserData WHERE sub_id=$1",
             [sub_id]
         );
+
+        if (userData.rows.length === 0) {
+            res.status(404).json({ error: "Database error: Requested user is not found." });
+            return;
+        }
 
         res.json(userData.rows[0]);
     }

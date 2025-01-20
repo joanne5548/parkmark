@@ -1,7 +1,7 @@
 import { googleLogout } from "@react-oauth/google";
 import React, { useState } from "react";
 import { PiUserCircle } from "react-icons/pi";
-import { UserData } from "../../lib/Interfaces";
+import { UserData } from "../../lib/interfaces";
 
 interface UserInfoTileProps {
     logInUserData: UserData;
