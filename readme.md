@@ -42,8 +42,14 @@
 #### UserData
 - [x] Modify get request to throw 404 error if user does not exist
     - [x] Identify what and where the 500 (or something else) error is coming from
-- [ ] Look for a way to mute 404 error or find out a better way to deal with new user
+- [x] Look for a way to mute 404 error or find out a better way to deal with new user
 - [ ] Check & update if user data has changed on every login
+
+#### Data
+- [x] Check missing national park data
+- [ ] Fill in missing national park data in `filtered_national_parks_nps.json`
+- [ ] Make sure to check again if the number matches to 63!
+- [ ] Then run `generateParkUuid.py` again
 
 ## Development Notes
 ### Dealing with Timezones

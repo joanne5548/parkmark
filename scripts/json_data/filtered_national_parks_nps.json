@@ -56,7 +56,7 @@
         }
     },
     {
-        "name": "Capitol Reef National Park",
+        "name": "Capital Reef National Park",
         "coordiantes": {
             "longitude": -111.00329294577273,
             "latitude": 37.795992535017426
@@ -189,14 +189,14 @@
         }
     },
     {
-        "name": "Haleakala National Park",
+        "name": "Haleakalā National Park",
         "coordiantes": {
             "longitude": -156.14709314319208,
             "latitude": 20.704512129332194
         }
     },
     {
-        "name": "Hawaii Volcanoes National Park",
+        "name": "Hawaiʻi Volcanoes National Park",
         "coordiantes": {
             "longitude": -155.2118228719388,
             "latitude": 19.32614215615518
@@ -378,7 +378,7 @@
         }
     },
     {
-        "name": "Wrangell - St Elias National Park & Preserve",
+        "name": "Wrangell–St Elias National Park & Preserve",
         "coordiantes": {
             "longitude": -142.60357111369407,
             "latitude": 61.41843937955613

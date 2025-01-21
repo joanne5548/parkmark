@@ -7,7 +7,7 @@ CREATE TABLE UserData(
 );
 
 CREATE TABLE Review (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id UUID REFERENCES UserData(id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
@@ -21,13 +21,14 @@ CREATE TABLE Review (
 );
 
 CREATE TABLE ThumbsUpList (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id UUID REFERENCES UserData(id),
     review_id UUID REFERENCES Review(id)
 );
 
+-- Postgres gen_random_uuid produces version 4 UUID
 CREATE TABLE NationalPark (
-    id UUID,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name VARCHAR(255),
     park_info JSONB DEFAULT NULL
 );

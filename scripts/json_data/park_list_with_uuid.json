@@ -1,0 +1,582 @@
+[
+    {
+        "id": "87da394d-d906-4c3e-aced-66ccc31ee7ff",
+        "name": "Acadia National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -68.24411197733804,
+                "latitude": 44.350751388328206
+            }
+        }
+    },
+    {
+        "id": "ca932ddd-bb3e-445c-8d3b-72984f817801",
+        "name": "Arches National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -109.59545602760868,
+                "latitude": 38.707917632251544
+            }
+        }
+    },
+    {
+        "id": "7acb48b9-f0dc-4614-977d-9f0b7e0a1ff3",
+        "name": "Badlands National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -102.39394509554067,
+                "latitude": 43.8340624087368
+            }
+        }
+    },
+    {
+        "id": "ba4d7c6e-4d40-4388-99ed-8ac78395c461",
+        "name": "Big Bend National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -103.22978967302261,
+                "latitude": 29.298177668897967
+            }
+        }
+    },
+    {
+        "id": "a4295c86-c0f7-477d-b0c4-8e879f73d750",
+        "name": "Biscayne National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -80.21830159269447,
+                "latitude": 25.469689246647114
+            }
+        }
+    },
+    {
+        "id": "aafd000f-7b49-4942-9102-5f4e905bd690",
+        "name": "Black Canyon Of The Gunnison National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -107.72398016641485,
+                "latitude": 38.577392252894334
+            }
+        }
+    },
+    {
+        "id": "3eed06a5-1f39-4c2a-9fa9-26c005191fdc",
+        "name": "Bryce Canyon National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -112.18266888744083,
+                "latitude": 37.58399143875251
+            }
+        }
+    },
+    {
+        "id": "5c14e3cf-5043-450a-a5db-4574c79249eb",
+        "name": "Canyonlands National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -109.88314625527481,
+                "latitude": 38.272072876214835
+            }
+        }
+    },
+    {
+        "id": "ce3d3382-2da8-4344-8274-9cd212842881",
+        "name": "Capitol Reef National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -111.00329294577273,
+                "latitude": 37.795992535017426
+            }
+        }
+    },
+    {
+        "id": "943ada1d-3541-4005-bbab-8d0f2baef21a",
+        "name": "Carlsbad Caverns National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -104.52776563457927,
+                "latitude": 32.15234275399143
+            }
+        }
+    },
+    {
+        "id": "ffde1d81-7ac6-40cc-88cb-098085fa2bdf",
+        "name": "Channel Islands National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -119.7251698451474,
+                "latitude": 34.00392978229205
+            }
+        }
+    },
+    {
+        "id": "fd01cfec-f116-421e-897d-dc8b55505f4e",
+        "name": "Congaree National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -80.81835232616444,
+                "latitude": 33.8062043146765
+            }
+        }
+    },
+    {
+        "id": "f6d6e4b8-2f3c-4ce6-a4d8-e6a9ea5d6bd7",
+        "name": "Crater Lake National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -122.13525870459277,
+                "latitude": 42.94443605194011
+            }
+        }
+    },
+    {
+        "id": "509b4fd5-020c-4dc0-b700-5660660e654b",
+        "name": "Cuyahoga Valley National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -81.5690344075238,
+                "latitude": 41.26071335500069
+            }
+        }
+    },
+    {
+        "id": "56ad9890-b314-4c6c-9c5c-fc513d7a2b24",
+        "name": "Death Valley National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -117.13511154435771,
+                "latitude": 36.48741910067162
+            }
+        }
+    },
+    {
+        "id": "a1330216-aa3a-471c-bce5-1824a649d9a7",
+        "name": "Denali National Park & Preserve",
+        "park_info": {
+            "coordinates": {
+                "longitude": -151.05263550282112,
+                "latitude": 63.29777436004586
+            }
+        }
+    },
+    {
+        "id": "d0298423-11ab-4225-a44d-466162ab56eb",
+        "name": "Dry Tortugas National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -82.86655423155601,
+                "latitude": 24.654395618647623
+            }
+        }
+    },
+    {
+        "id": "705c6946-1d65-4286-8014-c797c73df630",
+        "name": "Everglades National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -80.95349638622787,
+                "latitude": 25.27225616404826
+            }
+        }
+    },
+    {
+        "id": "c42fe7ec-0b5e-497f-a393-c0e61c316cce",
+        "name": "Gates Of The Arctic National Park & Preserve",
+        "park_info": {
+            "coordinates": {
+                "longitude": -153.26413231698794,
+                "latitude": 67.9192854407937
+            }
+        }
+    },
+    {
+        "id": "d018fc4f-5eb4-4487-9a12-d278b95af592",
+        "name": "Glacier Bay National Park & Preserve",
+        "park_info": {
+            "coordinates": {
+                "longitude": -136.84071732838277,
+                "latitude": 58.80086474447531
+            }
+        }
+    },
+    {
+        "id": "876df896-7fba-49bd-bdfd-4bd5fd16d6af",
+        "name": "Glacier National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -113.80079159548487,
+                "latitude": 48.68426876066877
+            }
+        }
+    },
+    {
+        "id": "42d04482-91d3-4b97-978c-bbae555b5875",
+        "name": "Grand Canyon National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -112.19586332050201,
+                "latitude": 36.186683141213514
+            }
+        }
+    },
+    {
+        "id": "3c8ac9c2-1ce8-41f6-b65e-42c780074a1a",
+        "name": "Grand Teton National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -110.70546656038158,
+                "latitude": 43.81853565368195
+            }
+        }
+    },
+    {
+        "id": "9c6db759-901e-4c2b-b9b7-7c7650c9c389",
+        "name": "Great Basin National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -114.25797817448695,
+                "latitude": 38.946173783127065
+            }
+        }
+    },
+    {
+        "id": "5624e6c5-2b91-4cb2-b35d-a956d07bc9d1",
+        "name": "Great Sand Dunes National Park & Preserve",
+        "park_info": {
+            "coordinates": {
+                "longitude": -105.57832630519154,
+                "latitude": 37.759942701007226
+            }
+        }
+    },
+    {
+        "id": "c1e42260-6f6a-405b-8b4d-2b8bf3a06e28",
+        "name": "Great Smoky Mountains National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -83.77104780772574,
+                "latitude": 35.53381126341195
+            }
+        }
+    },
+    {
+        "id": "32f40267-0379-4304-874b-ca3ca507e3d8",
+        "name": "Guadalupe Mountains National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -104.88434717034703,
+                "latitude": 31.923384209391674
+            }
+        }
+    },
+    {
+        "id": "b4871d5a-f640-4f52-9ef5-31d446bf4d95",
+        "name": "Haleakala National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -156.14709314319208,
+                "latitude": 20.704512129332194
+            }
+        }
+    },
+    {
+        "id": "0fa9c60e-3f1d-48d6-aec5-d7b74da64adf",
+        "name": "Hawaii Volcanoes National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -155.2118228719388,
+                "latitude": 19.32614215615518
+            }
+        }
+    },
+    {
+        "id": "d79dd0e4-5687-43b9-9ab6-287f922caffb",
+        "name": "Hot Springs National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -93.08972185108273,
+                "latitude": 34.51113822506357
+            }
+        }
+    },
+    {
+        "id": "9c702ee9-a25c-41c3-a208-ee462518d6cd",
+        "name": "Isle Royale National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -89.10441847731086,
+                "latitude": 47.900839582369585
+            }
+        }
+    },
+    {
+        "id": "b0a2c940-8a97-4ad4-ae12-f592e0eed7e2",
+        "name": "Joshua Tree National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -116.15907084356105,
+                "latitude": 33.98096522850808
+            }
+        }
+    },
+    {
+        "id": "a653b820-c493-4bf8-895b-9c2c2c6ad61b",
+        "name": "Katmai National Park & Preserve",
+        "park_info": {
+            "coordinates": {
+                "longitude": -155.01341050350874,
+                "latitude": 58.622573966764584
+            }
+        }
+    },
+    {
+        "id": "98be94e7-84be-4ae4-ad1d-ac676b4b46c5",
+        "name": "Kenai Fjords National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -149.88152448868524,
+                "latitude": 59.95389688763184
+            }
+        }
+    },
+    {
+        "id": "d206a37b-0a38-4100-b0a4-6cb41fe82a1e",
+        "name": "Kings Canyon National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -118.59384064032848,
+                "latitude": 36.8749421087923
+            }
+        }
+    },
+    {
+        "id": "4df54307-0eb1-45ce-ac1a-4f024e77bb17",
+        "name": "Kobuk Valley National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -159.06308334658615,
+                "latitude": 67.28263652770183
+            }
+        }
+    },
+    {
+        "id": "c149134e-df85-4130-a21e-60311b3b81fd",
+        "name": "Lake Clark National Park & Preserve",
+        "park_info": {
+            "coordinates": {
+                "longitude": -153.6018441528228,
+                "latitude": 60.64679690935658
+            }
+        }
+    },
+    {
+        "id": "55ab58b7-c56e-4725-a074-f800493ba0f9",
+        "name": "Lassen Volcanic National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -121.41212664904383,
+                "latitude": 40.48622026090819
+            }
+        }
+    },
+    {
+        "id": "f7e0fae8-5ae3-4da5-8346-d9ac151e6734",
+        "name": "Mammoth Cave National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -86.13090198191068,
+                "latitude": 37.197604576779035
+            }
+        }
+    },
+    {
+        "id": "8f001ef0-effc-41e7-a95c-ea2bb0196f51",
+        "name": "Mesa Verde National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -108.50092888589481,
+                "latitude": 37.22351315320654
+            }
+        }
+    },
+    {
+        "id": "e14ccd23-3390-4a25-a8f2-735c7348dc91",
+        "name": "Mount Rainier National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -121.70574507946985,
+                "latitude": 46.86055919903173
+            }
+        }
+    },
+    {
+        "id": "77e285f6-3447-4199-90e1-ddc832d3505a",
+        "name": "National Park of American Samoa",
+        "park_info": {
+            "coordinates": {
+                "longitude": -169.45380760526996,
+                "latitude": -14.239727732693918
+            }
+        }
+    },
+    {
+        "id": "d4b1686f-0803-448b-988c-ad1726cdba41",
+        "name": "North Cascades National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -121.34755778363238,
+                "latitude": 48.83303940981537
+            }
+        }
+    },
+    {
+        "id": "062b4222-3081-424b-857c-a82c5a30493b",
+        "name": "Olympic National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -123.6194451629227,
+                "latitude": 47.79453520449651
+            }
+        }
+    },
+    {
+        "id": "6098e7f3-c0c6-431b-99f3-faa5b43477cd",
+        "name": "Petrified Forest National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -109.67471774572405,
+                "latitude": 34.98868180401879
+            }
+        }
+    },
+    {
+        "id": "c5a98408-688f-4d36-89dc-53ed5710045f",
+        "name": "Rocky Mountain National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -105.69838532231373,
+                "latitude": 40.35579839722149
+            }
+        }
+    },
+    {
+        "id": "3e7cb452-a315-4ef0-9790-612a68fd2941",
+        "name": "Saguaro National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -110.60831406159426,
+                "latitude": 32.178836085393556
+            }
+        }
+    },
+    {
+        "id": "80f8a5b8-fc5d-4cda-a687-36b1e387a72f",
+        "name": "Sequoia & Kings Canyon National Parks",
+        "park_info": {
+            "coordinates": {
+                "longitude": -118.5752011004094,
+                "latitude": 36.50785282265928
+            }
+        }
+    },
+    {
+        "id": "396fe5ed-d998-43b1-94a4-e12bd62282bf",
+        "name": "Shenandoah National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -78.67619962877342,
+                "latitude": 38.28108210674896
+            }
+        }
+    },
+    {
+        "id": "0a4dfa5c-2dba-4b16-8bfd-1979a943eca0",
+        "name": "Theodore Roosevelt National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -103.45925080636415,
+                "latitude": 46.953620966658086
+            }
+        }
+    },
+    {
+        "id": "78add8ca-582f-4cb1-b01b-0772c5e07ec2",
+        "name": "Virgin Islands National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -64.77111048899694,
+                "latitude": 18.353798617233704
+            }
+        }
+    },
+    {
+        "id": "cc9b9aa7-37b8-4cd3-b583-1ebf18acff30",
+        "name": "Voyageurs National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -92.98057129969759,
+                "latitude": 48.51716932219992
+            }
+        }
+    },
+    {
+        "id": "0dd8cf0a-5ccc-4cd7-8eda-7626281ce70c",
+        "name": "Wind Cave National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -103.42877641689412,
+                "latitude": 43.60787178123641
+            }
+        }
+    },
+    {
+        "id": "996a3487-a5b0-4666-94c1-3dacf8b4884d",
+        "name": "Wolf Trap National Park for the Performing Arts",
+        "park_info": {
+            "coordinates": {
+                "longitude": -77.26355410163892,
+                "latitude": 38.93793199647512
+            }
+        }
+    },
+    {
+        "id": "36ba1d1f-6830-4a85-ad83-c13662359425",
+        "name": "Wrangell - St Elias National Park & Preserve",
+        "park_info": {
+            "coordinates": {
+                "longitude": -142.60357111369407,
+                "latitude": 61.41843937955613
+            }
+        }
+    },
+    {
+        "id": "9a1dfd6d-3d9d-4755-ac26-420c1f30e7df",
+        "name": "Yellowstone National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -110.49008302275851,
+                "latitude": 44.583032217213656
+            }
+        }
+    },
+    {
+        "id": "2ae43496-b406-4ae2-95b1-798ea02cbc36",
+        "name": "Yosemite National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -119.55600729459782,
+                "latitude": 37.84893656911814
+            }
+        }
+    },
+    {
+        "id": "eec86ced-d70a-4072-a6c0-25ef7c56aee6",
+        "name": "Zion National Park",
+        "park_info": {
+            "coordinates": {
+                "longitude": -112.95443162869537,
+                "latitude": 37.255709497131065
+            }
+        }
+    }
+]
