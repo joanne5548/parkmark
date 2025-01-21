@@ -1,8 +1,6 @@
 import React, { RefObject, useEffect, useRef, useState } from "react";
-import { LuMapPin } from "react-icons/lu";
 import { MapRef, Marker } from "react-map-gl";
 import CustomPopup from "./CustomPopup";
-import { FaMapPin } from "react-icons/fa";
 import { HiMapPin } from "react-icons/hi2";
 
 interface CustomMarkerProps {
@@ -36,6 +34,11 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
         setMarkerHovered(false);
     };
 
+    const handlePopupClose = () => {
+        setMarkerHovered(false);
+        setMarkerClicked(false);
+    };
+
     useEffect(() => {
         const updateMarkerSize = () => {
             const zoomCheck = mapRef.current?.getZoom();
@@ -51,7 +54,9 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
                     size = 7;
                 }
 
-                setPinClassName(`size-${size} text-red-500 stroke-1 stroke-slate-800`);
+                setPinClassName(
+                    `size-${size} text-red-500 stroke-1 stroke-slate-800`
+                );
             }
         };
 
@@ -62,8 +67,8 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
             map.on("zoom", updateMarkerSize);
 
             return () => {
-                map.off('zoom', updateMarkerSize);
-            }
+                map.off("zoom", updateMarkerSize);
+            };
         }
     }, [mapRef.current]);
 
@@ -80,11 +85,10 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
                 }}
             >
                 <HiMapPin className={pinClassName} />
-                {(markerClicked || markerHovered) && (
+                {(markerHovered || markerClicked) && (
                     <CustomPopup
                         parkInfoJson={parkInfoJson}
-                        setMarkerHovered={setMarkerHovered}
-                        setMarkerClicked={setMarkerClicked}
+                        handlePopupClose={handlePopupClose}
                     />
                 )}
             </div>

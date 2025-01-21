@@ -17,7 +17,7 @@ CREATE TABLE Review (
     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
     created_at timestamptz,
     content VARCHAR(2048),
-    img_url_list JSONB
+    img_url_list JSONB DEFAULT NULL
 );
 
 CREATE TABLE ThumbsUpList (
@@ -29,5 +29,5 @@ CREATE TABLE ThumbsUpList (
 CREATE TABLE NationalPark (
     id UUID,
     name VARCHAR(255),
-    park_info JSONB
+    park_info JSONB DEFAULT NULL
 );

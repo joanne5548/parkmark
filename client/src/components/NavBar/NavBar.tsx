@@ -1,4 +1,3 @@
-import { useState } from "react";
 import logoImg from "../../assets/parkmark-logo.jpg";
 import { IoSearch } from "react-icons/io5";
 import Login from "./Login";

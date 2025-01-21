@@ -6,7 +6,7 @@ const FrontPage = () => {
     return (
         <div>
             <NavBar />
-            {/* <MapContainer /> */}
+            <MapContainer />
         </div>
     );
 };
