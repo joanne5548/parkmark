@@ -404,5 +404,47 @@
             "longitude": -112.95443162869537,
             "latitude": 37.255709497131065
         }
+    },
+    {
+        "name": "Gateway Arch National Park",
+        "coordiantes": {
+            "longitude": -90.1857939618164,
+            "latitude": 38.625143035481344
+        }
+    },
+    {
+        "name": "Indiana Dunes National Park",
+        "coordiantes": {
+            "longitude": -87.05243146934447,
+            "latitude": 41.654384302554455
+        }
+    },
+    {
+        "name": "New River Gorge National Park",
+        "coordiantes": {
+            "longitude": -81.0514289750282,
+            "latitude": 37.87534462108355
+        }
+    },
+    {
+        "name": "Pinnacles National Park",
+        "coordiantes": {
+            "longitude": -121.17987431816847,
+            "latitude": 36.49510423649378
+        }
+    },
+    {
+        "name": "Redwood National Park",
+        "coordiantes": {
+            "longitude": -124.0327795204255,
+            "latitude": 41.408483998552235
+        }
+    },
+    {
+        "name": "White Sands National Park",
+        "coordiantes": {
+            "longitude": -106.32159655948601,
+            "latitude": 32.800789133820935
+        }
     }
 ]
