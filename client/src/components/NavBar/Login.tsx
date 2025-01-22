@@ -1,12 +1,14 @@
-import { useState } from "react";
 import UserInfoTile from "./UserInfoTile";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { GoogleLoginCredential, UserData } from "../../lib/interfaces";
 import { getUser, handleApiError, postNewUser } from "../../lib/userDataApi";
+import { useAtom } from "jotai";
+import { logInUserAtom } from "../../lib/atoms/atoms";
 
 const Login = () => {
-    const [logInUserData, setLogInUserData] = useState<UserData | null>(null);
+    // const [logInUserData, setLogInUserData] = useState<UserData | null>(null);
+    const [logInUser, setLogInUser] = useAtom(logInUserAtom);
 
     const handleLoginSuccess = async (response: CredentialResponse) => {
         const credentialJson: GoogleLoginCredential = jwtDecode(
@@ -18,9 +20,10 @@ const Login = () => {
             const userDataFromDb: UserData | null = await getUser(sub_id);
 
             if (userDataFromDb) {
-                setLogInUserData(userDataFromDb);
-            }
-            else {
+                console.log(userDataFromDb);
+
+                setLogInUser(userDataFromDb);
+            } else {
                 const userData: UserData = {
                     sub_id: sub_id,
                     name: credentialJson.name,
@@ -28,26 +31,21 @@ const Login = () => {
                     profile_picture_url: credentialJson.picture,
                 };
 
+                console.log(userData);
+
                 await postNewUser(userData);
-        
-                setLogInUserData(userData);
+
+                setLogInUser(userData);
             }
         } catch (error: any) {
             handleApiError(error);
         }
     };
 
-    const resetLogInUser = () => {
-        setLogInUserData(null);
-    };
-
     return (
         <div>
-            {logInUserData ? (
-                <UserInfoTile
-                    logInUserData={logInUserData}
-                    resetLogInUser={resetLogInUser}
-                />
+            {logInUser ? (
+                <UserInfoTile />
             ) : (
                 <div>
                     <GoogleLogin

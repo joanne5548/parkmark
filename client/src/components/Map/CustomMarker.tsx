@@ -3,7 +3,7 @@ import { MapRef, Marker } from "react-map-gl";
 import CustomPopup from "./CustomPopup";
 import { HiMapPin } from "react-icons/hi2";
 import { useSetAtom } from "jotai";
-import { selectedParkAtom } from "../../lib/atoms/selectedParkAtom";
+import { selectedParkAtom } from "../../lib/atoms/atoms";
 
 interface CustomMarkerProps {
     parkInfoJson: {
@@ -32,10 +32,13 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
         setMarkerClicked(true);
         setSelectedParkAtom(parkInfoJson.id);
         mapRef.current?.flyTo({
-            center: [parkInfoJson.park_info.coordinates.longitude, parkInfoJson.park_info.coordinates.latitude],
+            center: [
+                parkInfoJson.park_info.coordinates.longitude,
+                parkInfoJson.park_info.coordinates.latitude,
+            ],
             zoom: 13,
-            duration: 2750
-        })
+            duration: 2750,
+        });
     };
 
     const handleMouseEnter = () => {

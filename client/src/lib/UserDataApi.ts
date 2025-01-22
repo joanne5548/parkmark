@@ -1,7 +1,7 @@
 import { GoogleLoginCredential, UserData } from "./interfaces";
 
 export async function postNewUser(userData: UserData) {
-    const response = await fetch("http://localhost:5000/userdata", {
+    const response = await fetch("http://localhost:5000/api/userdata", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
@@ -13,7 +13,7 @@ export async function postNewUser(userData: UserData) {
 }
 
 export async function getUser(sub_id: string) {
-    const response = await fetch(`http://localhost:5000/userdata/${sub_id}`, {
+    const response = await fetch(`http://localhost:5000/api/userdata/${sub_id}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     });
