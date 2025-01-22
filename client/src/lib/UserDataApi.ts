@@ -1,4 +1,4 @@
-import { GoogleLoginCredential, UserData } from "./interfaces";
+import { UserData } from "./interfaces";
 
 export async function postNewUser(userData: UserData) {
     const response = await fetch("http://localhost:5000/api/userdata", {

@@ -30,5 +30,5 @@ CREATE TABLE ThumbsUpList (
 CREATE TABLE NationalPark (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name VARCHAR(255),
-    park_info JSONB DEFAULT NULL
+    park_info JSONB NOT NULL
 );
