@@ -2,7 +2,7 @@ import json
 from uuid import uuid4
 
 park_list_with_uuid = []
-with open('./json_data/filtered_national_parks_nps.json') as park_list_without_uuid_file:
+with open('./json_data/filtered_national_parks_nps.json', encoding="utf8") as park_list_without_uuid_file:
     park_list_without_uuid_data = json.load(park_list_without_uuid_file)
     for park in park_list_without_uuid_data:
     # park = park_list_without_uuid_data[0]

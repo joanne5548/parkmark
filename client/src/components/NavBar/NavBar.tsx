@@ -9,7 +9,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className="flex flex-row justify-between gap-4 my-4 mx-5">
+        <div className="flex flex-row justify-between gap-4">
             <div className="flex flex-row gap-4 items-center">
                 <img
                     src={logoImg}

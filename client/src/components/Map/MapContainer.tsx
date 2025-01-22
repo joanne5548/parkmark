@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Map, MapRef, MapEvent } from "react-map-gl";
 import CustomMarker from "./CustomMarker";
 // path alias doesn't work! @json_data/...
-import parkList from "../../../../scripts/json_data/filtered_national_parks_nps.json";
+import parkList from "../../../../scripts/json_data/park_list_with_uuid.json";
 // import parkList from "../../../../scripts/json_data/test.json";
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
@@ -21,7 +21,7 @@ const MapContainer = () => {
 
     return (
         <div className="flex items-center justify-center h-full">
-            <div className="h-[88vh] 3xl:h-[90vh] w-[97vw] rounded-xl overflow-hidden">
+            <div className="h-[88vh] 3xl:h-[90vh] w-full rounded-xl overflow-hidden">
                 <Map
                     ref={mapRef}
                     mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
@@ -35,8 +35,8 @@ const MapContainer = () => {
                     mapStyle="mapbox://styles/mapbox/outdoors-v12"
                 >
                     {parkList.map((park) => {
-                        const longitude: number = Number(park.coordiantes.longitude);
-                        const latitude: number = Number(park.coordiantes.latitude);
+                        const longitude: number = Number(park.park_info.coordinates.longitude);
+                        const latitude: number = Number(park.park_info.coordinates.latitude);
                         if (!isNaN(longitude) && isFinite(longitude) && !isNaN(latitude) && isFinite(latitude)) {
                             return <CustomMarker
                                 key={`[${longitude}, ${latitude}]`}

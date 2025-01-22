@@ -1,14 +1,19 @@
-import React, { RefObject, useEffect, useRef, useState } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import { MapRef, Marker } from "react-map-gl";
 import CustomPopup from "./CustomPopup";
 import { HiMapPin } from "react-icons/hi2";
+import { useSetAtom } from "jotai";
+import { selectedParkAtom } from "../../lib/atoms/selectedParkAtom";
 
 interface CustomMarkerProps {
     parkInfoJson: {
+        id: string;
         name: string;
-        coordiantes: {
-            longitude: number;
-            latitude: number;
+        park_info: {
+            coordinates: {
+                longitude: number;
+                latitude: number;
+            };
         };
     };
     mapRef: RefObject<MapRef>;
@@ -21,9 +26,16 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
     const [markerHovered, setMarkerHovered] = useState<boolean>(false);
     const [markerClicked, setMarkerClicked] = useState<boolean>(false);
     const [pinClassName, setPinClassName] = useState<string>("");
+    const setSelectedParkAtom = useSetAtom(selectedParkAtom);
 
     const handleMarkerClick = () => {
-        setMarkerClicked(!markerClicked);
+        setMarkerClicked(true);
+        setSelectedParkAtom(parkInfoJson.id);
+        mapRef.current?.flyTo({
+            center: [parkInfoJson.park_info.coordinates.longitude, parkInfoJson.park_info.coordinates.latitude],
+            zoom: 13,
+            duration: 2750
+        })
     };
 
     const handleMouseEnter = () => {
@@ -74,8 +86,8 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
 
     return (
         <Marker
-            longitude={parkInfoJson.coordiantes.longitude}
-            latitude={parkInfoJson.coordiantes.latitude}
+            longitude={parkInfoJson.park_info.coordinates.longitude}
+            latitude={parkInfoJson.park_info.coordinates.latitude}
             onClick={handleMarkerClick}
         >
             <div

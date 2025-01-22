@@ -1,13 +1,15 @@
-import React, { Dispatch } from "react";
+import React from "react";
 import { Popup } from "react-map-gl";
-import { Link } from "react-router-dom";
 
 interface CustomPopupProps {
     parkInfoJson: {
+        id: string;
         name: string;
-        coordiantes: {
-            longitude: number;
-            latitude: number;
+        park_info: {
+            coordinates: {
+                longitude: number;
+                latitude: number;
+            };
         };
     };
     handlePopupClose: () => void;
@@ -19,8 +21,8 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
 }) => {
     return (
         <Popup
-            longitude={parkInfoJson.coordiantes.longitude}
-            latitude={parkInfoJson.coordiantes.latitude}
+            longitude={parkInfoJson.park_info.coordinates.longitude}
+            latitude={parkInfoJson.park_info.coordinates.latitude}
             offset={8}
             maxWidth=""
             closeOnClick={false}
@@ -36,7 +38,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
                 >
                     {parkInfoJson.name}
                 </Link> */}
-                <div className="text-center text-2xl font-medium hover:underline border-none hover:border-none">{parkInfoJson.name}</div>
+                <div className="text-center text-2xl font-medium border-none">{parkInfoJson.name}</div>
                 <div className="text-center text-lg">Average Rating</div>
                 <div className="text-lg">put stars here</div>
                 <div className="text-lg">put pictures here</div>
