@@ -22,6 +22,7 @@ const NavBar = () => {
                     ParkMark
                 </div>
             </div>
+            {/* if the page is too tight, disable the search bar */}
             <div className="flex flex-row items-center pl-2.5 w-5/12 max-h-10 gap-3 bg-slate-200 rounded-md">
                 <IoSearch className="size-5 text-slate-500" />
                 <div className="text-slate-500">

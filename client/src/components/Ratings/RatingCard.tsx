@@ -1,28 +1,15 @@
 import { useState } from "react";
 import profileImg from "../../assets/parkmark-logo.jpg";
-import { LuThumbsUp } from "react-icons/lu";
+import ReviewStarList from "./ReviewStarList";
+import ThumbsUpButton from "./ThumbsUpButton";
 
 const RatingCard = () => {
-    const [thumbsUpBool, setThumbsUpBool] = useState<boolean>(false);
-    const [buttonClassName, setButtonClassName] = useState<string>("");
-
-    const handleThumbsUpButtonClick = () => {
-        const newThumbsUpBool = !thumbsUpBool;
-
-        let className = "size-4.5";
-        if (newThumbsUpBool) {
-            className += " fill-blue-400";
-        }
-        setThumbsUpBool(newThumbsUpBool);
-        setButtonClassName(className);
-    };
-
     return (
-        <div className="flex flex-row gap-4">
-            <div className="flex flex-col gap-3">
+        <div className="flex flex-row gap-4 pb-2 border-b-2">
+            <div className="flex flex-col gap-3 w-5/12 min-w-36">
                 <div className="flex flex-row gap-3">
                     <img src={profileImg} className="size-10 rounded-xl" />
-                    <div className="font-medium min-w-24">Joanne Kim</div>
+                    <div className="font-medium">Joanne Kim</div>
                 </div>
                 <div className="self-center">
                     <img
@@ -31,23 +18,23 @@ const RatingCard = () => {
                     />
                 </div>
             </div>
-            <div className="flex flex-col">
-                <div className="flex flex-row gap-2 items-center">
-                    <div>stars</div>
+            <div className="flex flex-col w-full">
+                <div className="flex flex-row gap-2 pb-2 items-center">
+                    <ReviewStarList rating={0} />
                     <div className="text-xs font-medium text-slate-500">
-                        date
+                        01/23/2025
                     </div>
                 </div>
-                <div className="text-slate-600 min-h-[7.75rem] min-w-full">
-                    review content
+                <div className="text-slate-700 pb-1">
+                    Yellowstone is the best national park ever! I loved seeing
+                    the bisons Though sometimes, bisons do jam the traffic when
+                    they're moving across the fields. We were stuck on the roads
+                    for 40 minutes! But it was unforgettable moments for sure.
+                    We camped there for a week, and one day, a huge moose was
+                    standing right next to our tent lol
                 </div>
                 <div className="flex justify-end">
-                    <button
-                        onClick={handleThumbsUpButtonClick}
-                        className="size-fit rounded-md bg-none border-2 p-1.5 border-slate-300"
-                    >
-                        <LuThumbsUp className={buttonClassName} />
-                    </button>
+                    <ThumbsUpButton />
                 </div>
             </div>
         </div>
