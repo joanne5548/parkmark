@@ -8,16 +8,16 @@ CREATE TABLE UserData(
 
 CREATE TABLE Review (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id UUID REFERENCES UserData(id)
+    user_sub_id VARCHAR(255) REFERENCES UserData(sub_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
     park_id UUID REFERENCES NationalPark(id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
-    rating INTEGER CHECK (rating >= 1 AND rating <= 5),
-    created_at timestamptz,
+    rating INTEGER CHECK (rating >= 0 AND rating <= 5),
     content VARCHAR(2048),
-    img_url_list JSONB DEFAULT NULL
+    img_url_list JSONB DEFAULT NULL,
+    created_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE ThumbsUpList (
