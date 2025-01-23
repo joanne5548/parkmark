@@ -1,4 +1,3 @@
-import React from "react";
 import { IoClose } from "react-icons/io5";
 import RatingCard from "./RatingCard";
 import { useAtom } from "jotai";
@@ -17,7 +16,7 @@ const RatingsSidePanel = () => {
                 <IoClose className="text-slate-500 size-6" />
             </button>
             <div className="font-medium text-2xl border-b-2 pb-4">
-                Replace with Park Name
+                {selectedPark?.name}
             </div>
 
             <RatingCard />

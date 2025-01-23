@@ -30,7 +30,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
 
     const handleMarkerClick = () => {
         setMarkerClicked(true);
-        setSelectedParkAtom(parkInfoJson.id);
+        setSelectedParkAtom(parkInfoJson);
         mapRef.current?.flyTo({
             center: [
                 parkInfoJson.park_info.coordinates.longitude,

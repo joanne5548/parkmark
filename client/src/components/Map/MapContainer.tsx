@@ -1,9 +1,8 @@
 import { useRef } from "react";
 import { Map, MapRef, MapEvent } from "react-map-gl";
 import CustomMarker from "./CustomMarker";
-// path alias doesn't work! @json_data/...
-import parkList from "../../../../scripts/json_data/park_list_with_uuid.json";
-// import parkList from "../../../../scripts/json_data/test.json";
+// import parkList from "@json_data/test.json";
+import parkList from "@json_data/park_list_with_uuid.json";
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
@@ -35,14 +34,25 @@ const MapContainer = () => {
                     mapStyle="mapbox://styles/mapbox/outdoors-v12"
                 >
                     {parkList.map((park) => {
-                        const longitude: number = Number(park.park_info.coordinates.longitude);
-                        const latitude: number = Number(park.park_info.coordinates.latitude);
-                        if (!isNaN(longitude) && isFinite(longitude) && !isNaN(latitude) && isFinite(latitude)) {
-                            return <CustomMarker
-                                key={`[${longitude}, ${latitude}]`}
-                                parkInfoJson={park}
-                                mapRef={mapRef}
-                            />
+                        const longitude: number = Number(
+                            park.park_info.coordinates.longitude
+                        );
+                        const latitude: number = Number(
+                            park.park_info.coordinates.latitude
+                        );
+                        if (
+                            !isNaN(longitude) &&
+                            isFinite(longitude) &&
+                            !isNaN(latitude) &&
+                            isFinite(latitude)
+                        ) {
+                            return (
+                                <CustomMarker
+                                    key={`[${longitude}, ${latitude}]`}
+                                    parkInfoJson={park}
+                                    mapRef={mapRef}
+                                />
+                            );
                         } else {
                             throw Error(
                                 "Longitude/latitude of park location string is not a valid number"

@@ -11,3 +11,14 @@ export interface UserData {
     email: string;
     profile_picture_url: string;
 }
+
+export interface NationalPark {
+    id: string;
+    name: string;
+    park_info: {
+        coordinates: {
+            longitude: number;
+            latitude: number;
+        };
+    };
+}
