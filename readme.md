@@ -93,7 +93,6 @@
 
 <details>
 <summary>Past Notes (Resolved)</summary>
-<br>
 
 ### Google OAuth Info
 

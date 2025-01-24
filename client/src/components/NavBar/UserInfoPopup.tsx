@@ -20,7 +20,7 @@ const UserInfoPopup = () => {
                 // transition, probably use callback function (transition-opacity duration-1000 ease-out opacity-100 hover:opacity-0) */
         <div
             className="absolute right-0 top-11 w-48 p-6 rounded-lg bg-white
-                            shadow-lg shadow-userinfo border border-slate-100 z-[1000]"
+                            shadow-lg shadow-userinfo border border-slate-100 z-[1001]"
         >
             <div className="flex flex-col gap-4 pb-6">
                 <img

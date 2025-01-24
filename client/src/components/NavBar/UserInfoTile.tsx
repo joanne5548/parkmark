@@ -11,8 +11,8 @@ const UserInfoTile = () => {
     const logInUser = useAtomValue(logInUserAtom);
     const [displayUserInfo, setDisplayUserInfo] = useState<boolean>(false);
 
-    const setDisplayUserInfoToTrue = () => {
-        setDisplayUserInfo(true);
+    const handleUserIconOnClick = () => {
+        setDisplayUserInfo(!displayUserInfo);
     };
 
     // const setDisplayUserInfoToFalse = () => {
@@ -25,7 +25,7 @@ const UserInfoTile = () => {
 
     return (
         <div className="flex flex-row gap-2 relative">
-            <button onClick={setDisplayUserInfoToTrue}>
+            <button onClick={handleUserIconOnClick}>
                 <img
                     src={logInUser?.profile_picture_url}
                     className="size-10 rounded-3xl"
