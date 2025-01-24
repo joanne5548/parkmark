@@ -22,3 +22,13 @@ export interface NationalPark {
         };
     };
 }
+
+export interface Review {
+    id: string;
+    user_sub_id: string;
+    park_id: string;
+    rating: number;
+    content: string;
+    img_url_list: JSON;
+    created_at: string;
+}

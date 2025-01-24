@@ -1,5 +1,7 @@
+import { useSetAtom } from "jotai";
 import React from "react";
 import { Popup } from "react-map-gl";
+import { selectedParkAtom } from "../../lib/atoms/atoms";
 
 interface CustomPopupProps {
     parkInfoJson: {
@@ -19,6 +21,12 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
     parkInfoJson,
     handlePopupClose,
 }) => {
+    const setSelectedPark = useSetAtom(selectedParkAtom);
+
+    const handleParkNameButtonOnClick = () => {
+        setSelectedPark(parkInfoJson);
+    }
+
     return (
         <Popup
             longitude={parkInfoJson.park_info.coordinates.longitude}
@@ -38,7 +46,12 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
                 >
                     {parkInfoJson.name}
                 </Link> */}
-                <div className="text-center text-2xl font-medium border-none">{parkInfoJson.name}</div>
+                <button
+                    onClick={handleParkNameButtonOnClick}
+                    className="text-center text-2xl font-medium border-none hover:underline"
+                >
+                    {parkInfoJson.name}
+                </button>
                 <div className="text-center text-lg">Average Rating</div>
                 <div className="text-lg">put stars here</div>
                 <div className="text-lg">put pictures here</div>

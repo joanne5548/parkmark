@@ -2,7 +2,11 @@ import UserInfoTile from "./UserInfoTile";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { GoogleLoginCredential, UserData } from "../../lib/interfaces";
-import { getUser, handleApiError, postNewUser } from "../../lib/userDataApi";
+import {
+    getUser,
+    handleApiError,
+    postNewUser,
+} from "../../lib/APIs/userDataApi";
 import { useAtom } from "jotai";
 import { logInUserAtom } from "../../lib/atoms/atoms";
 
@@ -20,8 +24,6 @@ const Login = () => {
             const userDataFromDb: UserData | null = await getUser(sub_id);
 
             if (userDataFromDb) {
-                console.log(userDataFromDb);
-
                 setLogInUser(userDataFromDb);
             } else {
                 const userData: UserData = {
@@ -30,8 +32,6 @@ const Login = () => {
                     email: credentialJson.email,
                     profile_picture_url: credentialJson.picture,
                 };
-
-                console.log(userData);
 
                 await postNewUser(userData);
 

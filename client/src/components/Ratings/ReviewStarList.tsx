@@ -9,7 +9,7 @@ const ReviewStarList: React.FC<ReviewStarListProps> = ({ rating }) => {
   return (
     <div className='flex flex-row gap-[3px]'>
       {[1, 2, 3, 4, 5].map((i) => {
-        let className = "size-[1.2rem] ";
+        let className = "size-4 ";
         const gray = "text-gray-300";
         const filled = "text-amber-400";
 
@@ -20,7 +20,7 @@ const ReviewStarList: React.FC<ReviewStarListProps> = ({ rating }) => {
             className += gray;
         }
 
-        return <FaStar className={className}/>
+        return <FaStar key={i} className={className}/>
       })}
     </div>
   )

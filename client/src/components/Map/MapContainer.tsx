@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Map, MapRef, MapEvent } from "react-map-gl";
 import CustomMarker from "./CustomMarker";
 // import parkList from "@json_data/test.json";
 import parkList from "@json_data/park_list_with_uuid.json";
-import { useAtomValue } from "jotai";
-import { selectedParkAtom } from "../../lib/atoms/atoms";
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 

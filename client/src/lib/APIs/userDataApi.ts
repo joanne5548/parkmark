@@ -1,4 +1,4 @@
-import { UserData } from "./interfaces";
+import { UserData } from "../interfaces";
 
 export async function postNewUser(userData: UserData) {
     const response = await fetch("http://localhost:5000/api/userdata", {
@@ -13,10 +13,13 @@ export async function postNewUser(userData: UserData) {
 }
 
 export async function getUser(sub_id: string) {
-    const response = await fetch(`http://localhost:5000/api/userdata/${sub_id}`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+        `http://localhost:5000/api/userdata/${sub_id}`,
+        {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+        }
+    );
 
     if (!response.ok) {
         if (response.status === 404) {

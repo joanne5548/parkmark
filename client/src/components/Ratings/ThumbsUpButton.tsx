@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { LuThumbsUp } from "react-icons/lu";
 
 const ThumbsUpButton = () => {
