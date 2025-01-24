@@ -1,4 +1,22 @@
 import { Review } from "../interfaces";
+import { handleApiError } from "./userDataApi";
+
+export const postReview = async (review: Review) => {
+    try {
+        const response = await fetch("http://localhost:5000/api/review", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(review)
+        });
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network Error: ${response.status}`);
+        }
+    }
+    catch (error) {
+        handleApiError(error);
+    }
+}
 
 export const fetchReviewsByParkId = async (selectedParkId: string) => {
     const response = await fetch(

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-const SelectStars = () => {
-    const [rating, setRating] = useState<number>(0);
+interface SelectStarsProps {
+    ratingStars: number,
+    setRatingStars: (rating: number) => void;
+}
+
+const SelectStars = ({ratingStars, setRatingStars}: SelectStarsProps) => {
 
     return (
         <div className="flex flex-row gap-[3px]">
@@ -11,7 +15,7 @@ const SelectStars = () => {
                 const gray: string = "text-gray-300";
                 const filled: string = "text-amber-400";
 
-                if (i <= rating) {
+                if (i <= ratingStars) {
                     baseClassName += filled;
                 } else {
                     baseClassName += gray;
@@ -20,7 +24,7 @@ const SelectStars = () => {
                 return (
                     <FaStar
                         key={i}
-                        onClick={() => setRating(i)}
+                        onClick={() => {setRatingStars(i)}}
                         className={baseClassName}
                     />
                 );

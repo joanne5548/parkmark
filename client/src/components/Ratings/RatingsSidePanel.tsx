@@ -47,7 +47,7 @@ const RatingsSidePanel = () => {
                     </div>
                 </div>
 
-                {creatingNewReview ? <RatingCardForm /> : <RatingsCardList />}
+                {creatingNewReview ? <RatingCardForm resetCreatingNewReview={() => setCreatingNewReview(false)} /> : <RatingsCardList />}
             </div>
         </div>
     );
