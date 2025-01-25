@@ -33,16 +33,16 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
             longitude={parkInfoJson.park_info.coordinates.longitude}
             latitude={parkInfoJson.park_info.coordinates.latitude}
             offset={8}
-            maxWidth=""
+            maxWidth="23.5rem"
             closeOnClick={false}
             onClose={() => {
                 handlePopupClose();
             }}
         >
-            <div className="flex flex-col gap-4 items-center">
+            <div className="flex flex-col gap-2 items-center">
                 <button
                     onClick={handleParkNameButtonOnClick}
-                    className="text-center text-2xl font-medium border-none hover:underline"
+                    className="w-full text-center text-xl font-medium border-none hover:underline"
                 >
                     {parkInfoJson.name}
                 </button>

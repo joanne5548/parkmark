@@ -25,7 +25,6 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
 }) => {
     const [markerHovered, setMarkerHovered] = useState<boolean>(false);
     const [markerClicked, setMarkerClicked] = useState<boolean>(false);
-    const [pinClassName, setPinClassName] = useState<string>("");
     const setSelectedParkAtom = useSetAtom(selectedParkAtom);
 
     const handleMarkerClick = () => {
@@ -54,39 +53,6 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
         setMarkerClicked(false);
     };
 
-    useEffect(() => {
-        const updateMarkerSize = () => {
-            const zoomCheck = mapRef.current?.getZoom();
-            if (zoomCheck !== undefined) {
-                let zoom: number = Math.round(zoomCheck);
-
-                let size: number;
-                if (zoom < 4) {
-                    size = 5;
-                } else if (zoom < 6) {
-                    size = 6;
-                } else {
-                    size = 7;
-                }
-
-                setPinClassName(
-                    `size-6 text-red-500 stroke-1 stroke-slate-800`
-                );
-            }
-        };
-
-        updateMarkerSize();
-
-        const map = mapRef.current;
-        if (map) {
-            map.on("zoom", updateMarkerSize);
-
-            return () => {
-                map.off("zoom", updateMarkerSize);
-            };
-        }
-    }, [mapRef.current]);
-
     return (
         <Marker
             longitude={parkInfoJson.park_info.coordinates.longitude}
@@ -99,7 +65,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
                     setTimeout(handleMouseLeave, 20);
                 }}
             >
-                <HiMapPin className={pinClassName} />
+                <HiMapPin className="size-6 text-red-500 stroke-1 stroke-slate-800" />
                 {(markerHovered || markerClicked) && (
                     <CustomPopup
                         parkInfoJson={parkInfoJson}

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import DisplayReviewStars from "../Ratings/Display/DisplayReviewStars";
-import StarsBarList from "./StarsBarList";
+import PercentageBarList from "./PercentageBarList";
 import { Review, StarRatingPercentageList } from "@lib/interfaces";
 import { fetchReviewsByParkId } from "@lib/APIs/reviewApi";
-import { calculateAverageRating, calculateStarsPercentage } from "@lib/calculateReviewStats";
+import {
+    calculateAverageRating,
+    calculateStarsPercentage,
+} from "@lib/calculateReviewStats";
 
 interface RatingStatisticsProps {
     parkId: string;
@@ -25,7 +28,7 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
         (async () => {
             console.log("run the function");
             const fetchedReviewList = await fetchReviewsByParkId(parkId);
-            
+
             if (fetchedReviewList.length === 0) {
                 return;
             }
@@ -34,7 +37,7 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
             setStarRatingPercentageList(starRatingPercentageList);
 
             setAverageRating(calculateAverageRating(fetchedReviewList));
-        
+
             setRatingsCount(fetchedReviewList.length);
         })();
     }, []);
@@ -44,12 +47,16 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
             <div className="flex flex-col gap-2 items-center">
                 <div className="font-normal text-lg">Average Rating</div>
                 <div className="flex flex-row gap-3 w-fit p-3 rounded-full bg-slate-100">
-                    <DisplayReviewStars rating={averageRating} starSize={6} />
+                    <DisplayReviewStars rating={averageRating} />
                     <div className="text-base">{averageRating} out of 5</div>
                 </div>
-                <div className="text-base text-slate-600">{ratingsCount} ratings</div>
+                <div className="text-base text-slate-600">
+                    {ratingsCount} ratings
+                </div>
             </div>
-            <StarsBarList starRatingPercentageList={starRatingPercentageList} />
+            <PercentageBarList
+                starRatingPercentageList={starRatingPercentageList}
+            />
         </div>
     );
 };

@@ -33,10 +33,10 @@
 -   [x] Fix marker dynamic sizing issue
     -   Check heights of the mapbox-pin div
     -   Bruh. It just got fixed on its own. I have no idea how or why this happened
--   [ ] Finish designing popup box
+-   [x] Finish designing popup box
     -   [x] Display average ratings
-    -   [ ] Fix 0% bar
-    -   [ ] Fix padding for longer names
+    -   [x] Fix 0% bar
+    -   [x] Fix padding for longer names
 
 #### Next Steps...
 
@@ -45,7 +45,7 @@
     -   [x] Implement REST API for user data
     -   [x] Insert user data upon google login
 -   [x] Build Ratings side panel
--   [ ] remove dynamic sizing for stars and pins
+-   [x] remove dynamic sizing for stars and pins
 -   [ ] Implement search bar
 
 <details>
@@ -53,13 +53,6 @@
 </details>
 
 ### Backend
-
-#### UserData
-
--   [x] Modify get request to throw 404 error if user does not exist
-    -   [x] Identify what and where the 500 (or something else) error is coming from
--   [x] Look for a way to mute 404 error or find out a better way to deal with new user
--   [ ] Check & update if user data has changed on every login
 
 #### Storing Images for Reviews
 
@@ -74,6 +67,13 @@
 -   [x] Fill in missing national park data in `filtered_national_parks_nps.json`
 -   [x] Make sure to check again if the number matches to 63!
 -   [x] Then run `generateParkUuid.py` again
+
+#### UserData
+
+-   [x] Modify get request to throw 404 error if user does not exist
+    -   [x] Identify what and where the 500 (or something else) error is coming from
+-   [x] Look for a way to mute 404 error or find out a better way to deal with new user
+-   [x] Check & update if user data has changed on every login
 </details>
 
 ## Development Notes

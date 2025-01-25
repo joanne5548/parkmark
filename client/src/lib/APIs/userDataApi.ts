@@ -32,6 +32,23 @@ export async function getUser(sub_id: string) {
     return userData;
 }
 
+export const putUser = async (userData: UserData) => {
+    try {
+        const response = await fetch(`http://localhost:5000/api/userdata/${userData.sub_id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network error: ${response.status}`);
+        }
+    }
+    catch (error) {
+        handleApiError(error);
+    }
+}
+
 // export async function createAndSetUserFromLogin(credentialJson: GoogleLoginCredential, setLoginUserDataWrapper: (userData: UserData | null) => void) {
 //     const userData: UserData = {
 //         sub_id: credentialJson.sub,

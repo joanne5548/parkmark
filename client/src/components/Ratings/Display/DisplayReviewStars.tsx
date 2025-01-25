@@ -3,14 +3,13 @@ import { FaStar } from "react-icons/fa";
 
 interface DisplayReviewStarsProps {
     rating: number;
-    starSize: number;
 }
 
-const DisplayReviewStars: React.FC<DisplayReviewStarsProps> = ({ rating, starSize }) => {
+const DisplayReviewStars: React.FC<DisplayReviewStarsProps> = ({ rating }) => {
     return (
         <div className="flex flex-row gap-[7px]">
             {[1, 2, 3, 4, 5].map((i) => {
-                let className = "size-6 ";//"size-" + starSize + " ";
+                let className = "size-6 ";
                 const gray = "text-gray-300";
                 const filled = "text-amber-400";
 

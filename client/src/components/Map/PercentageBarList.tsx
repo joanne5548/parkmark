@@ -1,16 +1,16 @@
 import React from "react";
-import StarsBarPercentage from "./StarsBarPercentage";
+import PercentageBar from "./PercentageBar";
 import { StarRatingPercentageList } from "@lib/interfaces";
 
-interface StarsBarListProps {
+interface PercentageBarListProps {
     starRatingPercentageList: StarRatingPercentageList;
 }
 
-const StarsBarList = ({ starRatingPercentageList }: StarsBarListProps) => {
+const PercentageBarList = ({ starRatingPercentageList }: PercentageBarListProps) => {
     return (
         <div className="flex flex-col gap-2 w-full">
             {[5, 4, 3, 2, 1].map((i) => (
-                <StarsBarPercentage
+                <PercentageBar
                     star={i}
                     starPercentage={
                         starRatingPercentageList[
@@ -23,4 +23,4 @@ const StarsBarList = ({ starRatingPercentageList }: StarsBarListProps) => {
     );
 };
 
-export default StarsBarList;
+export default PercentageBarList;

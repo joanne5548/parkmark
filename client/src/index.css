@@ -12,13 +12,9 @@
     cursor: pointer;
 }
 
-.mapboxgl-popup {
-    /* border-color: 10px solid #64748b; */
-}
-
 .mapboxgl-popup-content {
-    min-width: 25rem;
-    padding: 1.25rem 2rem 1.5rem 1.25rem;
+    min-width: 23.5rem;
+    padding: 1rem 1.5rem 1.5rem 1rem;
     /* fix border on popup tip */
     border: solid 1px #d4d4d4;
     border-radius: 1rem;

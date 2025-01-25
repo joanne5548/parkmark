@@ -1,14 +1,16 @@
 import UserInfoTile from "./UserInfoTile";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { GoogleLoginCredential, UserData } from "../../lib/interfaces";
+import { GoogleLoginCredential, UserData } from "@lib/interfaces";
 import {
     getUser,
     handleApiError,
     postNewUser,
-} from "../../lib/APIs/userDataApi";
+    putUser,
+} from "@lib/APIs/userDataApi";
 import { useAtom } from "jotai";
-import { logInUserAtom } from "../../lib/atoms/atoms";
+import { logInUserAtom } from "@lib/atoms/atoms";
+import { userDataMatchesFromDatabase } from "@lib/checkUserDataFromDb";
 
 const Login = () => {
     // const [logInUserData, setLogInUserData] = useState<UserData | null>(null);
@@ -23,20 +25,21 @@ const Login = () => {
         try {
             const userDataFromDb: UserData | null = await getUser(sub_id);
 
-            if (userDataFromDb) {
-                setLogInUser(userDataFromDb);
-            } else {
-                const userData: UserData = {
-                    sub_id: sub_id,
-                    name: credentialJson.name,
-                    email: credentialJson.email,
-                    profile_picture_url: credentialJson.picture,
-                };
+            const currentUserData: UserData = {
+                sub_id: sub_id,
+                name: credentialJson.name,
+                email: credentialJson.email,
+                profile_picture_url: credentialJson.picture,
+            };
 
-                await postNewUser(userData);
-
-                setLogInUser(userData);
+            if (!userDataFromDb) {
+                await postNewUser(currentUserData);
             }
+            else if (!userDataMatchesFromDatabase(userDataFromDb, currentUserData)) {
+                await putUser(currentUserData);
+            }
+
+            setLogInUser(currentUserData);
         } catch (error: any) {
             handleApiError(error);
         }
