@@ -11,7 +11,7 @@ const FrontPage = () => {
         <div className="flex flex-col gap-4 p-6 h-screen">
             <NavBar />
             <div className="relative flex flex-row items-center gap-6 h-full">
-                {/* <MapContainer /> */}
+                <MapContainer />
                 {selectedPark && <RatingsSidePanel />}
             </div>
         </div>

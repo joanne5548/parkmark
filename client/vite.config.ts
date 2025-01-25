@@ -10,6 +10,7 @@ export default defineConfig({
         alias: {
             "@json_data": path.resolve(__dirname, "../scripts/json_data"),
             "@lib": path.resolve(__dirname, "src/lib"),
+            "@assets": path.resolve(__dirname, "src/assets"),
         },
     },
     css: {

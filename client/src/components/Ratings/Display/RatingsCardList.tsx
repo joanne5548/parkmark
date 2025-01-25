@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAtomValue } from "jotai";
-import { Review } from "../../../lib/interfaces";
-import { selectedParkAtom } from "../../../lib/atoms/atoms";
-import { fetchReviewsByParkId } from "../../../lib/APIs/reviewApi";
-import { handleApiError } from "../../../lib/APIs/userDataApi";
+import { Review } from "@lib/interfaces";
+import { selectedParkAtom } from "@lib/atoms/atoms";
+import { fetchReviewsByParkId } from "@lib/APIs/reviewApi";
 import RatingCard from "./RatingCard";
 
 const RatingsCardList = () => {
@@ -15,7 +14,6 @@ const RatingsCardList = () => {
             selectedPark?.id!
         );
         setReviewList(fetchedReviewList);
-        console.log(fetchedReviewList);
     };
 
     useEffect(() => {

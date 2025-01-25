@@ -1,4 +1,3 @@
-import { fetchReviewsByParkId } from "./APIs/reviewApi";
 import { Review, StarRatingPercentageList } from "./interfaces";
 
 export const calculateStarsPercentage = (reviewList: Review[]) => {
@@ -18,8 +17,6 @@ export const calculateStarsPercentage = (reviewList: Review[]) => {
         starsPercentageList[rating.toString() as keyof StarRatingPercentageList] /= reviewList.length;
         starsPercentageList[rating.toString() as keyof StarRatingPercentageList] *= 100;
     });
-
-    console.log(starsPercentageList);
 
     return starsPercentageList;
 };

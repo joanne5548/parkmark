@@ -1,11 +1,7 @@
 import { useState } from "react";
 import UserInfoPopup from "./UserInfoPopup";
 import { useAtomValue } from "jotai";
-import { logInUserAtom } from "../../lib/atoms/atoms";
-
-// interface UserInfoTileProps {
-//     resetLogInUser: () => void;
-// }
+import { logInUserAtom } from "@lib/atoms/atoms";
 
 const UserInfoTile = () => {
     const logInUser = useAtomValue(logInUserAtom);

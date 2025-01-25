@@ -1,4 +1,3 @@
-import React from "react";
 import PercentageBar from "./PercentageBar";
 import { StarRatingPercentageList } from "@lib/interfaces";
 

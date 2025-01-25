@@ -30,7 +30,7 @@ const RatingsSidePanel = () => {
             >
                 <IoClose className="text-slate-500 size-5" />
             </button>
-            <div className="flex flex-col overflow-y-scroll pr-4 h-full">
+            <div className="flex flex-col overflow-y-auto pr-4 h-full">
                 <div className="relative h-[50px] font-medium text-2xl border-b-2 py-2">
                     Reviews
                     <div className="absolute right-0 bottom-1">

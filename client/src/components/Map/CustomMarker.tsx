@@ -1,8 +1,8 @@
-import React, { RefObject, useEffect, useState } from "react";
-import { MapRef, Marker } from "react-map-gl";
+import React, { useState } from "react";
+import { Marker } from "react-map-gl";
 import CustomPopup from "./CustomPopup";
 import { HiMapPin } from "react-icons/hi2";
-import { useSetAtom } from "jotai";
+import { useAtom } from "jotai";
 import { selectedParkAtom } from "../../lib/atoms/atoms";
 
 interface CustomMarkerProps {
@@ -16,28 +16,18 @@ interface CustomMarkerProps {
             };
         };
     };
-    mapRef: RefObject<MapRef>;
 }
 
 const CustomMarker: React.FC<CustomMarkerProps> = ({
     parkInfoJson,
-    mapRef,
 }) => {
     const [markerHovered, setMarkerHovered] = useState<boolean>(false);
     const [markerClicked, setMarkerClicked] = useState<boolean>(false);
-    const setSelectedParkAtom = useSetAtom(selectedParkAtom);
+    const [selectedPark, setSelectedPark] = useAtom(selectedParkAtom);
 
     const handleMarkerClick = () => {
         setMarkerClicked(true);
-        setSelectedParkAtom(parkInfoJson);
-        mapRef.current?.flyTo({
-            center: [
-                parkInfoJson.park_info.coordinates.longitude,
-                parkInfoJson.park_info.coordinates.latitude,
-            ],
-            zoom: 13,
-            duration: 2750,
-        });
+        setSelectedPark(parkInfoJson);
     };
 
     const handleMouseEnter = () => {
@@ -66,7 +56,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
                 }}
             >
                 <HiMapPin className="size-6 text-red-500 stroke-1 stroke-slate-800" />
-                {(markerHovered || markerClicked) && (
+                {(markerHovered || markerClicked || selectedPark?.id===parkInfoJson.id) && (
                     <CustomPopup
                         parkInfoJson={parkInfoJson}
                         handlePopupClose={handlePopupClose}

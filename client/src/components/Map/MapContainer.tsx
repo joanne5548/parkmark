@@ -1,13 +1,16 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Map, MapRef, MapEvent } from "react-map-gl";
 import CustomMarker from "./CustomMarker";
 // import parkList from "@json_data/test.json";
 import parkList from "@json_data/park_list_with_uuid.json";
+import { useAtomValue } from "jotai";
+import { selectedParkAtom } from "@lib/atoms/atoms";
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
 const MapContainer = () => {
     const mapRef = useRef<MapRef>(null);
+    const selectedPark = useAtomValue(selectedParkAtom)
 
     const handleOnMapLoad = (event: MapEvent) => {
         event.target.flyTo({
@@ -17,6 +20,27 @@ const MapContainer = () => {
             essential: true,
         });
     };
+
+    useEffect(() => {
+        if (!selectedPark) {
+            return;
+        }
+
+        mapRef.current?.flyTo({
+            center: [
+                selectedPark.park_info.coordinates.longitude+0.0175,
+                selectedPark.park_info.coordinates.latitude+0.0125,
+            ],
+            zoom: 13,
+            duration: 2750,
+        });
+
+        return () => {
+            // close current popup?
+            // do I have to maintain list of refs of every popup to close them here
+            // wait why tf does this work when closing the review tab
+        }
+    }, [selectedPark])
 
     return (
         <div className="flex items-center w-full h-full">
@@ -50,7 +74,6 @@ const MapContainer = () => {
                                 <CustomMarker
                                     key={`[${longitude}, ${latitude}]`}
                                     parkInfoJson={park}
-                                    mapRef={mapRef}
                                 />
                             );
                         } else {

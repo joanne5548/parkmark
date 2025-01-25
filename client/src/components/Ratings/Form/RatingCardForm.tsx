@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
-import { useAtom, useAtomValue } from "jotai";
-import { logInUserAtom, selectedParkAtom } from "../../../lib/atoms/atoms";
-import { Review, UserData } from "../../../lib/interfaces";
-import profileImg from "../../../assets/parkmark-logo.jpg";
-import { formatDate } from "../../../lib/dates";
+import { useRef, useState } from "react";
+import { useAtomValue } from "jotai";
 import SelectStars from "./SelectStars";
-import { postReview } from "../../../lib/APIs/reviewApi";
+import { logInUserAtom, selectedParkAtom } from "@lib/atoms/atoms";
+import { Review, UserData } from "@lib/interfaces";
+import placeholderImg from "@assets/parkmark-logo.jpg";
+import { formatDate } from "@lib/dates";
+import { postReview } from "@lib/APIs/reviewApi";
 
 interface RatingCardFormProps {
     resetCreatingNewReview: () => void;
@@ -62,7 +62,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                             </div>
                             <div className="self-center">
                                 <img
-                                    src={profileImg}
+                                    src={placeholderImg}
                                     className="size-32 object-cover rounded-lg"
                                 />
                             </div>

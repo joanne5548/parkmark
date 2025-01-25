@@ -1,10 +1,6 @@
 import { googleLogout } from "@react-oauth/google";
 import { useAtom } from "jotai";
-import { logInUserAtom } from "../../lib/atoms/atoms";
-
-// interface UserInfoPopupProps {
-//     logInUserData: UserData;
-// }
+import { logInUserAtom } from "@lib/atoms/atoms";
 
 const UserInfoPopup = () => {
     const [logInUser, setLogInUser] = useAtom(logInUserAtom);

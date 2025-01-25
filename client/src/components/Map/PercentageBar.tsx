@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-
 interface PercentageBarProps {
     star: number;
     starPercentage: number;
