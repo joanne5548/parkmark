@@ -25,7 +25,8 @@
         "types": ["node"],
         "baseUrl": ".",
         "paths": {
-            "@json_data/*": ["../scripts/json_data/*"]
+            "@json_data/*": ["../scripts/json_data/*"],
+            "@lib/*": ["src/lib/*"]
         }
     },
     "include": ["src"]

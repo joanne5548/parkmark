@@ -32,3 +32,11 @@ export interface Review {
     img_url_list: object;
     created_at?: string;
 }
+
+export interface StarRatingPercentageList {
+    "1": number;
+    "2": number;
+    "3": number;
+    "4": number;
+    "5": number;
+}

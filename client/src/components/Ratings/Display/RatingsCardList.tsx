@@ -11,14 +11,11 @@ const RatingsCardList = () => {
     const [reviewList, setReviewList] = useState<Review[]>([]);
 
     const fetchReviews = async () => {
-        try {
-            const fetchedReviewList: Review[] = await fetchReviewsByParkId(
-                selectedPark?.id!
-            );
-            setReviewList(fetchedReviewList);
-        } catch (error) {
-            handleApiError(error);
-        }
+        const fetchedReviewList: Review[] = await fetchReviewsByParkId(
+            selectedPark?.id!
+        );
+        setReviewList(fetchedReviewList);
+        console.log(fetchedReviewList);
     };
 
     useEffect(() => {

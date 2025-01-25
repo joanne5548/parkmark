@@ -19,21 +19,28 @@ export const postReview = async (review: Review) => {
 }
 
 export const fetchReviewsByParkId = async (selectedParkId: string) => {
-    const response = await fetch(
-        `http://localhost:5000/api/review/park_id/${selectedParkId}`,
-        {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
+    try {
+        const response = await fetch(
+            `http://localhost:5000/api/review/park_id/${selectedParkId}`,
+            {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+            }
+        );
+    
+        if (!response.ok) {
+            if (response.status === 404) {
+                return [];
+            }
+            throw new Error(`[Backend] Network Error: ${response.status}`);
         }
-    );
 
-    if (!response.ok) {
-        if (response.status === 404) {
-            return [];
-        }
-        throw new Error(`[Backend] Network Error: ${response.status}`);
+        const fetchedReviewList: Review[] = await response.json();
+        return fetchedReviewList;
+    }
+    catch (error) {
+        handleApiError(error);
+        return [];
     }
 
-    const fetchedReviewList: Review[] = await response.json();
-    return fetchedReviewList;
 };

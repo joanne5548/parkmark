@@ -2,6 +2,7 @@ import { useSetAtom } from "jotai";
 import React from "react";
 import { Popup } from "react-map-gl";
 import { selectedParkAtom } from "../../lib/atoms/atoms";
+import RatingStatistics from "./RatingStatistics";
 
 interface CustomPopupProps {
     parkInfoJson: {
@@ -38,23 +39,14 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
                 handlePopupClose();
             }}
         >
-            <div className="flex flex-col gap-2">
-                {/* <Link
-                    to={`/park/${parkInfoJson.name.replace(/\s/g, "").toLowerCase()}`}
-                    // this keeps highlighting when mouse hovers over marker
-                    className="text-center text-2xl font-medium hover:underline border-none hover:border-none"
-                >
-                    {parkInfoJson.name}
-                </Link> */}
+            <div className="flex flex-col gap-4 items-center">
                 <button
                     onClick={handleParkNameButtonOnClick}
                     className="text-center text-2xl font-medium border-none hover:underline"
                 >
                     {parkInfoJson.name}
                 </button>
-                <div className="text-center text-lg">Average Rating</div>
-                <div className="text-lg">put stars here</div>
-                <div className="text-lg">put pictures here</div>
+                <RatingStatistics parkId={parkInfoJson.id} />
             </div>
         </Popup>
     );

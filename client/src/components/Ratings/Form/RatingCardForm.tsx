@@ -53,11 +53,11 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                         <div className="flex flex-col gap-3 w-5/12 min-w-36">
                             <div className="flex flex-row gap-3">
                                 <img
-                                    src={logInUser?.profile_picture_url}
+                                    src={logInUser.profile_picture_url}
                                     className="size-10 rounded-xl object-cover"
                                 />
                                 <div className="font-medium">
-                                    {logInUser?.name}
+                                    {logInUser.name}
                                 </div>
                             </div>
                             <div className="self-center">
