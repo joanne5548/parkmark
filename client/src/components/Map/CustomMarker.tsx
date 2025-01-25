@@ -70,7 +70,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
                 }
 
                 setPinClassName(
-                    `size-${size} text-red-500 stroke-1 stroke-slate-800`
+                    `size-6 text-red-500 stroke-1 stroke-slate-800`
                 );
             }
         };

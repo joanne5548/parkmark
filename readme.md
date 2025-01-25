@@ -18,9 +18,9 @@
 #### Ratings Side Panel
 
 -   [x] Build basic reviews layout
--   [ ] Display images correctly
--   [ ] Build create review page
+-   [x] Build create review page
 -   [ ] Implement Thumbs up feature
+-   [ ] Display images correctly
 
 #### Mapbox
 
@@ -34,8 +34,9 @@
     -   Check heights of the mapbox-pin div
     -   Bruh. It just got fixed on its own. I have no idea how or why this happened
 -   [ ] Finish designing popup box
-    -   [ ] Display average ratings
-    -   [ ] Show images from reviews (Preferrably most popular ones)
+    -   [x] Display average ratings
+    -   [ ] Fix 0% bar
+    -   [ ] Fix padding for longer names
 
 #### Next Steps...
 
@@ -43,7 +44,9 @@
 -   [x] Establish database (create tables based on schema)
     -   [x] Implement REST API for user data
     -   [x] Insert user data upon google login
--   [ ] Build Ratings side panel
+-   [x] Build Ratings side panel
+-   [ ] remove dynamic sizing for stars and pins
+-   [ ] Implement search bar
 
 <details>
 <summary>Past To-dos (Completed)</summary>
