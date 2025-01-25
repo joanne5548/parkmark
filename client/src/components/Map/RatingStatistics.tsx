@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import DisplayReviewStars from "../Ratings/Display/DisplayReviewStars";
 import PercentageBarList from "./PercentageBarList";
 import { StarRatingPercentageList } from "@lib/interfaces";
-import { fetchReviewsByParkId } from "@lib/APIs/reviewApi";
+import { fetchReviewsWithUserDataByParkId } from "@lib/APIs/reviewApi";
 import {
     calculateAverageRating,
     calculateStarsPercentage,
@@ -26,7 +26,9 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
 
     useEffect(() => {
         (async () => {
-            const fetchedReviewList = await fetchReviewsByParkId(parkId);
+            const fetchedReviewList = await fetchReviewsWithUserDataByParkId(
+                parkId
+            );
 
             if (fetchedReviewList.length === 0) {
                 return;

@@ -50,6 +50,28 @@ reviewRouter.get("/park_id/:park_id", async (req: Request, res: Response) => {
     }
 });
 
+reviewRouter.get("/reviewWithUserData/park_id/:park_id", async (req:Request, res:Response) => {
+    try {
+        const { park_id } = req.params;
+
+        const columns = "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.img_url_list, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url"
+        const selectQueryResult = await pool.query(
+            `SELECT ${columns} FROM Review JOIN UserData ON Review.user_sub_id=UserData.sub_id WHERE park_id=$1`,
+            [park_id]
+        );
+
+        if (selectQueryResult.rowCount === 0) {
+            res.status(404).json({error: "No reviews found with given park id."});
+            return;
+        }
+
+        res.json(selectQueryResult.rows);
+    }
+    catch (error) {
+        handleError(error, res);
+    }
+})
+
 reviewRouter.get("/user_sub_id/:user_sub_id", async (req: Request, res: Response) => {
     try {
         const { user_sub_id } = req.params;
@@ -119,3 +141,5 @@ reviewRouter.delete("/review_id/:id", async (req: Request, res: Response) => {
         handleError(error, res);
     }
 });
+
+// SELECT Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.img_url_list, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url FROM Review JOIN UserData ON Review.user_sub_id=UserData.sub_id WHERE park_id='6e723d86-06cf-44b3-a31d-420d57950554';v

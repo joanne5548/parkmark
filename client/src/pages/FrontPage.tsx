@@ -2,7 +2,7 @@ import { useAtomValue } from "jotai";
 import MapContainer from "../components/Map/MapContainer";
 import NavBar from "../components/NavBar/NavBar";
 import RatingsSidePanel from "../components/Ratings/RatingsSidePanel";
-import { selectedParkAtom } from "../lib/atoms/atoms";
+import { selectedParkAtom } from "@lib/atoms/atoms";
 
 const FrontPage = () => {
     const selectedPark = useAtomValue(selectedParkAtom);

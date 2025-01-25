@@ -33,6 +33,19 @@ export interface Review {
     created_at?: string;
 }
 
+export interface ReviewWithUserData {
+    review_id: string;
+    park_id: string;
+    rating: number;
+    content: string;
+    img_url_list: object;
+    created_at: string;
+
+    user_sub_id: string;
+    user_name: string;
+    user_profile_picture_url: string;
+}
+
 export interface StarRatingPercentageList {
     "1": number;
     "2": number;

@@ -14,12 +14,19 @@ const SearchBar = () => {
     );
     const setSelectedParkAtom = useSetAtom(selectedParkAtom);
 
+    const baseClassName =
+        "relative flex flex-row items-center pl-2.5 w-[42%] max-h-10 gap-3 bg-white border-slate-300 border-2 ";
+    const [searchBarClassName, setSearchBarClassName] = useState<string>(
+        baseClassName + "rounded-md"
+    );
+
     const handleSearchInputOnChange = () => {
         if (!searchRef.current) {
             return;
         }
         if (searchRef.current.value.length === 0) {
             setSearchIsActive(false);
+            setSearchBarClassName(baseClassName + "rounded-md");
             return;
         }
 
@@ -31,15 +38,25 @@ const SearchBar = () => {
         setSuggestedParkList(suggestedParkList);
 
         setSearchIsActive(true);
+
+        setSearchBarClassName(baseClassName + "rounded-t-md border-b-0");
     };
 
     const handleParkButtonClick = (park: NationalPark) => {
         setSelectedParkAtom(park);
+        setSearchIsActive(false);
+        setSearchBarClassName(baseClassName + "rounded-md");
+
+        if (!searchRef.current) {
+            return;
+        }
+
+        searchRef.current.value = "";
     };
 
     return (
-        <div className="relative flex flex-row items-center pl-2.5 w-5/12 max-h-10 gap-3 bg-slate-200 rounded-md">
-            <IoSearch className="size-5 text-slate-500" />
+        <div className={searchBarClassName}>
+            <IoSearch className="size-5 text-slate-400" />
             <input
                 ref={searchRef}
                 onChange={handleSearchInputOnChange}
@@ -47,16 +64,19 @@ const SearchBar = () => {
                 className="bg-inherit w-full outline-none text-slate-900 placeholder:text-slate-500"
             ></input>
             {searchIsActive && (
-                <div className="absolute left-0 top-10 flex flex-col w-full max-h-52 overflow-y-auto text-[17px] bg-slate-200 rounded;-md z-[1000]">
+                <div
+                    className="absolute left-0 top-9 flex flex-col w-full max-h-52 overflow-y-auto text-[17px]
+                            shadow-lg bg-white border-slate-300 border-2 border-t-0 rounded-b-md z-[1000]"
+                >
                     {suggestedParkList.map((park) => {
                         return (
                             <button
                                 onClick={() => {
                                     handleParkButtonClick(park);
-                                    setSearchIsActive(false);
                                 }}
-                                className="py-2 text-slate-600 w-full rounded-md hover:bg-slate-100"
+                                className="flex flex-row gap-3 py-2 pl-2.5 text-start text-slate-600 w-full rounded-md hover:bg-slate-100"
                             >
+                                <IoSearch className="size-5 text-slate-400" />
                                 {park.name}
                             </button>
                         );

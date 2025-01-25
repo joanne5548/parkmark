@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 import { useAtomValue } from "jotai";
-import { Review } from "@lib/interfaces";
+import { ReviewWithUserData } from "@lib/interfaces";
 import { selectedParkAtom } from "@lib/atoms/atoms";
-import { fetchReviewsByParkId } from "@lib/APIs/reviewApi";
+import { fetchReviewsWithUserDataByParkId } from "@lib/APIs/reviewApi";
 import RatingCard from "./RatingCard";
 
 const RatingsCardList = () => {
     const selectedPark = useAtomValue(selectedParkAtom);
-    const [reviewList, setReviewList] = useState<Review[]>([]);
+    const [reviewList, setReviewList] = useState<ReviewWithUserData[]>([]);
 
     const fetchReviews = async () => {
-        const fetchedReviewList: Review[] = await fetchReviewsByParkId(
-            selectedPark?.id!
-        );
+        const fetchedReviewList =
+            await fetchReviewsWithUserDataByParkId(selectedPark?.id!);
         setReviewList(fetchedReviewList);
     };
 
@@ -33,7 +32,7 @@ const RatingsCardList = () => {
             ) : (
                 <div className="flex flex-col">
                     {reviewList.map((review) => (
-                        <RatingCard key={`${review.id}`} review={review} />
+                        <RatingCard key={`${review.review_id}`} review={review} />
                     ))}
                 </div>
             )}

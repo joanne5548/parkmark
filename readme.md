@@ -12,8 +12,9 @@
 -   [x] Complete responsive design
 -   [x] Implement Login
 -   [x] Display user information upon login
+-   [x] Implement search functionality
+    -   [ ] Fix misaligned dropdown
 -   [ ] Implement easier hovering over user information box popup
--   [ ] Implement search functionality
 
 #### Ratings Side Panel
 
@@ -46,7 +47,7 @@
     -   [x] Insert user data upon google login
 -   [x] Build Ratings side panel
 -   [x] remove dynamic sizing for stars and pins
--   [ ] Implement search bar
+-   [x] Implement search bar
 
 <details>
 <summary>Past To-dos (Completed)</summary>
@@ -57,6 +58,10 @@
 #### Storing Images for Reviews
 
 -   [ ] Look into Google Cloud
+
+#### Postgres
+
+-   [x] Do table join for returning list of reviews with user information
 
 <details>
 <summary>Past To-dos (Completed)</summary>
