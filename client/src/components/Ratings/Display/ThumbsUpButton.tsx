@@ -1,4 +1,5 @@
 import {
+    deleteThumbsUpData,
     fetchThumbsUpListByReviewId,
     postThumbsUpData,
 } from "@lib/APIs/thumbsUpListApi";
@@ -21,7 +22,7 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
 
     const logInUser: UserData | null = useAtomValue(logInUserAtom);
 
-    const handleThumbsUpButtonClick = () => {
+    const handleThumbsUpButtonClick = async () => {
         if (!logInUser) {
             alert("Please sign in to like a review.");
             return;
@@ -37,10 +38,12 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
         if (newThumbsUpBool) {
             className += " fill-blue-400";
 
-            postThumbsUpData(thumbsUpData);
+            await postThumbsUpData(thumbsUpData);
         } else {
-            // delete here, but I need to delete by user id and review id..
+            await deleteThumbsUpData(logInUser.sub_id, reviewId);
         }
+
+        await calculateNumberOfThumbsUp();
         setThumbsUpBool(newThumbsUpBool);
         setThumbsUpIconClassName(className);
     };
@@ -75,11 +78,7 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
     return (
         <button onClick={handleThumbsUpButtonClick} className={buttonClassName}>
             <LuThumbsUp className={thumbsUpIconClassName} />
-            {thumbsUpCount === 0 ? (
-                <></>
-            ) : (
-                <>{thumbsUpBool ? thumbsUpCount + 1 : thumbsUpCount}</>
-            )}
+            {thumbsUpCount === 0 ? <></> : <>{thumbsUpCount}</>}
         </button>
     );
 };

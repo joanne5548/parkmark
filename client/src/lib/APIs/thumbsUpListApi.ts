@@ -6,26 +6,26 @@ export const postThumbsUpData = async (thumbsUpData: ThumbsUpData) => {
         const response = await fetch("http://localhost:5000/api/thumbsuplist", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(thumbsUpData)
+            body: JSON.stringify(thumbsUpData),
         });
 
         if (!response.ok) {
             throw new Error(`[Backend] Network error: ${response.status}`);
         }
-    }
-    catch (error) {
+    } catch (error) {
         handleApiError(error);
     }
-}
-
-// export const deleteThumbsUpData = async (thumbsUpDataId)
+};
 
 export const fetchThumbsUpListByReviewId = async (reviewId: string) => {
     try {
-        const response = await fetch(`http://localhost:5000/api/thumbsuplist/review_id/${reviewId}`, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-        });
+        const response = await fetch(
+            `http://localhost:5000/api/thumbsuplist/review_id/${reviewId}`,
+            {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+            }
+        );
 
         if (!response.ok) {
             throw new Error(`[Backend] Network error: ${response.status}`);
@@ -34,8 +34,28 @@ export const fetchThumbsUpListByReviewId = async (reviewId: string) => {
         const thumbsUpList: ThumbsUpData[] = await response.json();
 
         return thumbsUpList;
-    }
-    catch (error) {
+    } catch (error) {
         handleApiError(error);
     }
-}
+};
+
+export const deleteThumbsUpData = async (
+    userSubId: string,
+    reviewId: string
+) => {
+    try {
+        const response = await fetch(
+            `http://localhost:5000/api/thumbsuplist?user_sub_id=${userSubId}&review_id=${reviewId}`,
+            {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network error: ${response.status}`);
+        }
+    } catch (error) {
+        handleApiError(error);
+    }
+};

@@ -20,6 +20,7 @@ export interface NationalPark {
             longitude: number;
             latitude: number;
         };
+        states?: string;
     };
 }
 

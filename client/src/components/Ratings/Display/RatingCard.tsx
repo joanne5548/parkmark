@@ -1,5 +1,4 @@
 import { ReviewWithUserData } from "@lib/interfaces";
-import profileImg from "@assets/parkmark-logo.jpg";
 import DisplayReviewStars from "./DisplayReviewStars";
 import ThumbsUpButton from "./ThumbsUpButton";
 import { formatDate } from "@lib/dates";
@@ -20,10 +19,10 @@ const RatingCard: React.FC<RatingCardProps> = ({ review }) => {
                     <div className="font-medium">{review.user_name}</div>
                 </div>
                 <div className="self-center">
-                    <img
+                    {/* <img
                         src={profileImg}
                         className="size-32 object-cover rounded-lg"
-                    />
+                    /> */}
                 </div>
             </div>
             <div className="flex flex-col w-full">

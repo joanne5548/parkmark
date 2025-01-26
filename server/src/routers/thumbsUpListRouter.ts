@@ -67,7 +67,22 @@ thumbsUpListRouter.get(
     }
 );
 
-thumbsUpListRouter.delete("/id/:id", async(req: Request, res:Response) => {
+thumbsUpListRouter.delete("/", async (req: Request, res: Response) => {
+    try {
+        const { user_sub_id, review_id } = req.query;
+
+        const deleteQueryResult = await pool.query(
+            "DELETE FROM ThumbsUpList WHERE user_sub_id=$1 AND review_id=$2",
+            [user_sub_id, review_id]
+        );
+
+        res.json(deleteQueryResult);
+    } catch (error) {
+        handleError(error, res);
+    }
+});
+
+thumbsUpListRouter.delete("/id/:id", async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
 
@@ -77,8 +92,7 @@ thumbsUpListRouter.delete("/id/:id", async(req: Request, res:Response) => {
         );
 
         res.json(deleteQueryResult);
-    }
-    catch (error) {
+    } catch (error) {
         handleError(error, res);
     }
 });

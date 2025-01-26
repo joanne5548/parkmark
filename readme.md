@@ -13,14 +13,14 @@
 -   [x] Implement Login
 -   [x] Display user information upon login
 -   [x] Implement search functionality
-    -   [ ] Fix misaligned dropdown
+    -   [x] Fix misaligned dropdown
 -   [ ] Implement easier hovering over user information box popup
 
 #### Ratings Side Panel
 
 -   [x] Build basic reviews layout
 -   [x] Build create review page
--   [ ] Implement Thumbs up feature
+-   [x] Implement Thumbs up feature
 -   [ ] Display images correctly
 
 #### Mapbox
@@ -60,12 +60,10 @@
 
 -   [ ] Look into Google Cloud
 
-#### Postgres
+#### REST API
 
 -   [x] Do table join for returning list of reviews with user information
-
-<details>
-<summary>Past To-dos (Completed)</summary>
+-   [ ] Move server domain to .env
 
 #### Data
 
@@ -73,6 +71,10 @@
 -   [x] Fill in missing national park data in `filtered_national_parks_nps.json`
 -   [x] Make sure to check again if the number matches to 63!
 -   [x] Then run `generateParkUuid.py` again
+-   [ ] Add in missing states list
+
+<details>
+<summary>Past To-dos (Completed)</summary>
 
 #### UserData
 

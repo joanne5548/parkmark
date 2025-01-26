@@ -6,7 +6,8 @@
             "coordinates": {
                 "longitude": -68.24411197733804,
                 "latitude": 44.350751388328206
-            }
+            },
+            "states": "Maine"
         }
     },
     {
@@ -16,7 +17,8 @@
             "coordinates": {
                 "longitude": -109.59545602760868,
                 "latitude": 38.707917632251544
-            }
+            },
+            "states": "Utah"
         }
     },
     {
@@ -26,7 +28,8 @@
             "coordinates": {
                 "longitude": -102.39394509554067,
                 "latitude": 43.8340624087368
-            }
+            },
+            "states": "South Dakota"
         }
     },
     {
@@ -36,7 +39,8 @@
             "coordinates": {
                 "longitude": -103.22978967302261,
                 "latitude": 29.298177668897967
-            }
+            },
+            "states": "Texas"
         }
     },
     {
@@ -46,7 +50,8 @@
             "coordinates": {
                 "longitude": -80.21830159269447,
                 "latitude": 25.469689246647114
-            }
+            },
+            "states": "Florida"
         }
     },
     {
@@ -56,7 +61,8 @@
             "coordinates": {
                 "longitude": -107.72398016641485,
                 "latitude": 38.577392252894334
-            }
+            },
+            "states": "Colorado"
         }
     },
     {
@@ -66,7 +72,8 @@
             "coordinates": {
                 "longitude": -112.18266888744083,
                 "latitude": 37.58399143875251
-            }
+            },
+            "states": "Utah"
         }
     },
     {
@@ -76,7 +83,8 @@
             "coordinates": {
                 "longitude": -109.88314625527481,
                 "latitude": 38.272072876214835
-            }
+            },
+            "states": "Utah"
         }
     },
     {
@@ -96,7 +104,8 @@
             "coordinates": {
                 "longitude": -104.52776563457927,
                 "latitude": 32.15234275399143
-            }
+            },
+            "states": "New Mexico"
         }
     },
     {
@@ -106,7 +115,8 @@
             "coordinates": {
                 "longitude": -119.7251698451474,
                 "latitude": 34.00392978229205
-            }
+            },
+            "states": "California"
         }
     },
     {
@@ -116,7 +126,8 @@
             "coordinates": {
                 "longitude": -80.81835232616444,
                 "latitude": 33.8062043146765
-            }
+            },
+            "states": "South Carolina"
         }
     },
     {
@@ -126,7 +137,8 @@
             "coordinates": {
                 "longitude": -122.13525870459277,
                 "latitude": 42.94443605194011
-            }
+            },
+            "states": "Oregon"
         }
     },
     {
@@ -136,7 +148,8 @@
             "coordinates": {
                 "longitude": -81.5690344075238,
                 "latitude": 41.26071335500069
-            }
+            },
+            "states": "Ohio"
         }
     },
     {
@@ -146,7 +159,8 @@
             "coordinates": {
                 "longitude": -117.13511154435771,
                 "latitude": 36.48741910067162
-            }
+            },
+            "states": "California, Nevada"
         }
     },
     {
@@ -166,7 +180,8 @@
             "coordinates": {
                 "longitude": -82.86655423155601,
                 "latitude": 24.654395618647623
-            }
+            },
+            "states": "Florida"
         }
     },
     {
@@ -176,7 +191,8 @@
             "coordinates": {
                 "longitude": -80.95349638622787,
                 "latitude": 25.27225616404826
-            }
+            },
+            "states": "Florida"
         }
     },
     {
@@ -206,7 +222,8 @@
             "coordinates": {
                 "longitude": -113.80079159548487,
                 "latitude": 48.68426876066877
-            }
+            },
+            "states": "Montana"
         }
     },
     {
@@ -216,7 +233,8 @@
             "coordinates": {
                 "longitude": -112.19586332050201,
                 "latitude": 36.186683141213514
-            }
+            },
+            "states": "Arizona"
         }
     },
     {
@@ -226,7 +244,8 @@
             "coordinates": {
                 "longitude": -110.70546656038158,
                 "latitude": 43.81853565368195
-            }
+            },
+            "states": "Wyoming"
         }
     },
     {
@@ -236,7 +255,8 @@
             "coordinates": {
                 "longitude": -114.25797817448695,
                 "latitude": 38.946173783127065
-            }
+            },
+            "states": "Nevada"
         }
     },
     {
@@ -256,7 +276,8 @@
             "coordinates": {
                 "longitude": -83.77104780772574,
                 "latitude": 35.53381126341195
-            }
+            },
+            "states": "North Carolina, Tennessee"
         }
     },
     {
@@ -266,7 +287,8 @@
             "coordinates": {
                 "longitude": -104.88434717034703,
                 "latitude": 31.923384209391674
-            }
+            },
+            "states": "Texas"
         }
     },
     {
@@ -276,7 +298,8 @@
             "coordinates": {
                 "longitude": -156.14709314319208,
                 "latitude": 20.704512129332194
-            }
+            },
+            "states": "Hawaii"
         }
     },
     {
@@ -296,7 +319,8 @@
             "coordinates": {
                 "longitude": -93.08972185108273,
                 "latitude": 34.51113822506357
-            }
+            },
+            "states": "Arkansas"
         }
     },
     {
@@ -306,7 +330,8 @@
             "coordinates": {
                 "longitude": -89.10441847731086,
                 "latitude": 47.900839582369585
-            }
+            },
+            "states": "Michigan"
         }
     },
     {
@@ -316,7 +341,8 @@
             "coordinates": {
                 "longitude": -116.15907084356105,
                 "latitude": 33.98096522850808
-            }
+            },
+            "states": "California"
         }
     },
     {
@@ -336,7 +362,8 @@
             "coordinates": {
                 "longitude": -149.88152448868524,
                 "latitude": 59.95389688763184
-            }
+            },
+            "states": "Alaska"
         }
     },
     {
@@ -346,7 +373,8 @@
             "coordinates": {
                 "longitude": -118.59384064032848,
                 "latitude": 36.8749421087923
-            }
+            },
+            "states": "California"
         }
     },
     {
@@ -356,7 +384,8 @@
             "coordinates": {
                 "longitude": -159.06308334658615,
                 "latitude": 67.28263652770183
-            }
+            },
+            "states": "Alaska"
         }
     },
     {
@@ -376,7 +405,8 @@
             "coordinates": {
                 "longitude": -121.41212664904383,
                 "latitude": 40.48622026090819
-            }
+            },
+            "states": "California"
         }
     },
     {
@@ -386,7 +416,8 @@
             "coordinates": {
                 "longitude": -86.13090198191068,
                 "latitude": 37.197604576779035
-            }
+            },
+            "states": "Kentucky"
         }
     },
     {
@@ -396,7 +427,8 @@
             "coordinates": {
                 "longitude": -108.50092888589481,
                 "latitude": 37.22351315320654
-            }
+            },
+            "states": "Colorado"
         }
     },
     {
@@ -406,7 +438,8 @@
             "coordinates": {
                 "longitude": -121.70574507946985,
                 "latitude": 46.86055919903173
-            }
+            },
+            "states": "Washington"
         }
     },
     {
@@ -426,7 +459,8 @@
             "coordinates": {
                 "longitude": -121.34755778363238,
                 "latitude": 48.83303940981537
-            }
+            },
+            "states": "Washington"
         }
     },
     {
@@ -436,7 +470,8 @@
             "coordinates": {
                 "longitude": -123.6194451629227,
                 "latitude": 47.79453520449651
-            }
+            },
+            "states": "Washington"
         }
     },
     {
@@ -446,7 +481,8 @@
             "coordinates": {
                 "longitude": -109.67471774572405,
                 "latitude": 34.98868180401879
-            }
+            },
+            "states": "Arizona"
         }
     },
     {
@@ -456,7 +492,8 @@
             "coordinates": {
                 "longitude": -105.69838532231373,
                 "latitude": 40.35579839722149
-            }
+            },
+            "states": "Colorado"
         }
     },
     {
@@ -466,7 +503,8 @@
             "coordinates": {
                 "longitude": -110.60831406159426,
                 "latitude": 32.178836085393556
-            }
+            },
+            "states": "Arizona"
         }
     },
     {
@@ -486,7 +524,8 @@
             "coordinates": {
                 "longitude": -78.67619962877342,
                 "latitude": 38.28108210674896
-            }
+            },
+            "states": "Virginia"
         }
     },
     {
@@ -496,7 +535,8 @@
             "coordinates": {
                 "longitude": -103.45925080636415,
                 "latitude": 46.953620966658086
-            }
+            },
+            "states": "North Dakota"
         }
     },
     {
@@ -506,7 +546,8 @@
             "coordinates": {
                 "longitude": -64.77111048899694,
                 "latitude": 18.353798617233704
-            }
+            },
+            "states": "United States Virgin Islands"
         }
     },
     {
@@ -516,7 +557,8 @@
             "coordinates": {
                 "longitude": -92.98057129969759,
                 "latitude": 48.51716932219992
-            }
+            },
+            "states": "Minnesota"
         }
     },
     {
@@ -526,7 +568,8 @@
             "coordinates": {
                 "longitude": -103.42877641689412,
                 "latitude": 43.60787178123641
-            }
+            },
+            "states": "South Dakota"
         }
     },
     {
@@ -556,7 +599,8 @@
             "coordinates": {
                 "longitude": -110.49008302275851,
                 "latitude": 44.583032217213656
-            }
+            },
+            "states": "Wyoming, Montana, Idaho"
         }
     },
     {
@@ -566,7 +610,8 @@
             "coordinates": {
                 "longitude": -119.55600729459782,
                 "latitude": 37.84893656911814
-            }
+            },
+            "states": "California"
         }
     },
     {
@@ -576,7 +621,8 @@
             "coordinates": {
                 "longitude": -112.95443162869537,
                 "latitude": 37.255709497131065
-            }
+            },
+            "states": "Utah"
         }
     },
     {
@@ -616,7 +662,8 @@
             "coordinates": {
                 "longitude": -121.17987431816847,
                 "latitude": 36.49510423649378
-            }
+            },
+            "states": "California"
         }
     },
     {
@@ -626,7 +673,8 @@
             "coordinates": {
                 "longitude": -124.0327795204255,
                 "latitude": 41.408483998552235
-            }
+            },
+            "states": "California"
         }
     },
     {
