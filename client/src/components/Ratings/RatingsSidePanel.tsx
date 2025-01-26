@@ -21,7 +21,7 @@ const RatingsSidePanel = () => {
 
     return (
         <div
-            className="absolute right-2 flex flex-col w-5/12 max-w-[34rem] h-[97%] p-6 pr-2
+            className="absolute right-2 flex flex-col w-1/2 max-w-[34rem] h-[97%] p-6 pr-2
             z-[1000] bg-white rounded-lg border-slate-400 shadow-lg shadow-slate-400"
         >
             <button

@@ -38,6 +38,7 @@
     -   [x] Display average ratings
     -   [x] Fix 0% bar
     -   [x] Fix padding for longer names
+-   [ ] Add reset button
 
 #### Next Steps...
 
@@ -47,7 +48,7 @@
     -   [x] Insert user data upon google login
 -   [x] Build Ratings side panel
 -   [x] remove dynamic sizing for stars and pins
--   [x] Implement search bar
+-   [ ] Add settings page
 
 <details>
 <summary>Past To-dos (Completed)</summary>
@@ -96,6 +97,7 @@
 
 -   [Mapbox](https://docs.mapbox.com/mapbox-gl-js/guides/install/)
     -   Has 50,000 load limits per month
+    -   Used [React Mapbox Library (react-map-gl)](https://visgl.github.io/react-map-gl/)
 -   [MapLibre](https://maplibre.org/)
     -   Free
 

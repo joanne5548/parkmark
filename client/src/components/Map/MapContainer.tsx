@@ -28,7 +28,7 @@ const MapContainer = () => {
 
         mapRef.current?.flyTo({
             center: [
-                selectedPark.park_info.coordinates.longitude+0.0175,
+                selectedPark.park_info.coordinates.longitude+0.02,
                 selectedPark.park_info.coordinates.latitude+0.0125,
             ],
             zoom: 13,
@@ -38,7 +38,7 @@ const MapContainer = () => {
         return () => {
             // close current popup?
             // do I have to maintain list of refs of every popup to close them here
-            // wait why tf does this work when closing the review tab
+            // wait why does this work when closing the review tab
         }
     }, [selectedPark])
 

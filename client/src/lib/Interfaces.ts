@@ -33,6 +33,12 @@ export interface Review {
     created_at?: string;
 }
 
+export interface ThumbsUpData {
+    id?: string;
+    user_sub_id: string;
+    review_id: string;
+}
+
 export interface ReviewWithUserData {
     review_id: string;
     park_id: string;

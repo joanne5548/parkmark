@@ -29,13 +29,13 @@ const RatingCard: React.FC<RatingCardProps> = ({ review }) => {
             <div className="flex flex-col w-full">
                 <div className="flex flex-row gap-2 pb-2 items-center">
                     <DisplayReviewStars rating={review.rating} />
-                    <div className="text-xs font-medium text-slate-500">
+                    <div className="text-sm font-medium text-slate-500">
                         {formatDate(review.created_at)}
                     </div>
                 </div>
-                <div className="text-slate-700 pb-1">{review.content}</div>
+                <div className="text-slate-700 pb-1 h-full">{review.content}</div>
                 <div className="flex justify-end">
-                    <ThumbsUpButton />
+                    <ThumbsUpButton reviewId={review.review_id}/>
                 </div>
             </div>
         </div>

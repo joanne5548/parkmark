@@ -22,8 +22,12 @@ CREATE TABLE Review (
 
 CREATE TABLE ThumbsUpList (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id UUID REFERENCES UserData(id),
+    user_sub_id VARCHAR(255) REFERENCES UserData(sub_id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE, -- hmm is this a good idea
     review_id UUID REFERENCES Review(id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
 -- Postgres gen_random_uuid produces version 4 UUID
