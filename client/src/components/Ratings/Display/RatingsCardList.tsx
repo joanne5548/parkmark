@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAtom, useAtomValue } from "jotai";
-import { ReviewWithUserData } from "@lib/interfaces";
 import { selectedParkAtom, selectedParkReviewListAtom } from "@lib/atoms/atoms";
 import { fetchReviewsWithUserDataByParkId } from "@lib/APIs/reviewApi";
 import RatingCard from "./RatingCard";

@@ -1,9 +1,11 @@
 import { ThumbsUpData } from "@lib/interfaces";
 import { handleApiError } from "./userDataApi";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 export const postThumbsUpData = async (thumbsUpData: ThumbsUpData) => {
     try {
-        const response = await fetch("http://localhost:5000/api/thumbsuplist", {
+        const response = await fetch(`${backendUrl}/api/thumbsuplist`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(thumbsUpData),
@@ -20,7 +22,7 @@ export const postThumbsUpData = async (thumbsUpData: ThumbsUpData) => {
 export const fetchThumbsUpListByReviewId = async (reviewId: string) => {
     try {
         const response = await fetch(
-            `http://localhost:5000/api/thumbsuplist/review_id/${reviewId}`,
+            `${backendUrl}/api/thumbsuplist/review_id/${reviewId}`,
             {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
@@ -45,7 +47,7 @@ export const deleteThumbsUpData = async (
 ) => {
     try {
         const response = await fetch(
-            `http://localhost:5000/api/thumbsuplist?user_sub_id=${userSubId}&review_id=${reviewId}`,
+            `${backendUrl}/api/thumbsuplist?user_sub_id=${userSubId}&review_id=${reviewId}`,
             {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
