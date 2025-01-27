@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Marker } from "react-map-gl";
 import CustomPopup from "./CustomPopup";
 import { HiMapPin } from "react-icons/hi2";
@@ -43,11 +43,11 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
         setMarkerClicked(false);
     };
 
-    // useEffect(() => {
-    //     if (!selectedPark) {
-    //         handlePopupClose();
-    //     }
-    // }, [selectedPark])
+    useEffect(() => {
+        if (!selectedPark) {
+            handlePopupClose();
+        }
+    }, [selectedPark])
 
     return (
         <Marker

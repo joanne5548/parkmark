@@ -39,7 +39,7 @@
     -   [x] Display average ratings
     -   [x] Fix 0% bar
     -   [x] Fix padding for longer names
--   [ ] Add reset button
+-   [x] Add reset button
 -   [x] Fix hover popup not showing after clicking the marker and closing the popup
 
 #### Next Steps...

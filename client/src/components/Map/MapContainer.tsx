@@ -3,15 +3,15 @@ import { Map, MapRef, MapEvent } from "react-map-gl";
 import CustomMarker from "./Widgets/CustomMarker";
 // import parkList from "@json_data/test.json";
 import parkList from "@json_data/park_list_with_uuid.json";
-import { useAtomValue } from "jotai";
+import { useAtom } from "jotai";
 import { selectedParkAtom } from "@lib/atoms/atoms";
-// import ResetButton from "./Widgets/ResetButton";
+import ResetButton from "./Widgets/ResetButton";
 
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
 const MapContainer = () => {
     const mapRef = useRef<MapRef>(null);
-    const selectedPark = useAtomValue(selectedParkAtom);
+    const [selectedPark, setSelectedPark] = useAtom(selectedParkAtom);
 
     const handleOnMapLoad = (event: MapEvent) => {
         event.target.flyTo({
@@ -22,16 +22,16 @@ const MapContainer = () => {
         });
     };
 
-    // const handleResetButtonOnClick = () => {
-    //     mapRef.current?.flyTo({
-    //         center: [-98.618002, 38.724452],
-    //         zoom: 3.85,
-    //         duration: 2000,
-    //         essential: true,
-    //     });
+    const handleResetButtonOnClick = () => {
+        mapRef.current?.flyTo({
+            center: [-98.618002, 38.724452],
+            zoom: 3.85,
+            duration: 2000,
+            essential: true,
+        });
 
-    //     setSelectedPark(null);
-    // };
+        setSelectedPark(null);
+    };
 
     useEffect(() => {
         if (!selectedPark) {
@@ -69,7 +69,7 @@ const MapContainer = () => {
                     style={{ width: "100%", height: "100%" }}
                     mapStyle="mapbox://styles/mapbox/outdoors-v12"
                 >
-                    {/* <ResetButton handleResetButtonOnClick={handleResetButtonOnClick} /> */}
+                    <ResetButton handleResetButtonOnClick={handleResetButtonOnClick} />
                     {parkList.map((park) => {
                         const longitude: number = Number(
                             park.park_info.coordinates.longitude
