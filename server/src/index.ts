@@ -17,7 +17,7 @@ app.use("/api/nationalpark", nationalParkRouter);
 app.use("/api/review", reviewRouter);
 app.use("/api/thumbsuplist", thumbsUpListRouter);
 
-const domain = process.env.DOMAIN;
+const domain = process.env.SERVER_DOMAIN;
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`[server]: Server is running at http://${domain}:${port}`);
