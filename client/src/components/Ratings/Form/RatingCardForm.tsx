@@ -3,7 +3,7 @@ import { useAtomValue } from "jotai";
 import SelectStars from "./SelectStars";
 import { logInUserAtom, selectedParkAtom } from "@lib/atoms/atoms";
 import { Review, UserData } from "@lib/interfaces";
-import placeholderImg from "@assets/parkmark-logo.jpg";
+// import placeholderImg from "@assets/parkmark-logo.jpg";
 import { formatDate } from "@lib/dates";
 import { postReview } from "@lib/APIs/reviewApi";
 
