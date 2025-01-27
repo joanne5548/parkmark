@@ -2,7 +2,8 @@ import requests
 import json
 
 def post_national_park(park_json_data):
-    endpoint = "http://localhost:5000/api/nationalpark"
+    # endpoint = "http://localhost:5000/api/nationalpark"
+    endpoint = "https://parkmark-153383262818.us-east1.run.app/api/nationalpark"
 
     try:
         response = requests.post(endpoint, json=park_json_data)

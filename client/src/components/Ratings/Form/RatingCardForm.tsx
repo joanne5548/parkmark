@@ -61,10 +61,10 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                 </div>
                             </div>
                             <div className="self-center">
-                                <img
+                                {/* <img
                                     src={placeholderImg}
                                     className="size-32 object-cover rounded-lg"
-                                />
+                                /> */}
                             </div>
                         </div>
                         <div className="flex flex-col w-full">
