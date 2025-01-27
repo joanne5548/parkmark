@@ -1,7 +1,7 @@
 import { useSetAtom } from "jotai";
 import React from "react";
 import { Popup } from "react-map-gl";
-import { selectedParkAtom } from "../../lib/atoms/atoms";
+import { selectedParkAtom } from "@lib/atoms/atoms";
 import RatingStatistics from "./RatingStatistics";
 
 interface CustomPopupProps {

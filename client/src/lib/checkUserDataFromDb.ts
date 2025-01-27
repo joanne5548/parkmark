@@ -1,4 +1,4 @@
-import { UserData } from "./interfaces";
+import { UserData } from "@lib/interfaces";
 
 export const userDataMatchesFromDatabase = (
     userDataFromDb: UserData,

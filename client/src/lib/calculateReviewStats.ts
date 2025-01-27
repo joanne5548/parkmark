@@ -1,4 +1,4 @@
-import { Review, StarRatingPercentageList } from "./interfaces";
+import { Review, StarRatingPercentageList } from "@lib/interfaces";
 
 export const calculateStarsPercentage = (reviewList: Review[]) => {
     let starsPercentageList: StarRatingPercentageList = {

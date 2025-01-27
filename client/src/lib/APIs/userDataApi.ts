@@ -1,4 +1,4 @@
-import { UserData } from "../interfaces";
+import { UserData } from "@lib/interfaces";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 

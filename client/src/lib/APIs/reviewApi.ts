@@ -1,4 +1,4 @@
-import { Review, ReviewWithUserData } from "../interfaces";
+import { Review, ReviewWithUserData } from "@lib/interfaces";
 import { handleApiError } from "./userDataApi";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;

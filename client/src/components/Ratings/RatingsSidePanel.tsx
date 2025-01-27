@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSetAtom } from "jotai";
-import { selectedParkAtom } from "../../lib/atoms/atoms";
+import { selectedParkAtom } from "@lib/atoms/atoms";
 import { IoClose } from "react-icons/io5";
 import { MdAdd } from "react-icons/md";
 import RatingsCardList from "./Display/RatingsCardList";

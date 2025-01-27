@@ -3,7 +3,7 @@ import { Marker } from "react-map-gl";
 import CustomPopup from "./CustomPopup";
 import { HiMapPin } from "react-icons/hi2";
 import { useAtom } from "jotai";
-import { selectedParkAtom } from "../../lib/atoms/atoms";
+import { selectedParkAtom } from "@lib/atoms/atoms";
 
 interface CustomMarkerProps {
     parkInfoJson: {

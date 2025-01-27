@@ -1,4 +1,4 @@
-import { NationalPark } from "./interfaces";
+import { NationalPark } from "@lib/interfaces";
 
 export const generateSuggestedPark = (
     input: string,
