@@ -30,11 +30,8 @@ export const fetchReviewsWithUserDataByParkId = async (
                 headers: { "Content-Type": "application/json" },
             }
         );
-
+        
         if (!response.ok) {
-            if (response.status === 404) {
-                return [];
-            }
             throw new Error(`[Backend] Network Error: ${response.status}`);
         }
 

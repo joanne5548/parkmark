@@ -2,7 +2,7 @@ import { useSetAtom } from "jotai";
 import React from "react";
 import { Popup } from "react-map-gl";
 import { selectedParkAtom } from "@lib/atoms/atoms";
-import RatingStatistics from "./RatingStatistics";
+import RatingStatistics from "../RatingStats/RatingStatistics";
 
 interface CustomPopupProps {
     parkInfoJson: {
@@ -26,7 +26,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
 
     const handleParkNameButtonOnClick = () => {
         setSelectedPark(parkInfoJson);
-    }
+    };
 
     return (
         <Popup

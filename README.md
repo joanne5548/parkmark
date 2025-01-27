@@ -15,6 +15,7 @@
 -   [x] Implement search functionality
     -   [x] Fix misaligned dropdown
 -   [x] Implement easier hovering over user information box popup
+-   [ ] Implement Responsive Design (for mobile)
 
 #### Ratings Side Panel
 
@@ -64,7 +65,7 @@
 
 -   [x] Do table join for returning list of reviews with user information
 -   [x] Move server domain to .env
--   [ ] Get rid of 404 error for empty get requests (and verify I just need emtpy list)
+-   [x] Get rid of 404 error for empty get requests
 
 #### Data
 

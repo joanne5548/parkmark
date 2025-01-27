@@ -41,9 +41,7 @@ userDataRouter.get("/:sub_id", async (req: Request, res: Response) => {
         );
 
         if (selectQueryResult.rowCount === 0) {
-            // Is this the best way to handle this? lol
-            res.status(404);
-            res.json({error: "Database Error - user not found."})
+            res.json(null);
             return;
         }
 

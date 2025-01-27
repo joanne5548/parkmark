@@ -24,13 +24,10 @@ export async function getUser(sub_id: string) {
     );
 
     if (!response.ok) {
-        if (response.status === 404) {
-            return null;
-        }
         throw new Error(`[Backend] Network response error: ${response.status}`);
     }
 
-    const userData: UserData = await response.json();
+    const userData: UserData | null = await response.json();
     return userData;
 }
 

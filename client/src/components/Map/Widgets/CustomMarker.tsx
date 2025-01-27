@@ -43,6 +43,12 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({
         setMarkerClicked(false);
     };
 
+    // useEffect(() => {
+    //     if (!selectedPark) {
+    //         handlePopupClose();
+    //     }
+    // }, [selectedPark])
+
     return (
         <Marker
             longitude={parkInfoJson.park_info.coordinates.longitude}

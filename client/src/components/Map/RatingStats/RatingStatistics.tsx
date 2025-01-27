@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DisplayReviewStars from "../Ratings/Display/DisplayReviewStars";
+import DisplayReviewStars from "../../Ratings/Display/DisplayReviewStars";
 import PercentageBarList from "./PercentageBarList";
 import { StarRatingPercentageList } from "@lib/interfaces";
 import { fetchReviewsWithUserDataByParkId } from "@lib/APIs/reviewApi";

@@ -11,9 +11,11 @@ const RatingsCardList = () => {
     );
 
     const fetchReviews = async () => {
+        // console.log(selectedPark)
         const fetchedReviewList = await fetchReviewsWithUserDataByParkId(
             selectedPark?.id!
         );
+        // console.log(fetchedReviewList)
         setSelectedParkReviewList(fetchedReviewList);
     };
 

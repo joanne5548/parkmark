@@ -39,11 +39,6 @@ reviewRouter.get("/park_id/:park_id", async (req: Request, res: Response) => {
             [park_id]
         );
 
-        if (selectQueryResult.rowCount === 0) {
-            res.status(404).json({ error: "There are no reviews for requested park id." });
-            return;
-        }
-
         res.json(selectQueryResult.rows);
     } catch (error) {
         handleError(error, res);
@@ -60,11 +55,6 @@ reviewRouter.get("/reviewWithUserData/park_id/:park_id", async (req:Request, res
             [park_id]
         );
 
-        if (selectQueryResult.rowCount === 0) {
-            res.status(404).json({error: "No reviews found with given park id."});
-            return;
-        }
-
         res.json(selectQueryResult.rows);
     }
     catch (error) {
@@ -80,11 +70,6 @@ reviewRouter.get("/user_sub_id/:user_sub_id", async (req: Request, res: Response
             "SELECT * FROM Review WHERE user_sub_id=$1",
             [user_sub_id]
         );
-
-        if (selectQueryResult.rowCount === 0) {
-            res.status(404).json({ error: "There is no review found from the requested user sub id." });
-            return;
-        }
 
         res.json(selectQueryResult.rows);
     }
