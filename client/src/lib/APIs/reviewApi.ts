@@ -1,9 +1,11 @@
 import { Review, ReviewWithUserData } from "../interfaces";
 import { handleApiError } from "./userDataApi";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 export const postReview = async (review: Review) => {
     try {
-        const response = await fetch("http://localhost:5000/api/review", {
+        const response = await fetch(`${backendUrl}/api/review`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(review),
@@ -22,7 +24,7 @@ export const fetchReviewsWithUserDataByParkId = async (
 ) => {
     try {
         const response = await fetch(
-            `http://localhost:5000/api/review/reviewWithUserData/park_id/${selectedParkId}`,
+            `${backendUrl}/api/review/reviewWithUserData/park_id/${selectedParkId}`,
             {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },

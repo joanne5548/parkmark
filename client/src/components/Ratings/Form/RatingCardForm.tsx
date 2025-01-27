@@ -17,7 +17,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
     const reviewContentRef = useRef<HTMLTextAreaElement>(null);
     const selectedPark = useAtomValue(selectedParkAtom);
 
-    const handlePostButtonClick = () => {
+    const handlePostButtonClick = async () => {
         if (!logInUser) {
             throw new Error("User is not logged in!");
         }
@@ -40,7 +40,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
             img_url_list: {},
         };
 
-        postReview(review);
+        await postReview(review);
 
         resetCreatingNewReview();
     };

@@ -39,6 +39,7 @@
     -   [x] Fix 0% bar
     -   [x] Fix padding for longer names
 -   [ ] Add reset button
+-   [ ] Fix hover popup not showing after clicking the marker and closing the popup
 
 #### Next Steps...
 
@@ -64,6 +65,7 @@
 
 -   [x] Do table join for returning list of reviews with user information
 -   [ ] Move server domain to .env
+-   [ ] Get rid of 404 error for empty get requests (and verify I just need emtpy list)
 
 #### Data
 

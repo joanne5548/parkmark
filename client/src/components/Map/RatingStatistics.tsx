@@ -7,6 +7,8 @@ import {
     calculateAverageRating,
     calculateStarsPercentage,
 } from "@lib/calculateReviewStats";
+import { useAtomValue } from "jotai";
+import { selectedParkReviewListAtom } from "@lib/atoms/atoms";
 
 interface RatingStatisticsProps {
     parkId: string;
@@ -23,9 +25,10 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
         });
     const [averageRating, setAverageRating] = useState<number>(0);
     const [ratingsCount, setRatingsCount] = useState<number>(0);
+    const selectedParkReviewList = useAtomValue(selectedParkReviewListAtom);
 
     useEffect(() => {
-        (async () => {
+        const updateReviewStatistics = async () => {
             const fetchedReviewList = await fetchReviewsWithUserDataByParkId(
                 parkId
             );
@@ -40,8 +43,10 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
             setAverageRating(calculateAverageRating(fetchedReviewList));
 
             setRatingsCount(fetchedReviewList.length);
-        })();
-    }, []);
+        };
+
+        updateReviewStatistics();
+    }, [selectedParkReviewList]);
 
     return (
         <div className="flex flex-col gap-4 items-center">
