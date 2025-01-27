@@ -54,7 +54,9 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
                 <div className="font-normal text-lg">Average Rating</div>
                 <div className="flex flex-row gap-3 w-fit p-3 rounded-full bg-slate-100">
                     <DisplayReviewStars rating={averageRating} />
-                    <div className="text-base">{averageRating} out of 5</div>
+                    <div className="text-base">
+                        {Math.round(averageRating * 100) / 100} out of 5
+                    </div>
                 </div>
                 <div className="text-base text-slate-600">
                     {ratingsCount} ratings

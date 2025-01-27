@@ -64,7 +64,7 @@
 #### REST API
 
 -   [x] Do table join for returning list of reviews with user information
--   [ ] Move server domain to .env
+-   [x] Move server domain to .env
 -   [ ] Get rid of 404 error for empty get requests (and verify I just need emtpy list)
 
 #### Data
