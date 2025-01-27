@@ -37,6 +37,7 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
             closeOnClick={false}
             onClose={() => {
                 handlePopupClose();
+                setSelectedPark(null);
             }}
         >
             <div className="flex flex-col gap-2 items-center">

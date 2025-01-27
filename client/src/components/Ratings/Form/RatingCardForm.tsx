@@ -67,7 +67,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                 /> */}
                             </div>
                         </div>
-                        <div className="flex flex-col w-full">
+                        <div className="flex flex-col w-full min-h-32">
                             <div className="flex flex-row gap-2 pb-2 items-center">
                                 <SelectStars
                                     ratingStars={ratingStars}

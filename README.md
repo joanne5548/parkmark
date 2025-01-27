@@ -14,7 +14,7 @@
 -   [x] Display user information upon login
 -   [x] Implement search functionality
     -   [x] Fix misaligned dropdown
--   [ ] Implement easier hovering over user information box popup
+-   [x] Implement easier hovering over user information box popup
 
 #### Ratings Side Panel
 
@@ -39,7 +39,7 @@
     -   [x] Fix 0% bar
     -   [x] Fix padding for longer names
 -   [ ] Add reset button
--   [ ] Fix hover popup not showing after clicking the marker and closing the popup
+-   [x] Fix hover popup not showing after clicking the marker and closing the popup
 
 #### Next Steps...
 
@@ -49,7 +49,6 @@
     -   [x] Insert user data upon google login
 -   [x] Build Ratings side panel
 -   [x] remove dynamic sizing for stars and pins
--   [ ] Add settings page
 
 <details>
 <summary>Past To-dos (Completed)</summary>

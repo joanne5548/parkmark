@@ -25,7 +25,7 @@ const RatingCard: React.FC<RatingCardProps> = ({ review }) => {
                     /> */}
                 </div>
             </div>
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full min-h-28">
                 <div className="flex flex-row gap-2 pb-2 items-center">
                     <DisplayReviewStars rating={review.rating} />
                     <div className="text-sm font-medium text-slate-500">

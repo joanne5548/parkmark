@@ -5,30 +5,31 @@ import { logInUserAtom } from "@lib/atoms/atoms";
 
 const UserInfoTile = () => {
     const logInUser = useAtomValue(logInUserAtom);
-    const [displayUserInfo, setDisplayUserInfo] = useState<boolean>(false);
+    const [mouseClickOnIcon, setMouseClickOnIcon] = useState<boolean>(false);
+    const [mouseHoverOverIcon, setMouseHoverOverIcon] = useState<boolean>(false);
 
     const handleUserIconOnClick = () => {
-        setDisplayUserInfo(!displayUserInfo);
+        setMouseClickOnIcon(!mouseClickOnIcon);
     };
-
-    // const setDisplayUserInfoToFalse = () => {
-    //     setDisplayUserInfo(false);
-    // };
-
-    // const handleProfileButtonOnClick = () => {
-    //     setDisplayUserInfo(!displayUserInfo);
-    // };
 
     return (
         <div className="flex flex-row gap-2 relative">
-            <button onClick={handleUserIconOnClick}>
+            <button
+                onClick={handleUserIconOnClick}
+                onMouseEnter={() => {
+                    setMouseHoverOverIcon(true);
+                }}
+                onMouseLeave={() => {
+                    setMouseHoverOverIcon(false);
+                }}
+            >
                 <img
                     src={logInUser?.profile_picture_url}
                     className="size-10 rounded-3xl"
                     referrerPolicy="no-referrer"
                 />
             </button>
-            {displayUserInfo && <UserInfoPopup />}
+            {(mouseClickOnIcon || mouseHoverOverIcon) && <UserInfoPopup />}
         </div>
     );
 };
