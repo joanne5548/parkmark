@@ -13,6 +13,7 @@ CREATE TABLE NationalPark (
     park_info JSONB NOT NULL
 );
 
+-- Supports only 1 image
 CREATE TABLE Review (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_sub_id VARCHAR(255) REFERENCES UserData(sub_id)
@@ -23,7 +24,7 @@ CREATE TABLE Review (
         ON DELETE CASCADE,
     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
     content VARCHAR(2048),
-    img_url_list JSONB DEFAULT NULL,
+    img_url VARCHAR(255),
     created_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -36,3 +37,30 @@ CREATE TABLE ThumbsUpList (
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
+
+-- Old review table
+-- CREATE TABLE Review (
+--     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+--     user_sub_id VARCHAR(255) REFERENCES UserData(sub_id)
+--         ON UPDATE CASCADE
+--         ON DELETE CASCADE,
+--     park_id UUID REFERENCES NationalPark(id)
+--         ON UPDATE CASCADE
+--         ON DELETE CASCADE,
+--     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
+--     content VARCHAR(2048),
+--     img_url_list JSONB DEFAULT NULL,
+--     created_at timestamptz DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- CREATE TABLE ReviewImages (
+--     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+--     user_sub_id VARCHAR(255) REFERENCES UserData(sub_id)
+--         ON UPDATE CASCADE
+--         ON DELETE CASCADE,
+--     review_id UUID REFERENCES Review(id)
+--         ON UPDATE CASCADE
+--         ON DELETE CASCADE,
+--     image_url VARCHAR(255), -- generate and use uuid as image name
+--     -- display_order?
+-- );

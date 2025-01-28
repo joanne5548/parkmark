@@ -22,7 +22,21 @@
 -   [x] Build basic reviews layout
 -   [x] Build create review page
 -   [x] Implement Thumbs up feature
--   [ ] Display images correctly
+-   [x] Display images correctly
+-   [ ] Use form to submit new post
+
+#### Next Steps...
+
+-   [x] Implement Google OAuth
+-   [x] Establish database (create tables based on schema)
+    -   [x] Implement REST API for user data
+    -   [x] Insert user data upon google login
+-   [x] Build Ratings side panel
+-   [x] remove dynamic sizing for stars and pins
+-   [ ] Add image upload
+
+<details>
+<summary>Past To-dos (Completed)</summary>
 
 #### Mapbox
 
@@ -41,31 +55,22 @@
     -   [x] Fix padding for longer names
 -   [x] Add reset button
 -   [x] Fix hover popup not showing after clicking the marker and closing the popup
-
-#### Next Steps...
-
--   [x] Implement Google OAuth
--   [x] Establish database (create tables based on schema)
-    -   [x] Implement REST API for user data
-    -   [x] Insert user data upon google login
--   [x] Build Ratings side panel
--   [x] remove dynamic sizing for stars and pins
-
-<details>
-<summary>Past To-dos (Completed)</summary>
 </details>
 
 ### Backend
 
 #### Storing Images for Reviews
 
--   [ ] Look into Google Cloud
+-   [x] Look into Google Cloud
+    -   Note: The relevant information is stored in secrets/index.js
 
 #### REST API
 
 -   [x] Do table join for returning list of reviews with user information
 -   [x] Move server domain to .env
 -   [x] Get rid of 404 error for empty get requests
+-   [ ] Modify review post request to handle image upload
+    -   [Look into this link](https://stackoverflow.com/questions/15772394/how-to-upload-display-and-save-images-using-node-js-and-express)
 
 #### Data
 
