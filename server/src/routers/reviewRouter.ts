@@ -2,7 +2,7 @@ import { Request, Response, Router } from "express";
 import pool from "../db";
 import { handleError } from "../../middleware/errorHandler";
 import { upload } from "../multer/multer";
-import { uploadImage } from "../cloud/uploadImage";
+import { deleteImage, uploadImage } from "../cloud/bucketFileManager";
 
 export const reviewRouter = Router();
 
@@ -130,6 +130,14 @@ reviewRouter.put("/review_id/:id", async (req: Request, res: Response) => {
 reviewRouter.delete("/review_id/:id", async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
+
+        const selectImgUrlQueryResult = await pool.query(
+            "SELECT img_url FROM review WHERE id=$1",
+            [id]
+        );
+
+        const img_url = selectImgUrlQueryResult.rows[0]['img_url'];
+        await deleteImage(img_url);
 
         const deleteQueryResult = await pool.query(
             "DELETE FROM Review WHERE id=$1",

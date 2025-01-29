@@ -3,13 +3,16 @@ import { unlink } from "fs";
 
 const credentials = Buffer.from(
     process.env.GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY_BASE64!,
-    'base64'
+    "base64"
 ).toString();
 
 const storage = new Storage({
-    credentials: JSON.parse(credentials)
+    credentials: JSON.parse(credentials),
 });
 
+/*
+ I dunno how, but somehow root to all paths here seems to be /server/src
+ */
 const removeFile = (filePath: string) => {
     unlink(filePath, (error) => {
         if (error) {
@@ -51,6 +54,21 @@ export const uploadImage = async (file: Express.Multer.File) => {
                 error instanceof Error ? error.message : "Unknown error"
             }`
         );
+    }
+};
+
+export const deleteImage = async (filePathToPublic: string) => {
+    try {
+        const fileName = filePathToPublic.substring(
+            filePathToPublic.lastIndexOf("/") + 1
+        );
+
+        await storage
+            .bucket(process.env.GOOGLE_CLOUD_BUCKET_NAME!)
+            .file(`images/${fileName}`)
+            .delete();
+    } catch (error) {
+        console.log(`Error deleting the file in bucket: ${error}`);
     }
 };
 

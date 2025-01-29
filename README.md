@@ -72,8 +72,8 @@
 -   [x] Get rid of 404 error for empty get requests
 -   [x] Modify review post request to handle image upload
 -   [x] Sort reviews by most recent
+-   [x] Implement image deletion from bucket on review deletion
 -   [ ] Block liking a post more than once
--   [ ] Implement image deletion from bucket on review deletion
 
 #### Data
 
