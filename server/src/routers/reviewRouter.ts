@@ -137,7 +137,9 @@ reviewRouter.delete("/review_id/:id", async (req: Request, res: Response) => {
         );
 
         const img_url = selectImgUrlQueryResult.rows[0]['img_url'];
-        await deleteImage(img_url);
+        if (img_url) {
+            await deleteImage(img_url);
+        }
 
         const deleteQueryResult = await pool.query(
             "DELETE FROM Review WHERE id=$1",

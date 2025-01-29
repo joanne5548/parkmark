@@ -24,7 +24,7 @@ CREATE TABLE Review (
         ON DELETE CASCADE,
     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
     content VARCHAR(2048),
-    img_url VARCHAR(255),
+    img_url VARCHAR(255) DEFAULT NULL,
     created_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 

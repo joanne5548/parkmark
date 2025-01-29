@@ -30,7 +30,7 @@ export interface Review {
     park_id: string;
     rating: number;
     content: string;
-    img_url: string;
+    img_url: string | null;
     created_at?: string;
 }
 
