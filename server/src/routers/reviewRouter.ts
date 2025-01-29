@@ -48,7 +48,7 @@ reviewRouter.get("/park_id/:park_id", async (req: Request, res: Response) => {
         const { park_id } = req.params;
 
         const selectQueryResult = await pool.query(
-            "SELECT * FROM Review WHERE park_id=$1",
+            "SELECT * FROM Review WHERE park_id=$1 ORDER BY created_at DESC",
             [park_id]
         );
 
@@ -67,7 +67,7 @@ reviewRouter.get(
             const columns =
                 "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.img_url, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url";
             const selectQueryResult = await pool.query(
-                `SELECT ${columns} FROM Review JOIN UserData ON Review.user_sub_id=UserData.sub_id WHERE park_id=$1`,
+                `SELECT ${columns} FROM Review JOIN UserData ON Review.user_sub_id=UserData.sub_id WHERE park_id=$1 ORDER BY Review.created_at DESC`,
                 [park_id]
             );
 

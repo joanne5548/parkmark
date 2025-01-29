@@ -19,6 +19,9 @@ SET client_encoding TO 'UTF8';
 ALTER TABLE Review RENAME img_url_list TO img_url;
 ALTER TABLE Review ALTER COLUMN img_url TYPE VARCHAR(255);
 
+-- Return reviews by most recent to oldest
+SELECT * FROM review ORDER BY created_at DESC;
+
 INSERT INTO NationalPark(name, park_info) VALUES(
     'Joanne''s national park :D',
     '{"favorite color": "Blue"}'

@@ -71,7 +71,7 @@
 -   [x] Move server domain to .env
 -   [x] Get rid of 404 error for empty get requests
 -   [x] Modify review post request to handle image upload
--   [ ] Sort reviews by most recent
+-   [x] Sort reviews by most recent
 -   [ ] Block liking a post more than once
 -   [ ] Implement image deletion from bucket on review deletion
 
