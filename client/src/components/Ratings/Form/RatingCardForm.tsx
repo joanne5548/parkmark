@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useAtomValue } from "jotai";
 import SelectStars from "./SelectStars";
 import { logInUserAtom, selectedParkAtom } from "@lib/atoms/atoms";
@@ -16,8 +16,9 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
     const selectedPark = useAtomValue(selectedParkAtom);
 
     const [ratingStars, setRatingStars] = useState<number>(0);
-    const [imageFile, setImageFile] = useState<File | null>(null);
     const reviewContentRef = useRef<HTMLTextAreaElement>(null);
+    const [imageFile, setImageFile] = useState<File | null>(null);
+    const [imagePreviewUrl, setImagePreviewUrl] = useState<string | null>(null);
 
     const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
         if (!event.target.files || !event.target.files[0]) {
@@ -47,7 +48,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
         formData.append("park_id", selectedPark.id);
         formData.append("rating", ratingStars.toString());
         formData.append("content", reviewContentRef.current.value);
-        
+
         if (imageFile) {
             formData.append("img_file", imageFile);
         }
@@ -56,6 +57,17 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
 
         resetCreatingNewReview();
     };
+
+    useEffect(() => {
+        if (!imageFile) {
+            return;
+        }
+
+        const imageUrl = URL.createObjectURL(imageFile);
+        setImagePreviewUrl(imageUrl);
+
+        return () => URL.revokeObjectURL(imageUrl);
+    }, [imageFile]);
 
     return (
         <div className="h-full">
@@ -72,7 +84,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                     {logInUser.name}
                                 </div>
                             </div>
-                            <div className="size-32 self-center">
+                            <div className="relative size-32 self-center">
                                 <label
                                     htmlFor="imageUpload"
                                     className="block h-full self-center border-[1.5px] border-slate-400 rounded-lg
@@ -89,6 +101,12 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                         onChange={handleImageUpload}
                                         className="hidden"
                                     />
+                                    {imagePreviewUrl && (
+                                        <img
+                                            src={imagePreviewUrl}
+                                            className="absolute top-0 left-0 size-32 rounded-lg object-cover opacity-65"
+                                        />
+                                    )}
                                 </label>
                             </div>
                         </div>

@@ -23,6 +23,7 @@
 -   [x] Build create review page
 -   [x] Implement Thumbs up feature
 -   [x] Display images correctly
+    - [x] Add image preview
 -   [ ] Give more padding to y axis
 
 #### Next Steps...
@@ -33,7 +34,7 @@
     -   [x] Insert user data upon google login
 -   [x] Build Ratings side panel
 -   [x] remove dynamic sizing for stars and pins
--   [ ] Add image upload
+-   [x] Add image upload
 
 <details>
 <summary>Past To-dos (Completed)</summary>
@@ -72,6 +73,7 @@
 -   [x] Modify review post request to handle image upload
 -   [ ] Sort reviews by most recent
 -   [ ] Block liking a post more than once
+-   [ ] Implement image deletion from bucket on review deletion
 
 #### Data
 
