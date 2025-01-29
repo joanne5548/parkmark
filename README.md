@@ -24,7 +24,7 @@
 -   [x] Implement Thumbs up feature
 -   [x] Display images correctly
     - [x] Add image preview
--   [ ] Give more padding to y axis
+-   [x] Give more padding to y axis
 
 #### Next Steps...
 

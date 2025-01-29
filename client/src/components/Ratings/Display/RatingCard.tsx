@@ -9,8 +9,8 @@ interface RatingCardProps {
 
 const RatingCard: React.FC<RatingCardProps> = ({ review }) => {
     return (
-        <div className="flex flex-row gap-4 py-4 border-b-2">
-            <div className="flex flex-col gap-3 w-5/12 min-w-36">
+        <div className="flex flex-row gap-4 py-5 border-b-2">
+            <div className="flex flex-col gap-4 w-5/12 min-w-36">
                 <div className="flex flex-row gap-3">
                     <img
                         src={review.user_profile_picture_url}
