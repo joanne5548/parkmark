@@ -37,6 +37,7 @@ const RatingsCardList = () => {
                         <RatingCard
                             key={`${review.review_id}`}
                             review={review}
+                            fetchReviews={fetchReviews}
                         />
                     ))}
                 </div>

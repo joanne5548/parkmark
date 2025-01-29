@@ -40,7 +40,7 @@ const MapContainer = () => {
 
         mapRef.current?.flyTo({
             center: [
-                selectedPark.park_info.coordinates.longitude + 0.02,
+                selectedPark.park_info.coordinates.longitude + 0.019,
                 selectedPark.park_info.coordinates.latitude + 0.0125,
             ],
             zoom: 13,

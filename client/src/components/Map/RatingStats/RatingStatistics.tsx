@@ -34,11 +34,18 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
             );
 
             if (fetchedReviewList.length === 0) {
+                setStarRatingPercentageList({
+                    "1": 0,
+                    "2": 0,
+                    "3": 0,
+                    "4": 0,
+                    "5": 0,
+                });
+                setAverageRating(0);
+                setRatingsCount(0);
                 return;
             }
-            const starRatingPercentageList =
-                calculateStarsPercentage(fetchedReviewList);
-            setStarRatingPercentageList(starRatingPercentageList);
+            setStarRatingPercentageList(calculateStarsPercentage(fetchedReviewList));
 
             setAverageRating(calculateAverageRating(fetchedReviewList));
 
