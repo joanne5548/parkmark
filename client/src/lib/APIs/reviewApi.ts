@@ -1,23 +1,23 @@
-import { Review, ReviewWithUserData } from "@lib/interfaces";
+import { ReviewWithUserData } from "@lib/interfaces";
 import { handleApiError } from "./userDataApi";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-export const postReview = async (review: Review) => {
+export const postReview = async (formData: FormData) => {
     try {
         const response = await fetch(`${backendUrl}/api/review`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(review),
+            body: formData
         });
 
         if (!response.ok) {
-            throw new Error(`[Backend] Network Error: ${response.status}`);
+            throw new Error(`[Backend] Network error: ${response.status}`);
         }
-    } catch (error) {
+    }
+    catch (error) {
         handleApiError(error);
     }
-};
+}
 
 export const fetchReviewsWithUserDataByParkId = async (
     selectedParkId: string

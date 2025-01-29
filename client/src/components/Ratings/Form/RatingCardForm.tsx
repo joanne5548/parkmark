@@ -1,11 +1,11 @@
-import { useRef, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { useAtomValue } from "jotai";
 import SelectStars from "./SelectStars";
 import { logInUserAtom, selectedParkAtom } from "@lib/atoms/atoms";
-import { Review, UserData } from "@lib/interfaces";
-// import placeholderImg from "@assets/parkmark-logo.jpg";
+import { UserData } from "@lib/interfaces";
 import { formatDate } from "@lib/dates";
 import { postReview } from "@lib/APIs/reviewApi";
+import { FaImage } from "react-icons/fa6";
 
 interface RatingCardFormProps {
     resetCreatingNewReview: () => void;
@@ -13,9 +13,19 @@ interface RatingCardFormProps {
 
 const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
     const logInUser: UserData | null = useAtomValue(logInUserAtom);
-    const [ratingStars, setRatingStars] = useState<number>(0);
-    const reviewContentRef = useRef<HTMLTextAreaElement>(null);
     const selectedPark = useAtomValue(selectedParkAtom);
+
+    const [ratingStars, setRatingStars] = useState<number>(0);
+    const [imageFile, setImageFile] = useState<File | null>(null);
+    const reviewContentRef = useRef<HTMLTextAreaElement>(null);
+
+    const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
+        if (!event.target.files || !event.target.files[0]) {
+            return;
+        }
+
+        setImageFile(event.target.files[0]);
+    };
 
     const handlePostButtonClick = async () => {
         if (!logInUser) {
@@ -32,15 +42,17 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
             return;
         }
 
-        const review: Review = {
-            user_sub_id: logInUser.sub_id,
-            park_id: selectedPark.id,
-            rating: ratingStars,
-            content: reviewContentRef.current.value,
-            img_url_list: {},
-        };
+        const formData = new FormData();
+        formData.append("user_sub_id", logInUser.sub_id);
+        formData.append("park_id", selectedPark.id);
+        formData.append("rating", ratingStars.toString());
+        formData.append("content", reviewContentRef.current.value);
+        
+        if (imageFile) {
+            formData.append("img_file", imageFile);
+        }
 
-        await postReview(review);
+        await postReview(formData);
 
         resetCreatingNewReview();
     };
@@ -60,11 +72,24 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                     {logInUser.name}
                                 </div>
                             </div>
-                            <div className="self-center">
-                                {/* <img
-                                    src={placeholderImg}
-                                    className="size-32 object-cover rounded-lg"
-                                /> */}
+                            <div className="size-32 self-center">
+                                <label
+                                    htmlFor="imageUpload"
+                                    className="block h-full self-center border-[1.5px] border-slate-400 rounded-lg
+                                                hover:cursor-pointer hover:bg-slate-100"
+                                >
+                                    <div className="flex h-full justify-center items-center">
+                                        <FaImage className="text-slate-600 text-4xl" />
+                                    </div>
+                                    <input
+                                        type="file"
+                                        name="image"
+                                        accept=".png, .jpg, .jpeg"
+                                        id="imageUpload"
+                                        onChange={handleImageUpload}
+                                        className="hidden"
+                                    />
+                                </label>
                             </div>
                         </div>
                         <div className="flex flex-col w-full min-h-32">
@@ -81,6 +106,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                             </div>
                             <textarea
                                 ref={reviewContentRef}
+                                name="content"
                                 placeholder="Content"
                                 className="border-[1px] border-slate-400 rounded-lg p-3 text-slate-950 pb-1 w-full h-full outline-none"
                             />

@@ -23,7 +23,7 @@
 -   [x] Build create review page
 -   [x] Implement Thumbs up feature
 -   [x] Display images correctly
--   [ ] Use form to submit new post
+-   [ ] Give more padding to y axis
 
 #### Next Steps...
 
@@ -69,8 +69,9 @@
 -   [x] Do table join for returning list of reviews with user information
 -   [x] Move server domain to .env
 -   [x] Get rid of 404 error for empty get requests
--   [ ] Modify review post request to handle image upload
-    -   [Look into this link](https://stackoverflow.com/questions/15772394/how-to-upload-display-and-save-images-using-node-js-and-express)
+-   [x] Modify review post request to handle image upload
+-   [ ] Sort reviews by most recent
+-   [ ] Block liking a post more than once
 
 #### Data
 
@@ -92,6 +93,12 @@
 </details>
 
 ## Development Notes
+
+### Sending files from frontend to backend
+
+-   Used middleware Multer
+    -   [Official docs from Express](https://expressjs.com/en/resources/middleware/multer.html)
+    -   [Tutorial with handling single/multiple files](https://blog.logrocket.com/multer-nodejs-express-upload-file/)
 
 ### Dealing with Timezones
 

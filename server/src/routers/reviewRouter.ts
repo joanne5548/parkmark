@@ -1,18 +1,31 @@
 import { Request, Response, Router } from "express";
 import pool from "../db";
 import { handleError } from "../../middleware/errorHandler";
+import { upload } from "../multer/multer";
+import { uploadImage } from "../cloud/uploadImage";
 
 export const reviewRouter = Router();
 
-reviewRouter.post("/", async (req: Request, res: Response) => {
+reviewRouter.post("/", upload.single("img_file"), async (req: Request, res: Response) => {
     try {
-        const { user_sub_id, park_id, rating, content, img_url } =
+        const { user_sub_id, park_id, rating, content } =
             req.body;
 
-        const insertQueryResult = await pool.query(
-            "INSERT INTO Review(user_sub_id, park_id, rating, content, img_url) VALUES($1, $2, $3, $4, $5) RETURNING *",
-            [user_sub_id, park_id, rating, content, img_url]
-        );
+        let insertQueryResult;
+        if (req.file) {
+            const img_url = await uploadImage(req.file)
+            
+            insertQueryResult = await pool.query(
+                "INSERT INTO Review(user_sub_id, park_id, rating, content, img_url) VALUES($1, $2, $3, $4, $5) RETURNING *",
+                [user_sub_id, park_id, rating, content, img_url]
+            );
+        }
+        else {
+            insertQueryResult = await pool.query(
+                "INSERT INTO Review(user_sub_id, park_id, rating, content) VALUES($1, $2, $3, $4) RETURNING *",
+                [user_sub_id, park_id, rating, content]
+            );
+        }
 
         res.json(insertQueryResult.rows[0]);
     } catch (error) {

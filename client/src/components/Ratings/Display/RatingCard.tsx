@@ -19,10 +19,12 @@ const RatingCard: React.FC<RatingCardProps> = ({ review }) => {
                     <div className="font-medium">{review.user_name}</div>
                 </div>
                 <div className="self-center">
-                    {/* <img
-                        src={profileImg}
-                        className="size-32 object-cover rounded-lg"
-                    /> */}
+                    {review.img_url && (
+                        <img
+                            src={review.img_url}
+                            className="size-32 object-cover rounded-lg"
+                        />
+                    )}
                 </div>
             </div>
             <div className="flex flex-col w-full min-h-28">
@@ -32,9 +34,11 @@ const RatingCard: React.FC<RatingCardProps> = ({ review }) => {
                         {formatDate(review.created_at)}
                     </div>
                 </div>
-                <div className="text-slate-700 pb-1 h-full">{review.content}</div>
+                <div className="text-slate-700 pb-1 h-full">
+                    {review.content}
+                </div>
                 <div className="flex justify-end">
-                    <ThumbsUpButton reviewId={review.review_id}/>
+                    <ThumbsUpButton reviewId={review.review_id} />
                 </div>
             </div>
         </div>
