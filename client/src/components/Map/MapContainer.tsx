@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Map, MapRef, MapEvent } from "react-map-gl";
 import CustomMarker from "./Widgets/CustomMarker";
-// import parkList from "@json_data/test.json";
 import parkList from "@json_data/park_list_with_uuid.json";
 import { useAtom } from "jotai";
 import { selectedParkAtom } from "@lib/atoms/atoms";
@@ -16,7 +15,7 @@ const MapContainer = () => {
     const handleOnMapLoad = (event: MapEvent) => {
         event.target.flyTo({
             center: [-98.618002, 38.724452],
-            zoom: 3.85,
+            zoom: 3.65,
             duration: 2000,
             essential: true,
         });
@@ -25,7 +24,7 @@ const MapContainer = () => {
     const handleResetButtonOnClick = () => {
         mapRef.current?.flyTo({
             center: [-98.618002, 38.724452],
-            zoom: 3.85,
+            zoom: 3.65,
             duration: 2000,
             essential: true,
         });

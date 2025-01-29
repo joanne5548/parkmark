@@ -71,8 +71,13 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
         }
     };
 
+    const checkIfUserHasSentThumbsUp = () => {
+        
+    }
+
     useEffect(() => {
         calculateNumberOfThumbsUp();
+        checkIfUserHasSentThumbsUp();
     }, []);
 
     return (
