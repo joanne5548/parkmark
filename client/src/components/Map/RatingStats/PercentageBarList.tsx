@@ -9,7 +9,7 @@ const PercentageBarList = ({
     starRatingPercentageList,
 }: PercentageBarListProps) => {
     return (
-        <div className="flex flex-col gap-2 w-full">
+        <div className="hidden sm:flex flex-col gap-2 w-full">
             {[5, 4, 3, 2, 1].map((i) => {
                 const percentage =
                     starRatingPercentageList[

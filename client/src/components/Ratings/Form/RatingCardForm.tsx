@@ -73,25 +73,25 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
         <div className="h-full">
             {logInUser ? (
                 <div className="flex flex-col">
-                    <div className="flex flex-row md:gap-4 py-4 md:py-5">
-                        <div className="flex flex-col gap-3.5 md:gap-4 w-5/12 min-w-36">
+                    <div className="flex flex-row sm:gap-4 py-4 sm:py-5">
+                        <div className="flex flex-col gap-3.5 sm:gap-4 w-5/12 min-w-36">
                             <div className="flex flex-row gap-3">
                                 <img
                                     src={logInUser.profile_picture_url}
-                                    className="size-8 md:size-10 rounded-xl object-cover"
+                                    className="size-8 sm:size-10 rounded-xl object-cover"
                                 />
-                                <div className="text-[0.95rem] md:text-base font-medium">
+                                <div className="text-[0.95rem] sm:text-base font-medium">
                                     {logInUser.name}
                                 </div>
                             </div>
-                            <div className="relative size-24 md:size-32 self-center">
+                            <div className="relative size-24 sm:size-32 self-center">
                                 <label
                                     htmlFor="imageUpload"
                                     className="block h-full self-center border-[1.5px] border-slate-400 rounded-lg
                                                 hover:cursor-pointer hover:bg-slate-100"
                                 >
                                     <div className="flex h-full justify-center items-center">
-                                        <FaImage className="text-slate-600 text-2xl md:text-4xl" />
+                                        <FaImage className="text-slate-600 text-2xl sm:text-4xl" />
                                     </div>
                                     <input
                                         type="file"
@@ -111,7 +111,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                             </div>
                         </div>
                         <div className="flex flex-col w-full min-h-32">
-                            <div className="flex flex-col md:flex-row gap-2 pb-2 md:items-center">
+                            <div className="flex flex-col sm:flex-row gap-2 pb-2 sm:items-center">
                                 <SelectStars
                                     ratingStars={ratingStars}
                                     size={4}
@@ -119,7 +119,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                         setRatingStars(i)
                                     }
                                 />
-                                <div className="text-xs md:text-sm font-medium text-slate-500">
+                                <div className="text-xs sm:text-sm font-medium text-slate-500">
                                     {formatDate()}
                                 </div>
                             </div>
@@ -127,7 +127,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                 ref={reviewContentRef}
                                 name="content"
                                 placeholder="Content"
-                                className="w-full h-full p-2 md:p-3 pb-1 border-[1px] border-slate-400 text-[0.95rem] md:text-base rounded-lg text-slate-950 outline-none"
+                                className="w-full h-full p-2 sm:p-3 pb-1 border-[1px] border-slate-400 text-[0.95rem] sm:text-base rounded-lg text-slate-950 outline-none"
                             />
                         </div>
                     </div>

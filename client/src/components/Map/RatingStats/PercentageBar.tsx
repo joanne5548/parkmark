@@ -8,10 +8,10 @@ const PercentageBar = ({ star, starPercentage }: PercentageBarProps) => {
 
     return (
         <div className="flex flex-row gap-2 w-full items-center">
-            <div className="text-blue-700 text-sm md:text-base font-medium w-[43px]">
+            <div className="text-blue-700 text-sm sm:text-base font-medium w-[43px]">
                 {star} star
             </div>
-            <div className="relative bg-slate-100 rounded-full w-44 md:w-52 h-3 md:h-4">
+            <div className="relative bg-slate-100 rounded-full w-44 sm:w-52 h-3 sm:h-4">
                 <div
                     className="absolute left-0 bg-amber-400 shadow-amber-200 shadow-sm rounded-full h-full"
                     style={{
@@ -19,7 +19,7 @@ const PercentageBar = ({ star, starPercentage }: PercentageBarProps) => {
                     }}
                 ></div>
             </div>
-            <div className="text-sm md:text-base font-medium">{starPercentage}%</div>
+            <div className="text-sm sm:text-base font-medium">{starPercentage}%</div>
         </div>
     );
 };

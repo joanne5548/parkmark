@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Map, MapRef, MapEvent } from "react-map-gl";
+import { Map, MapRef, MapEvent, LngLatLike } from "react-map-gl";
 import CustomMarker from "./Widgets/CustomMarker";
 import parkList from "@json_data/park_list_with_uuid.json";
 import { useAtom } from "jotai";
@@ -37,11 +37,17 @@ const MapContainer = () => {
             return;
         }
 
+        let center: LngLatLike = [selectedPark.park_info.coordinates.longitude, selectedPark.park_info.coordinates.latitude];
+
+        if (window.innerWidth > 640) {
+            center = [center[0] + 0.019, center[1] + 0.0125];
+        }
+        else {
+            center = [center[0], center[1] - 0.004];
+        }
+
         mapRef.current?.flyTo({
-            center: [
-                selectedPark.park_info.coordinates.longitude + 0.019,
-                selectedPark.park_info.coordinates.latitude + 0.0125,
-            ],
+            center: center,
             zoom: 13,
             duration: 2750,
         });

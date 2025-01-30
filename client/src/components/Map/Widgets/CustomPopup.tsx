@@ -40,10 +40,10 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
                 setSelectedPark(null);
             }}
         >
-            <div className="flex flex-col gap-2 items-center">
+            <div className="flex flex-col gap-1 sm:gap-2 items-center">
                 <button
                     onClick={handleParkNameButtonOnClick}
-                    className="w-full text-center text-lg md:text-xl font-medium border-none hover:underline"
+                    className="w-full text-center text-lg sm:text-xl font-medium border-none hover:underline"
                 >
                     {parkInfoJson.name}
                 </button>

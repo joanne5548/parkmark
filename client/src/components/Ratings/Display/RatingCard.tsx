@@ -28,29 +28,29 @@ const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews }) => {
     }
 
     return (
-        <div className="flex flex-row md:gap-4 py-4 md:py-5 border-b-2">
-            <div className="flex flex-col gap-3.5 md:gap-4 w-5/12 min-w-36">
+        <div className="flex flex-row sm:gap-4 py-4 sm:py-5 border-b-2">
+            <div className="flex flex-col gap-3.5 sm:gap-4 w-5/12 min-w-36">
                 <div className="flex flex-row gap-3">
                     <img
                         src={review.user_profile_picture_url}
-                        className="size-8 md:size-10 rounded-xl object-cover"
+                        className="size-8 sm:size-10 rounded-xl object-cover"
                     />
-                    <div className="text-[0.95rem] md:text-base font-medium">{review.user_name}</div>
+                    <div className="text-[0.95rem] sm:text-base font-medium">{review.user_name}</div>
                 </div>
                 <div className="self-center">
                     {review.img_url && (
                         <img
                             src={review.img_url}
-                            className="size-24 md:size-32 object-cover rounded-lg"
+                            className="size-24 sm:size-32 object-cover rounded-lg"
                         />
                     )}
                 </div>
             </div>
             <div className="flex flex-col w-full min-h-28">
-                <div className="flex flex-row gap-1 md:gap-2 pb-2 items-start justify-between">
-                    <div className="flex flex-col md:flex-row gap-2 md:items-center">
+                <div className="flex flex-row gap-1 sm:gap-2 pb-2 items-start justify-between">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
                         <DisplayReviewStars rating={review.rating} size={4} />
-                        <div className="text-xs md:text-sm font-medium text-slate-500">
+                        <div className="text-xs sm:text-sm font-medium text-slate-500">
                             {formatDate(review.created_at)}
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews }) => {
                         </button>
                     }
                 </div>
-                <div className="h-full text-[0.95rem] md:text-base pb-4 md:pb-1 text-slate-700">
+                <div className="h-full text-[0.95rem] sm:text-base pb-4 sm:pb-1 text-slate-700">
                     {review.content}
                 </div>
                 <div className="flex justify-end">

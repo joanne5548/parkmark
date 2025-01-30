@@ -8,7 +8,7 @@ const FrontPage = () => {
     const selectedPark = useAtomValue(selectedParkAtom);
 
     return (
-        <div className="flex flex-col gap-4 p-4 md:p-6 h-screen">
+        <div className="flex flex-col gap-4 p-4 sm:p-6 h-screen">
             <NavBar />
             <div className="relative flex flex-row items-center gap-6 h-full">
                 <MapContainer />
