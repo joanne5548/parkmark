@@ -51,7 +51,7 @@ const MapContainer = () => {
             center = [center[0] + 0.019, center[1] + 0.0125];
         }
         else {
-            center = [center[0] + 0.00066, center[1] - 0.004];
+            center = [center[0], center[1] - 0.005];
         }
 
         mapRef.current?.flyTo({
