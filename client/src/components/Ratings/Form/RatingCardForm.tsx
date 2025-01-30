@@ -104,7 +104,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                     {imagePreviewUrl && (
                                         <img
                                             src={imagePreviewUrl}
-                                            className="absolute top-0 left-0 size-32 rounded-lg object-cover opacity-65"
+                                            className="absolute top-0 left-0 size-24 sm:size-32 rounded-lg object-cover opacity-65"
                                         />
                                     )}
                                 </label>
