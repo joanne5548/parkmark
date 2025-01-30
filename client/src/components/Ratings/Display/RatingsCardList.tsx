@@ -28,7 +28,7 @@ const RatingsCardList = () => {
     return (
         <div className="h-full">
             {selectedParkReviewList.length === 0 ? (
-                <div className="flex justify-center items-center text-slate-800 text-lg h-full">
+                <div className="flex justify-center items-center text-center text-slate-800 text-lg h-full">
                     No Reviews Yet! Wanna be the first? :D
                 </div>
             ) : (

@@ -34,12 +34,10 @@ const SearchBar = () => {
 
         setSuggestedParkList(suggestedParkList);
 
-        
         if (suggestedParkList.length > 0) {
             setSearchBarExtraClasses("rounded-t-md border-b-0");
             setSearchIsActive(true);
-        }
-        else {
+        } else {
             setSearchBarExtraClasses("rounded-md");
             setSearchIsActive(false);
         }
@@ -59,7 +57,7 @@ const SearchBar = () => {
 
     return (
         <div
-            className={`relative flex flex-row items-center pl-1.5 sm:pl-2.5 w-full sm:w-[42%] max-h-10 gap-1 sm:gap-3 bg-white border-slate-300 border-2 ${searchBarExtraClasses}`}
+            className={`relative flex flex-row items-center pl-1.5 sm:pl-2.5 w-full sm:w-[42%] max-h-10 gap-1 sm:gap-3 bg-white border-slate-300 border-[1px] ${searchBarExtraClasses}`}
         >
             <IoSearch className="size-5 text-slate-400" />
             <input
@@ -70,8 +68,8 @@ const SearchBar = () => {
             ></input>
             {searchIsActive && (
                 <div
-                    className="absolute left-[-2px] top-9 flex flex-col w-[calc(100%+4px)] max-h-52 overflow-y-auto text-[17px]
-                            shadow-lg bg-white border-slate-300 border-2 border-t-0 rounded-b-md z-[1001]"
+                    className="absolute left-[-1px] top-9 flex flex-col w-[calc(100%+2px)] max-h-52 overflow-y-auto text-[17px]
+                            shadow-lg bg-white border-slate-300 border-[1px] border-t-0 rounded-b-md z-[1001]"
                 >
                     {suggestedParkList.map((park) => {
                         return (
@@ -82,10 +80,12 @@ const SearchBar = () => {
                                 className="flex flex-row gap-3 py-2 pl-2.5 text-start text-slate-600 w-full hover:bg-slate-100"
                             >
                                 <IoSearch className="size-5 text-slate-400" />
-                                {park.name}{" "}
-                                <span className="text-slate-400 pl-2">
-                                    {park.park_info.states}
-                                </span>
+                                <div className="flex flex-row w-fit">
+                                    {park.name}{" "}
+                                    <span className="text-slate-400 pl-2 text-start">
+                                        {park.park_info.states}
+                                    </span>
+                                </div>
                             </button>
                         );
                     })}

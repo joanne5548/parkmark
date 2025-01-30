@@ -11,9 +11,21 @@ import {
 import { useAtom } from "jotai";
 import { logInUserAtom } from "@lib/atoms/atoms";
 import { userDataMatchesFromDatabase } from "@lib/checkUserDataFromDb";
+import { useEffect, useState } from "react";
 
 const Login = () => {
     const [logInUser, setLogInUser] = useAtom(logInUserAtom);
+    const [logInIconStyle, setLogInIconStyle] = useState<"standard" | "icon">(
+        "standard"
+    );
+
+    useEffect(() => {
+        if (window.innerWidth > 640) {
+            setLogInIconStyle("standard");
+        } else {
+            setLogInIconStyle("icon");
+        }
+    }, []);
 
     const handleLoginSuccess = async (response: CredentialResponse) => {
         const credentialJson: GoogleLoginCredential = jwtDecode(
@@ -33,8 +45,9 @@ const Login = () => {
 
             if (!userDataFromDb) {
                 await postNewUser(currentUserData);
-            }
-            else if (!userDataMatchesFromDatabase(userDataFromDb, currentUserData)) {
+            } else if (
+                !userDataMatchesFromDatabase(userDataFromDb, currentUserData)
+            ) {
                 await putUser(currentUserData);
             }
 
@@ -56,9 +69,9 @@ const Login = () => {
                             console.log("Login failed! :(");
                         }}
                         auto_select={true}
-                        type="icon"
+                        type={logInIconStyle}
                         text="signin"
-                        shape="circle"
+                        shape="square"
                     />
                 </div>
             )}

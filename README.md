@@ -16,9 +16,9 @@
     -   [x] Fix misaligned dropdown
 -   [x] Implement easier hovering over user information box popup
 -   [ ] Implement Responsive Design (for mobile)
-    - [ ] Search bar
-    - [ ] Align popup
-    - [ ] Google Sign In button
+    - [x] Search bar
+    - [x] Align popup
+    - [x] Google Sign In button
 
 #### Ratings Side Panel
 
