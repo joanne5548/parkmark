@@ -56,16 +56,16 @@ const RatingStatistics = ({ parkId }: RatingStatisticsProps) => {
     }, [selectedParkReviewList]);
 
     return (
-        <div className="flex flex-col gap-4 items-center">
+        <div className="flex flex-col gap-3 md:gap-4 items-center">
             <div className="flex flex-col gap-2 items-center">
-                <div className="font-normal text-lg">Average Rating</div>
+                <div className="font-normal text-base md:text-lg">Average Rating</div>
                 <div className="flex flex-row gap-3 w-fit p-3 rounded-full bg-slate-100">
-                    <DisplayReviewStars rating={averageRating} />
-                    <div className="text-base">
+                    <DisplayReviewStars rating={averageRating} size={6} />
+                    <div className="text-sm md:text-base">
                         {Math.round(averageRating * 100) / 100} out of 5
                     </div>
                 </div>
-                <div className="text-base text-slate-600">
+                <div className="text-sm nd:text-base text-slate-600">
                     {ratingsCount} ratings
                 </div>
             </div>

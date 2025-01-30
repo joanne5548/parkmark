@@ -38,3 +38,9 @@
 .mapbox-gl-marker:hover {
     cursor: pointer !important;
 }
+
+@media screen and (max-width: 768px) {
+    .mapboxgl-popup-content {
+        min-width: 20rem;
+    }
+}

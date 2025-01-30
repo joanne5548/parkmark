@@ -21,8 +21,9 @@ const RatingsSidePanel = () => {
 
     return (
         <div
-            className="absolute right-2 flex flex-col w-1/2 max-w-[34rem] h-[97%] p-6 pr-2
-            z-[1000] bg-white rounded-lg border-slate-400 shadow-lg shadow-slate-400"
+            className="absolute left-2 right-2 bottom-2 h-[55%] md:right-2 md:left-auto md:bottom-auto
+                md:w-1/2 md:max-w-[34rem] md:h-[97%] pr-2 py-6 pl-5 md:py-6 md:pl-6
+                flex flex-col z-[1000] bg-white rounded-lg border-slate-400 shadow-lg shadow-slate-400"
         >
             <button
                 className="absolute right-1 top-1"
@@ -31,7 +32,7 @@ const RatingsSidePanel = () => {
                 <IoClose className="text-slate-500 size-5" />
             </button>
             <div className="flex flex-col overflow-y-auto pr-4 h-full">
-                <div className="relative h-[50px] font-medium text-2xl border-b-2 py-2">
+                <div className="relative h-[50px] font-medium text-xl md:text-2xl border-b-2 py-2">
                     Reviews
                     <div className="absolute right-0 bottom-1">
                         <button

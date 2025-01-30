@@ -16,6 +16,9 @@
     -   [x] Fix misaligned dropdown
 -   [x] Implement easier hovering over user information box popup
 -   [ ] Implement Responsive Design (for mobile)
+    - [ ] Search bar
+    - [ ] Align popup
+    - [ ] Google Sign In button
 
 #### Ratings Side Panel
 
@@ -23,18 +26,8 @@
 -   [x] Build create review page
 -   [x] Implement Thumbs up feature
 -   [x] Display images correctly
-    - [x] Add image preview
+    -   [x] Add image preview
 -   [x] Give more padding to y axis
-
-#### Next Steps...
-
--   [x] Implement Google OAuth
--   [x] Establish database (create tables based on schema)
-    -   [x] Implement REST API for user data
-    -   [x] Insert user data upon google login
--   [x] Build Ratings side panel
--   [x] remove dynamic sizing for stars and pins
--   [x] Add image upload
 
 <details>
 <summary>Past To-dos (Completed)</summary>
@@ -56,6 +49,16 @@
     -   [x] Fix padding for longer names
 -   [x] Add reset button
 -   [x] Fix hover popup not showing after clicking the marker and closing the popup
+
+#### Next Steps...
+
+-   [x] Implement Google OAuth
+-   [x] Establish database (create tables based on schema)
+    -   [x] Implement REST API for user data
+    -   [x] Insert user data upon google login
+-   [x] Build Ratings side panel
+-   [x] remove dynamic sizing for stars and pins
+-   [x] Add image upload
 </details>
 
 ### Backend
@@ -126,6 +129,7 @@
 
 -   [Youtube Tutorial](https://www.youtube.com/watch?v=GuHN_ZqHExs)
 -   [Jwt Fields Description](https://developers.google.com/assistant/identity/google-sign-in-oauth)
+-   [GoogleLogin Props](https://github.com/MomenSherif/react-oauth?tab=readme-ov-file)
 
 ### Backend in TypeScript
 

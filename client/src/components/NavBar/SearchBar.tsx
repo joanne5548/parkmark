@@ -65,7 +65,7 @@ const SearchBar = () => {
             <input
                 ref={searchRef}
                 onChange={handleSearchInputOnChange}
-                placeholder="What's your favorite national park?"
+                placeholder="What's your favorite national park?" // Change this to 'Search' when window size is < 768px
                 className="bg-inherit w-full outline-none text-slate-900 placeholder:text-slate-500"
             ></input>
             {searchIsActive && (

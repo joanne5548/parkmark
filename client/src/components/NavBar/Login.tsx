@@ -13,7 +13,6 @@ import { logInUserAtom } from "@lib/atoms/atoms";
 import { userDataMatchesFromDatabase } from "@lib/checkUserDataFromDb";
 
 const Login = () => {
-    // const [logInUserData, setLogInUserData] = useState<UserData | null>(null);
     const [logInUser, setLogInUser] = useAtom(logInUserAtom);
 
     const handleLoginSuccess = async (response: CredentialResponse) => {
@@ -57,6 +56,9 @@ const Login = () => {
                             console.log("Login failed! :(");
                         }}
                         auto_select={true}
+                        type="icon"
+                        text="signin"
+                        shape="circle"
                     />
                 </div>
             )}
