@@ -59,7 +59,7 @@ const SearchBar = () => {
 
     return (
         <div
-            className={`relative flex flex-row items-center pl-2.5 w-full sm:w-[42%] max-h-10 gap-3 bg-white border-slate-300 border-2 ${searchBarExtraClasses}`}
+            className={`relative flex flex-row items-center pl-1.5 sm:pl-2.5 w-full sm:w-[42%] max-h-10 gap-1 sm:gap-3 bg-white border-slate-300 border-2 ${searchBarExtraClasses}`}
         >
             <IoSearch className="size-5 text-slate-400" />
             <input

@@ -41,7 +41,8 @@
 
 @media screen and (max-width: 768px) {
     .mapboxgl-popup-content {
-        min-width: 20rem;
+        min-width: 15rem;
+        max-width: 15rem;
         padding: 0.75rem 1rem 1rem 0.5rem;
     }
 }

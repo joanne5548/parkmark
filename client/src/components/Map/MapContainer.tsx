@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Map, MapRef, MapEvent, LngLatLike } from "react-map-gl";
 import CustomMarker from "./Widgets/CustomMarker";
 import parkList from "@json_data/park_list_with_uuid.json";
@@ -11,11 +11,12 @@ const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 const MapContainer = () => {
     const mapRef = useRef<MapRef>(null);
     const [selectedPark, setSelectedPark] = useAtom(selectedParkAtom);
+    const [responsiveZoomLevel, setResponsiveZoomLevel] = useState<number>(3.65);
 
     const handleOnMapLoad = (event: MapEvent) => {
         event.target.flyTo({
             center: [-98.618002, 38.724452],
-            zoom: 3.65,
+            zoom: responsiveZoomLevel,
             duration: 2000,
             essential: true,
         });
@@ -24,7 +25,7 @@ const MapContainer = () => {
     const handleResetButtonOnClick = () => {
         mapRef.current?.flyTo({
             center: [-98.618002, 38.724452],
-            zoom: 3.65,
+            zoom: responsiveZoomLevel,
             duration: 2000,
             essential: true,
         });
@@ -33,6 +34,13 @@ const MapContainer = () => {
     };
 
     useEffect(() => {
+        if (window.innerWidth > 640) {
+            setResponsiveZoomLevel(3.65);
+        }
+        else {
+            setResponsiveZoomLevel(2.1);
+        }
+
         if (!selectedPark) {
             return;
         }
@@ -43,7 +51,7 @@ const MapContainer = () => {
             center = [center[0] + 0.019, center[1] + 0.0125];
         }
         else {
-            center = [center[0], center[1] - 0.004];
+            center = [center[0] + 0.00066, center[1] - 0.004];
         }
 
         mapRef.current?.flyTo({
@@ -57,7 +65,7 @@ const MapContainer = () => {
             // do I have to maintain list of refs of every popup to close them here
             // wait why does this work when closing the review tab
         };
-    }, [selectedPark]);
+    }, [selectedPark, window.innerWidth]);
 
     return (
         <div className="flex items-center w-full h-full">
