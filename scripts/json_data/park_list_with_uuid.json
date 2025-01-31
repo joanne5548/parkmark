@@ -94,7 +94,8 @@
             "coordinates": {
                 "longitude": -111.00329294577273,
                 "latitude": 37.795992535017426
-            }
+            },
+            "states": "Utah"
         }
     },
     {
@@ -170,7 +171,8 @@
             "coordinates": {
                 "longitude": -151.05263550282112,
                 "latitude": 63.29777436004586
-            }
+            },
+            "states": "Alaska"
         }
     },
     {
@@ -202,7 +204,8 @@
             "coordinates": {
                 "longitude": -153.26413231698794,
                 "latitude": 67.9192854407937
-            }
+            },
+            "states": "Alaska"
         }
     },
     {
@@ -212,7 +215,8 @@
             "coordinates": {
                 "longitude": -136.84071732838277,
                 "latitude": 58.80086474447531
-            }
+            },
+            "states": "Alaska"
         }
     },
     {
@@ -266,7 +270,8 @@
             "coordinates": {
                 "longitude": -105.57832630519154,
                 "latitude": 37.759942701007226
-            }
+            },
+            "states": "Colorado"
         }
     },
     {
@@ -309,7 +314,8 @@
             "coordinates": {
                 "longitude": -155.2118228719388,
                 "latitude": 19.32614215615518
-            }
+            },
+            "states": "Hawaii"
         }
     },
     {
@@ -352,7 +358,8 @@
             "coordinates": {
                 "longitude": -155.01341050350874,
                 "latitude": 58.622573966764584
-            }
+            },
+            "states": "Alaska"
         }
     },
     {
@@ -395,7 +402,8 @@
             "coordinates": {
                 "longitude": -153.6018441528228,
                 "latitude": 60.64679690935658
-            }
+            },
+            "states": "Alaska"
         }
     },
     {
@@ -449,7 +457,8 @@
             "coordinates": {
                 "longitude": -169.45380760526996,
                 "latitude": -14.239727732693918
-            }
+            },
+            "states": "American Samoa"
         }
     },
     {
@@ -514,7 +523,8 @@
             "coordinates": {
                 "longitude": -118.5752011004094,
                 "latitude": 36.50785282265928
-            }
+            },
+            "states": "California"
         }
     },
     {
@@ -579,7 +589,8 @@
             "coordinates": {
                 "longitude": -77.26355410163892,
                 "latitude": 38.93793199647512
-            }
+            },
+            "states": "Virginia"
         }
     },
     {
@@ -589,7 +600,8 @@
             "coordinates": {
                 "longitude": -142.60357111369407,
                 "latitude": 61.41843937955613
-            }
+            },
+            "states": "Alaska"
         }
     },
     {
@@ -632,7 +644,8 @@
             "coordinates": {
                 "longitude": -90.1857939618164,
                 "latitude": 38.625143035481344
-            }
+            },
+            "states": "Missouri"
         }
     },
     {
@@ -642,7 +655,8 @@
             "coordinates": {
                 "longitude": -87.05243146934447,
                 "latitude": 41.654384302554455
-            }
+            },
+            "states": "Indiana"
         }
     },
     {
@@ -652,7 +666,8 @@
             "coordinates": {
                 "longitude": -81.0514289750282,
                 "latitude": 37.87534462108355
-            }
+            },
+            "states": "West Virginia"
         }
     },
     {
