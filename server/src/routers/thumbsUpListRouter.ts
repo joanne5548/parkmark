@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express";
 import pool from "../db";
 import { handleError } from "../../middleware/errorHandler";
+import { RequestError } from "@google-cloud/storage/build/cjs/src/file";
 
 export const thumbsUpListRouter = Router();
 
@@ -66,6 +67,24 @@ thumbsUpListRouter.get(
         }
     }
 );
+
+thumbsUpListRouter.get("/review_id_by_user_and_park", async (req: Request, res: Response) => {
+    try {
+        const { user_sub_id, park_id } = req.query;
+
+        const selectQueryResult = await pool.query(
+            "SELECT review_id FROM ThumbsUpList JOIN Review ON Review.id=ThumbsUpList.review_id WHERE ThumbsUpList.user_sub_id=$1 AND park_id=$2",
+            [user_sub_id, park_id]
+        );
+
+        const reviewIdList = selectQueryResult.rows.map((row) => row['review_id']);
+        
+        res.json(reviewIdList);
+    }
+    catch (error) {
+        handleError(error, res);
+    }
+});
 
 thumbsUpListRouter.delete("/", async (req: Request, res: Response) => {
     try {

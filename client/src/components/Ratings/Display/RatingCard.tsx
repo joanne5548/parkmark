@@ -10,9 +10,10 @@ import { deleteReview } from "@lib/APIs/reviewApi";
 interface RatingCardProps {
     review: ReviewWithUserData;
     fetchReviews: () => Promise<void>;
+    initialThumbsUpBool: boolean;
 }
 
-const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews }) => {
+const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews, initialThumbsUpBool }) => {
     const logInUser = useAtomValue(logInUserAtom);
 
     const handleDeleteRatingButtonOnClick = async () => {
@@ -64,7 +65,7 @@ const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews }) => {
                     {review.content}
                 </div>
                 <div className="flex justify-end">
-                    <ThumbsUpButton reviewId={review.review_id} />
+                    <ThumbsUpButton reviewId={review.review_id} initialThumbsUpBool={initialThumbsUpBool} />
                 </div>
             </div>
         </div>

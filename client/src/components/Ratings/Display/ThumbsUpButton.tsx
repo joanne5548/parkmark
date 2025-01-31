@@ -11,10 +11,14 @@ import { LuThumbsUp } from "react-icons/lu";
 
 interface ThumbsUpButtonProps {
     reviewId: string;
+    initialThumbsUpBool: boolean;
 }
 
-const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
-    const [thumbsUpBool, setThumbsUpBool] = useState<boolean>(false);
+const ThumbsUpButton = ({
+    reviewId,
+    initialThumbsUpBool,
+}: ThumbsUpButtonProps) => {
+    const [thumbsUpBool, setThumbsUpBool] = useState<boolean>(initialThumbsUpBool);
     const [buttonClassName, setButtonClassName] = useState<string>("");
     const [thumbsUpIconClassName, setThumbsUpIconClassName] =
         useState<string>("");
@@ -34,18 +38,15 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
             review_id: reviewId,
         };
 
-        let className = "size-4.5";
         if (newThumbsUpBool) {
-            className += " fill-blue-400";
-
             await postThumbsUpData(thumbsUpData);
         } else {
             await deleteThumbsUpData(logInUser.sub_id, reviewId);
         }
 
-        await calculateNumberOfThumbsUp();
+        changeThumbsUpIconColor(newThumbsUpBool);
         setThumbsUpBool(newThumbsUpBool);
-        setThumbsUpIconClassName(className);
+        await calculateNumberOfThumbsUp();
     };
 
     const calculateNumberOfThumbsUp = async () => {
@@ -71,13 +72,18 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
         }
     };
 
-    const checkIfUserHasSentThumbsUp = () => {
-        
-    }
+    const changeThumbsUpIconColor = (newThumbsUpBool: boolean) => {
+        let className = "size-4.5";
+        if (newThumbsUpBool) {
+            className += " fill-blue-400";
+        }
+        setThumbsUpIconClassName(className);
+    };
 
     useEffect(() => {
+        console.log(initialThumbsUpBool);
         calculateNumberOfThumbsUp();
-        checkIfUserHasSentThumbsUp();
+        changeThumbsUpIconColor(initialThumbsUpBool);
     }, []);
 
     return (

@@ -41,6 +41,26 @@ export const fetchThumbsUpListByReviewId = async (reviewId: string) => {
     }
 };
 
+export const fetchListOfThumbsUpReviewByUserAndPark = async (userSubId: string, parkId: string) => {
+    try {
+        const response = await fetch(`${backendUrl}/api/thumbsuplist/review_id_by_user_and_park?user_sub_id=${userSubId}&park_id=${parkId}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json"},
+        });
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network error: ${response.status}`);
+        }
+
+        const listOfReviews: string[] = await response.json();
+        return listOfReviews;
+    }
+    catch (error) {
+        handleApiError(error);
+        return [];
+    }
+}
+
 export const deleteThumbsUpData = async (
     userSubId: string,
     reviewId: string
