@@ -58,7 +58,7 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className="flex-shrink-0">
             {logInUser ? (
                 <UserInfoTile />
             ) : (

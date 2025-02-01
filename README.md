@@ -15,7 +15,7 @@
 -   [x] Implement search functionality
     -   [x] Fix misaligned dropdown
 -   [x] Implement easier hovering over user information box popup
--   [ ] Implement Responsive Design (for mobile)
+-   [x] Implement Responsive Design (for mobile)
     - [x] Search bar
     - [x] Align popup
     - [x] Google Sign In button
@@ -84,7 +84,7 @@
 -   [x] Fill in missing national park data in `filtered_national_parks_nps.json`
 -   [x] Make sure to check again if the number matches to 63!
 -   [x] Then run `generateParkUuid.py` again
--   [ ] Add in missing states list
+-   [x] Add in missing states list
 
 <details>
 <summary>Past To-dos (Completed)</summary>
