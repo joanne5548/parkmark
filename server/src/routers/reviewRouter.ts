@@ -58,25 +58,23 @@ reviewRouter.get("/park_id/:park_id", async (req: Request, res: Response) => {
     }
 });
 
-reviewRouter.get(
-    "/reviewWithUserData/park_id/:park_id",
-    async (req: Request, res: Response) => {
-        try {
-            const { park_id } = req.params;
+reviewRouter.get("/reviewWithUserData", async (req: Request, res: Response) => {
+    try {
+        const columns = "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.img_url, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url, ThumbsUpList.id AS thumbs_up_id";
+        
+        const { park_id, user_sub_id="" } = req.query;
 
-            const columns =
-                "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.img_url, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url";
-            const selectQueryResult = await pool.query(
-                `SELECT ${columns} FROM Review JOIN UserData ON Review.user_sub_id=UserData.sub_id WHERE park_id=$1 ORDER BY Review.created_at DESC`,
-                [park_id]
-            );
-
-            res.json(selectQueryResult.rows);
-        } catch (error) {
-            handleError(error, res);
-        }
+        const selectQueryResult = await pool.query(
+            `SELECT ${columns} FROM REVIEW LEFT JOIN ThumbsUpList ON Review.id=ThumbsUpList.review_id AND ThumbsUpList.user_sub_id=$1 JOIN UserData ON Review.user_sub_id=UserData.sub_id WHERE park_id=$2 ORDER BY Review.created_at DESC`,
+            [user_sub_id, park_id]
+        );
+        
+        res.json(selectQueryResult.rows);
     }
-);
+    catch (error) {
+        handleError(error, res);
+    }
+})
 
 reviewRouter.get(
     "/user_sub_id/:user_sub_id",

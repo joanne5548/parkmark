@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { useAtom, useAtomValue } from "jotai";
-import { selectedParkAtom, selectedParkReviewListAtom } from "@lib/atoms/atoms";
+import {
+    logInUserAtom,
+    selectedParkAtom,
+    selectedParkReviewListAtom,
+} from "@lib/atoms/atoms";
 import { fetchReviewsWithUserDataByParkId } from "@lib/APIs/reviewApi";
 import RatingCard from "./RatingCard";
 
@@ -9,11 +13,15 @@ const RatingsCardList = () => {
     const [selectedParkReviewList, setSelectedParkReviewList] = useAtom(
         selectedParkReviewListAtom
     );
+    const logInUser = useAtomValue(logInUserAtom);
 
     const fetchReviews = async () => {
         const fetchedReviewList = await fetchReviewsWithUserDataByParkId(
-            selectedPark?.id!
+            selectedPark?.id!,
+            logInUser ? logInUser.sub_id : ""
         );
+
+        console.log(fetchedReviewList);
         setSelectedParkReviewList(fetchedReviewList);
     };
 
@@ -23,7 +31,7 @@ const RatingsCardList = () => {
         }
 
         fetchReviews();
-    }, [selectedPark]);
+    }, [selectedPark, logInUser]);
 
     return (
         <div className="h-full">
@@ -38,6 +46,7 @@ const RatingsCardList = () => {
                             key={`${review.review_id}`}
                             review={review}
                             fetchReviews={fetchReviews}
+                            initialThumbsUpBool={review.thumbs_up_id ? true : false}
                         />
                     ))}
                 </div>

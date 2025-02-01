@@ -11,16 +11,26 @@ import { LuThumbsUp } from "react-icons/lu";
 
 interface ThumbsUpButtonProps {
     reviewId: string;
+    initialThumbsUpBool: boolean;
 }
 
-const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
-    const [thumbsUpBool, setThumbsUpBool] = useState<boolean>(false);
-    const [buttonClassName, setButtonClassName] = useState<string>("");
-    const [thumbsUpIconClassName, setThumbsUpIconClassName] =
-        useState<string>("");
+const ThumbsUpButton = ({ reviewId, initialThumbsUpBool }: ThumbsUpButtonProps) => {
+    const [thumbsUpBool, setThumbsUpBool] = useState<boolean>(initialThumbsUpBool);
     const [thumbsUpCount, setThumbsUpCount] = useState<number>(0);
-
     const logInUser: UserData | null = useAtomValue(logInUserAtom);
+
+    let thumbsUpIconClassName = "size-4.5 ";
+    if (thumbsUpBool) {
+        thumbsUpIconClassName += "fill-blue-400";
+    }
+
+    let buttonClassName = "size-fit rounded-md bg-none border-2 border-slate-300 ";
+    if (thumbsUpCount === 0) {
+        buttonClassName += "p-1.5";
+    }
+    else {
+        buttonClassName += "flex flex-row gap-2 items-center px-1.5 py-0.5";
+    }
 
     const handleThumbsUpButtonClick = async () => {
         if (!logInUser) {
@@ -34,10 +44,7 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
             review_id: reviewId,
         };
 
-        let className = "size-4.5";
         if (newThumbsUpBool) {
-            className += " fill-blue-400";
-
             await postThumbsUpData(thumbsUpData);
         } else {
             await deleteThumbsUpData(logInUser.sub_id, reviewId);
@@ -45,7 +52,6 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
 
         await calculateNumberOfThumbsUp();
         setThumbsUpBool(newThumbsUpBool);
-        setThumbsUpIconClassName(className);
     };
 
     const calculateNumberOfThumbsUp = async () => {
@@ -58,26 +64,16 @@ const ThumbsUpButton = ({ reviewId }: ThumbsUpButtonProps) => {
             return;
         }
 
-        const baseClassName =
-            "size-fit rounded-md bg-none border-2 border-slate-300 ";
         if (thumbsUpList.length === 0) {
-            setButtonClassName(baseClassName + "p-1.5");
             setThumbsUpCount(0);
         } else {
-            setButtonClassName(
-                baseClassName + "flex flex-row gap-2 items-center px-1.5 py-0.5"
-            );
             setThumbsUpCount(thumbsUpList.length);
         }
     };
 
-    const checkIfUserHasSentThumbsUp = () => {
-        
-    }
-
     useEffect(() => {
+        console.log(initialThumbsUpBool);
         calculateNumberOfThumbsUp();
-        checkIfUserHasSentThumbsUp();
     }, []);
 
     return (

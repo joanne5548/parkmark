@@ -76,7 +76,7 @@
 -   [x] Modify review post request to handle image upload
 -   [x] Sort reviews by most recent
 -   [x] Implement image deletion from bucket on review deletion
--   [ ] Block liking a post more than once
+-   [x] Block liking a post more than once
 
 #### Data
 

@@ -51,6 +51,8 @@ export interface ReviewWithUserData {
     user_sub_id: string;
     user_name: string;
     user_profile_picture_url: string;
+
+    thumbs_up_id: string | null;
 }
 
 export interface StarRatingPercentageList {

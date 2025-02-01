@@ -20,11 +20,12 @@ export const postReview = async (formData: FormData) => {
 }
 
 export const fetchReviewsWithUserDataByParkId = async (
-    selectedParkId: string
+    selectedParkId: string,
+    logInUserId: string = ""
 ) => {
     try {
         const response = await fetch(
-            `${backendUrl}/api/review/reviewWithUserData/park_id/${selectedParkId}`,
+            `${backendUrl}/api/review/reviewWithUserData?park_id=${selectedParkId}&user_sub_id=${logInUserId}`,
             {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
