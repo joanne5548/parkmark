@@ -1,7 +1,7 @@
 ## About Parkmark
 Parkmark is an online rating platform for U.S. national parks, built with React and Express.
 
-You can access the website at: [ParkMark](https://parcomolo.vercel.app/) 🌳 :milky_way:
+You can access the website at: [ParkMark](https://parcomolo.vercel.app/) 🌳🌠
 
 ## Preview
 ![frontpage](./FrontPage.png)
@@ -62,6 +62,21 @@ docker run -p 5000:5000 <image_id>
     - Contains Python scripts for data cleaning and retrieval
 
 ## Environment Variables
+### Frontend
+Placed in `/client` directory.
+1. `VITE_BACKEND_URL`: URL for backend endpoint. For development server, it is set to `http://localhost:5000`
+2. `VITE_MAPBOX_ACCESS_TOKEN`: Mapbox access token. Required to load map on the front page. Under free plan, you get free 50K loads every month.
+3. `VITE_GOOGLE_OAUTH_CLIENT_ID`: Google OAuth client ID. Required to offer Google OAuth service on the website. More information on the setup can be found [here](./PreviousTodoList.md#google-oauth-info).
+
+### Backend
+Placed in `/server` directory.
+1. `SERVER_DOMAIN`: Domain name of the server endpoint. For development, set to localhost.
+2. `PORT`: Port number for the server. If not set, the server file will default to 5000.
+3. `DB_HOST`: Domain name for database endpoint. For development, set to localhost.
+4. `DB_PASSWORD`: Database password for the PostgreSQL user.
+5. `DB_NAME`: Database name to use.
+6. `GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY_BASE_64`: Google cloud key for using buckets. The service account key downloaded in json is converted into base 64 to be stored as a string.
+7. `GOOGLE_CLOUD_BUCKET_NAME`: Bucket name to use to store the images uploaded by users.
 
 ## Roadmap
 - [ ] Create user information page
@@ -71,10 +86,9 @@ docker run -p 5000:5000 <image_id>
 - [ ] Allow more than one image upload
 - [ ] Allow edits to posts
 
-Note: Previous items can be found at: [PreviousTodoList.md](./PreviousTodoList.md)
+Previous items can be found at: [PreviousTodoList.md](./PreviousTodoList.md)
 
 ## Contact
 **Joanne Kim** </br>
-[Visit my website!](joannekim.dev) |
-[LinkedIn](https://www.linkedin.com/in/jkim0328) </br>
-You can reach me at: joanne.kim0328@gmail.com
+You can reach me at: joanne.kim0328@gmail.com </br>
+[Visit my website!](joannekim.dev) | [LinkedIn](https://www.linkedin.com/in/jkim0328)
