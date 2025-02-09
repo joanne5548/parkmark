@@ -24,8 +24,13 @@ CREATE TABLE Review (
         ON DELETE CASCADE,
     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
     content VARCHAR(2048),
-    img_url VARCHAR(255) DEFAULT NULL,
     created_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE ReviewImage (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    review_id UUID REFERENCES Review(id)
+    img_url VARCHAR(255),
 );
 
 CREATE TABLE ThumbsUpList (
@@ -38,7 +43,7 @@ CREATE TABLE ThumbsUpList (
         ON DELETE CASCADE
 );
 
--- Old review table
+-- Old review table 1: Uses json for image list
 -- CREATE TABLE Review (
 --     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 --     user_sub_id VARCHAR(255) REFERENCES UserData(sub_id)
@@ -53,14 +58,17 @@ CREATE TABLE ThumbsUpList (
 --     created_at timestamptz DEFAULT CURRENT_TIMESTAMP
 -- );
 
--- CREATE TABLE ReviewImages (
+-- Old review table 2: Supports only 1 image
+-- CREATE TABLE Review (
 --     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 --     user_sub_id VARCHAR(255) REFERENCES UserData(sub_id)
 --         ON UPDATE CASCADE
 --         ON DELETE CASCADE,
---     review_id UUID REFERENCES Review(id)
+--     park_id UUID REFERENCES NationalPark(id)
 --         ON UPDATE CASCADE
 --         ON DELETE CASCADE,
---     image_url VARCHAR(255), -- generate and use uuid as image name
---     -- display_order?
+--     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
+--     content VARCHAR(2048),
+--     img_url VARCHAR(255) DEFAULT NULL,
+--     created_at timestamptz DEFAULT CURRENT_TIMESTAMP
 -- );

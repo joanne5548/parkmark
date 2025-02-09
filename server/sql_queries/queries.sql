@@ -29,3 +29,9 @@ INSERT INTO NationalPark(name, park_info) VALUES(
     'Joanne''s national park :D',
     '{"favorite color": "Blue"}'
 );
+
+-- We're spending time dealing with images AGAIN...
+-- We will use a separate table for images. So
+-- 1) Create the ReviewImage table
+-- 2) Get all reviews from Review table and insert into ReviewImage
+-- 3) Drop img_url column in Review table

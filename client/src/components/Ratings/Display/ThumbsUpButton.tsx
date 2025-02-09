@@ -72,7 +72,6 @@ const ThumbsUpButton = ({ reviewId, initialThumbsUpBool }: ThumbsUpButtonProps) 
     };
 
     useEffect(() => {
-        console.log(initialThumbsUpBool);
         calculateNumberOfThumbsUp();
     }, []);
 
