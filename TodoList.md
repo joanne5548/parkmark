@@ -13,11 +13,11 @@
     -   [x] Add image preview
 -   [ ] Implement multiple images
     -   [ ] Create separate component for displaying multiple images
--   [ ] Handle delete review
+-   [x] Handle delete review
     -   Delete button should do the following **In Order**
         1. Delete all images in bucket :heavy_check_mark:
         2. Delete all relevant ReviewImage rows :heavy_check_mark:
-        3. Delete the review itself
+        3. Delete the review itself :heavy_check_mark:
 
 #### Display Image Component
 
@@ -74,7 +74,7 @@
 
 -   [x] Look into Google Cloud
     -   Note: The relevant information is stored in secrets/index.js
--   [ ] Sit down and write what I need to implement!!
+-   [ ] Edit select query for fetching reviews to include image list
 
 #### Database
 

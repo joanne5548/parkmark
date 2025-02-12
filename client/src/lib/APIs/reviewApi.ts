@@ -46,10 +46,27 @@ export const fetchReviewsWithUserDataByParkId = async (
         handleApiError(error);
         return [];
     }
-};
+}
+
+const deleteReviewImage = async (reviewId: string) => {
+    try {
+        const response = await fetch(`${backendUrl}/api/reviewimage/reviewid/${reviewId}`, {
+            method: "DELETE",
+        });
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network error: ${response.status}`);
+        }
+    }
+    catch (error) {
+        handleApiError(error);
+    }
+}
 
 export const deleteReview = async (reviewId: string) => {
     try {
+        await deleteReviewImage(reviewId);
+
         const response = await fetch(`${backendUrl}/api/review/review_id/${reviewId}`, {
             method: "DELETE",
         });

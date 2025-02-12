@@ -8,7 +8,7 @@ export const reviewRouter = Router();
 reviewRouter.post("/", async (req: Request, res: Response) => {
     try {
         const { user_sub_id, park_id, rating, content } = req.body;
-        
+
         // let insertQueryResult;
         // if (req.files) {
         //     const fileList = req.files as Express.Multer.File[];
@@ -65,6 +65,22 @@ reviewRouter.get("/park_id/:park_id", async (req: Request, res: Response) => {
         );
 
         res.json(selectQueryResult.rows);
+    } catch (error) {
+        handleError(error, res);
+    }
+});
+
+interface test {
+    list: string[];
+}
+
+reviewRouter.get("/test", async (req: Request, res: Response) => {
+    try {
+        const x: test = {
+            list: ["a", "b"],
+        };
+
+        res.json(x);
     } catch (error) {
         handleError(error, res);
     }
