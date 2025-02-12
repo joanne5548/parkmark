@@ -4,20 +4,6 @@
 
 ### Front Page
 
-#### Navbar
-
--   [x] Complete layout
--   [x] Complete responsive design
--   [x] Implement Login
--   [x] Display user information upon login
--   [x] Implement search functionality
-    -   [x] Fix misaligned dropdown
--   [x] Implement easier hovering over user information box popup
--   [x] Implement Responsive Design (for mobile)
-    - [x] Search bar
-    - [x] Align popup
-    - [x] Google Sign In button
-
 #### Ratings Side Panel
 
 -   [x] Build basic reviews layout
@@ -25,7 +11,29 @@
 -   [x] Implement Thumbs up feature
 -   [x] Display images correctly
     -   [x] Add image preview
--   [x] Give more padding to y axis
+-   [ ] Implement multiple images
+    -   [ ] Create separate component for displaying multiple images
+-   [ ] Handle delete review
+    -   Delete button should do the following **In Order**
+        1. Delete all images in bucket :heavy_check_mark:
+        2. Delete all relevant ReviewImage rows :heavy_check_mark:
+        3. Delete the review itself
+
+#### Display Image Component
+
+-   [ ] Make arrows that can slide through each image
+    -   [ ] Use image url list from backend
+
+#### Next Steps...
+
+-   [x] Implement Google OAuth
+-   [x] Establish database (create tables based on schema)
+    -   [x] Implement REST API for user data
+    -   [x] Insert user data upon google login
+-   [x] Build Ratings side panel
+-   [x] remove dynamic sizing for stars and pins
+-   [x] Add image upload
+-   [ ] Add image upload... More than one!
 
 <details>
 <summary>Past To-dos (Completed)</summary>
@@ -48,15 +56,16 @@
 -   [x] Add reset button
 -   [x] Fix hover popup not showing after clicking the marker and closing the popup
 
-#### Next Steps...
+#### Navbar
 
--   [x] Implement Google OAuth
--   [x] Establish database (create tables based on schema)
-    -   [x] Implement REST API for user data
-    -   [x] Insert user data upon google login
--   [x] Build Ratings side panel
--   [x] remove dynamic sizing for stars and pins
--   [x] Add image upload
+-   [x] Complete layout
+-   [x] Complete responsive design
+-   [x] Implement Login
+-   [x] Display user information upon login
+-   [x] Implement search functionality
+    -   [x] Fix misaligned dropdown
+-   [x] Implement easier hovering over user information box popup
+-   [x] Implement Responsive Design (for mobile) - [x] Search bar - [x] Align popup - [x] Google Sign In button
 </details>
 
 ### Backend
@@ -65,6 +74,13 @@
 
 -   [x] Look into Google Cloud
     -   Note: The relevant information is stored in secrets/index.js
+-   [ ] Sit down and write what I need to implement!!
+
+#### Database
+
+-   [x] Create a new table for images (ReviewImage)
+-   [x] Move all img_url data in Review to ReviewImage table
+-   [x] Drop img_url column in Review table
 
 #### REST API
 
@@ -76,7 +92,7 @@
 -   [x] Implement image deletion from bucket on review deletion
 -   [x] Block liking a post more than once
 
-#### Data
+#### Park Location Data
 
 -   [x] Check missing national park data
 -   [x] Fill in missing national park data in `filtered_national_parks_nps.json`

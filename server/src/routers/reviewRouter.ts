@@ -1,31 +1,43 @@
 import { Request, Response, Router } from "express";
 import pool from "../db";
 import { handleError } from "../../middleware/errorHandler";
-import { upload } from "../multer/multer";
-import { deleteImage, uploadImage } from "../cloud/bucketFileManager";
+import { deleteImage } from "../cloud/bucketFileManager";
 
 export const reviewRouter = Router();
 
-reviewRouter.post("/", upload.single("img_file"), async (req: Request, res: Response) => {
+reviewRouter.post("/", async (req: Request, res: Response) => {
     try {
-        const { user_sub_id, park_id, rating, content } =
-            req.body;
+        const { user_sub_id, park_id, rating, content } = req.body;
+        
+        // let insertQueryResult;
+        // if (req.files) {
+        //     const fileList = req.files as Express.Multer.File[];
+        //     let img_url_list: string[] = [];
 
-        let insertQueryResult;
-        if (req.file) {
-            const img_url = await uploadImage(req.file)
-            
-            insertQueryResult = await pool.query(
-                "INSERT INTO Review(user_sub_id, park_id, rating, content, img_url) VALUES($1, $2, $3, $4, $5) RETURNING *",
-                [user_sub_id, park_id, rating, content, img_url]
-            );
-        }
-        else {
-            insertQueryResult = await pool.query(
-                "INSERT INTO Review(user_sub_id, park_id, rating, content) VALUES($1, $2, $3, $4) RETURNING *",
-                [user_sub_id, park_id, rating, content]
-            );
-        }
+        //     fileList.forEach(async (file: Express.Multer.File) => {
+        //         const img_url = await uploadImage(file)
+        //         img_url_list.push(img_url);
+        //     });
+        //     console.log(img_url_list);
+
+        //     insertQueryResult = await pool.query(
+        //         "INSERT INTO Review(user_sub_id, park_id, rating, content, img_url) VALUES($1, $2, $3, $4, $5) RETURNING *",
+        //         [user_sub_id, park_id, rating, content, img_url_list]
+        //     );
+        // }
+        // // Refactor below
+        // else if (req.file) {
+        //     const img_url = await uploadImage(req.file)
+
+        //     insertQueryResult = await pool.query(
+        //         "INSERT INTO Review(user_sub_id, park_id, rating, content, img_url) VALUES($1, $2, $3, $4, $5) RETURNING *",
+        //         [user_sub_id, park_id, rating, content, img_url]
+        //     );
+        // }
+        const insertQueryResult = await pool.query(
+            "INSERT INTO Review(user_sub_id, park_id, rating, content) VALUES($1, $2, $3, $4) RETURNING *",
+            [user_sub_id, park_id, rating, content]
+        );
 
         res.json(insertQueryResult.rows[0]);
     } catch (error) {
@@ -60,21 +72,21 @@ reviewRouter.get("/park_id/:park_id", async (req: Request, res: Response) => {
 
 reviewRouter.get("/reviewWithUserData", async (req: Request, res: Response) => {
     try {
-        const columns = "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.img_url, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url, ThumbsUpList.id AS thumbs_up_id";
-        
-        const { park_id, user_sub_id="" } = req.query;
+        const columns =
+            "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url, ThumbsUpList.id AS thumbs_up_id";
+
+        const { park_id, user_sub_id = "" } = req.query;
 
         const selectQueryResult = await pool.query(
             `SELECT ${columns} FROM REVIEW LEFT JOIN ThumbsUpList ON Review.id=ThumbsUpList.review_id AND ThumbsUpList.user_sub_id=$1 JOIN UserData ON Review.user_sub_id=UserData.sub_id WHERE park_id=$2 ORDER BY Review.created_at DESC`,
             [user_sub_id, park_id]
         );
-        
+
         res.json(selectQueryResult.rows);
-    }
-    catch (error) {
+    } catch (error) {
         handleError(error, res);
     }
-})
+});
 
 reviewRouter.get(
     "/user_sub_id/:user_sub_id",
@@ -128,16 +140,6 @@ reviewRouter.put("/review_id/:id", async (req: Request, res: Response) => {
 reviewRouter.delete("/review_id/:id", async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-
-        const selectImgUrlQueryResult = await pool.query(
-            "SELECT img_url FROM review WHERE id=$1",
-            [id]
-        );
-
-        const img_url = selectImgUrlQueryResult.rows[0]['img_url'];
-        if (img_url) {
-            await deleteImage(img_url);
-        }
 
         const deleteQueryResult = await pool.query(
             "DELETE FROM Review WHERE id=$1",

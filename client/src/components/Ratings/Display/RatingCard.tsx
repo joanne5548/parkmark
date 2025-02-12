@@ -38,11 +38,11 @@ const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews, initialTh
                     />
                     <div className="text-[0.95rem] sm:text-base font-medium">{review.user_name}</div>
                 </div>
-                <div className="self-center">
+                <div className="w-full">
                     {review.img_url && (
                         <img
                             src={review.img_url}
-                            className="size-24 sm:size-32 object-cover rounded-lg"
+                            className="w-full aspect-square object-cover rounded-lg"
                         />
                     )}
                 </div>

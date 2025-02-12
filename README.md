@@ -66,7 +66,7 @@ docker run -p 5000:5000 <image_id>
 Placed in `/client` directory.
 1. `VITE_BACKEND_URL`: URL for backend endpoint. For development server, it is set to `http://localhost:5000`
 2. `VITE_MAPBOX_ACCESS_TOKEN`: Mapbox access token. Required to load map on the front page. Under free plan, you get free 50K loads every month.
-3. `VITE_GOOGLE_OAUTH_CLIENT_ID`: Google OAuth client ID. Required to offer Google OAuth service on the website. More information on the setup can be found [here](./PreviousTodoList.md#google-oauth-info).
+3. `VITE_GOOGLE_OAUTH_CLIENT_ID`: Google OAuth client ID. Required to offer Google OAuth service on the website. More information on the setup can be found [here](./TodoList.md#google-oauth-info).
 
 ### Backend
 Placed in `/server` directory.
@@ -86,7 +86,7 @@ Placed in `/server` directory.
 - [ ] Allow more than one image upload
 - [ ] Allow edits to posts
 
-Previous items can be found at: [PreviousTodoList.md](./PreviousTodoList.md)
+Previous items can be found at: [TodoList.md](./TodoList.md)
 
 ## Contact
 **Joanne Kim** </br>

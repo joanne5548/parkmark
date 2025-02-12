@@ -29,8 +29,8 @@ CREATE TABLE Review (
 
 CREATE TABLE ReviewImage (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    review_id UUID REFERENCES Review(id)
-    img_url VARCHAR(255),
+    review_id UUID REFERENCES Review(id),
+    img_url VARCHAR(255)
 );
 
 CREATE TABLE ThumbsUpList (

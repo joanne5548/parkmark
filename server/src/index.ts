@@ -5,6 +5,7 @@ import { userDataRouter } from "./routers/userDataRouter";
 import { nationalParkRouter } from "./routers/nationalParkRouter";
 import { reviewRouter } from "./routers/reviewRouter";
 import { thumbsUpListRouter } from "./routers/thumbsUpListRouter";
+import { reviewImageRouter } from "./routers/reviewImageRouter";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use("/api/userdata", userDataRouter);
 app.use("/api/nationalpark", nationalParkRouter);
 app.use("/api/review", reviewRouter);
 app.use("/api/thumbsuplist", thumbsUpListRouter);
+app.use("/api/reviewimage", reviewImageRouter);
 
 const domain = process.env.SERVER_DOMAIN;
 const port = process.env.PORT || 5000;
