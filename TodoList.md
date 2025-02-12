@@ -13,6 +13,7 @@
     -   [x] Add image preview
 -   [ ] Implement multiple images
     -   [ ] Create separate component for displaying multiple images
+    -   [ ] Modify form margin between image box and content
 -   [x] Handle delete review
     -   Delete button should do the following **In Order**
         1. Delete all images in bucket :heavy_check_mark:
@@ -75,10 +76,12 @@
 -   [x] Look into Google Cloud
     -   Note: The relevant information is stored in secrets/index.js
 -   [ ] Edit select query for fetching reviews to include image list
+    - Do I want 
 
 #### Database
 
 -   [x] Create a new table for images (ReviewImage)
+    -   [ ] Do I need to cascade on delete and update for review id??
 -   [x] Move all img_url data in Review to ReviewImage table
 -   [x] Drop img_url column in Review table
 

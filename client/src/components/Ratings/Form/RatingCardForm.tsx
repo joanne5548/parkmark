@@ -6,7 +6,6 @@ import { Review, UserData } from "@lib/interfaces";
 import { formatDate } from "@lib/dates";
 import { postReview } from "@lib/APIs/reviewApi";
 import { FaImage } from "react-icons/fa6";
-import { postImages } from "@lib/APIs/reviewImageApi";
 
 interface RatingCardFormProps {
     resetCreatingNewReview: () => void;
@@ -44,12 +43,6 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
             return;
         }
 
-        // const reviewFormData = new FormData();
-        // reviewFormData.append("user_sub_id", logInUser.sub_id);
-        // reviewFormData.append("park_id", selectedPark.id);
-        // reviewFormData.append("rating", ratingStars.toString());
-        // reviewFormData.append("content", reviewContentRef.current.value);
-
         const reviewData: Review = {
             user_sub_id: logInUser.sub_id,
             park_id: selectedPark.id,
@@ -57,19 +50,13 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
             content: reviewContentRef.current.value,
         }
 
-        const createdReview = await postReview(reviewData);
-        console.log(createdReview);
-
         const imageFormData = new FormData();
         if (imageFileList) {
             Array.from(imageFileList).forEach((file) => {
                 imageFormData.append("img_file", file);
-                // console.log(file);
             })
-            imageFormData.append("review_id", createdReview?.id!); // maybe this is not a good practice
-            
-            const imgUrlList = await postImages(imageFormData);
         }
+        await postReview(reviewData, imageFormData);
 
         resetCreatingNewReview();
     };
