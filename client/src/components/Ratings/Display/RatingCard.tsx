@@ -52,7 +52,7 @@ const RatingCard: React.FC<RatingCardProps> = ({
             <div className="flex flex-col w-full min-h-28">
                 <div className="flex flex-row gap-1 sm:gap-2 pb-2 items-start justify-between">
                     <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
-                        <DisplayReviewStars rating={review.rating} size={4} />
+                        <DisplayReviewStars rating={review.rating} size={5} />
                         <div className="text-xs sm:text-sm font-medium text-slate-500">
                             {formatDate(review.created_at)}
                         </div>

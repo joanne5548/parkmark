@@ -1,6 +1,5 @@
-import { ReviewWithUserData } from "@lib/interfaces";
 import clsx from "clsx";
-import React, { ReactElement, useState } from "react";
+import { ReactElement, useState } from "react";
 
 interface Tab {
     title: string;

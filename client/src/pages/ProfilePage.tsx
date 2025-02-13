@@ -54,7 +54,7 @@ const ProfilePage = () => {
 
         fetchUser(userSubId);
         fetchReviewPostedByUser();
-    }, []);
+    }, [logInUser]);
 
     return (
         <div className="flex flex-col gap-4 sm:gap-8 p-2 sm:p-6">
