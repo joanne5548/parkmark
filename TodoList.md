@@ -11,9 +11,9 @@
 -   [x] Implement Thumbs up feature
 -   [x] Display images correctly
     -   [x] Add image preview
--   [ ] Implement multiple images
+-   [x] Implement multiple images
     -   [x] Create separate component for displaying multiple images
-    -   [ ] Modify form margin between image box and content
+    -   [x] Modify form margin between image box and content
 -   [x] Handle delete review
     -   Delete button should do the following **In Order**
         1. Delete all images in bucket :heavy_check_mark:
@@ -36,7 +36,7 @@
 -   [x] Build Ratings side panel
 -   [x] remove dynamic sizing for stars and pins
 -   [x] Add image upload
--   [ ] Add image upload... More than one!
+-   [x] Add image upload... More than one!
 
 <details>
 <summary>Past To-dos (Completed)</summary>

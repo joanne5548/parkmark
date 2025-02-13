@@ -88,10 +88,10 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                     {logInUser.name}
                                 </div>
                             </div>
-                            <div className="relative w-full aspect-square self-center">
+                            <div className="relative w-[8.5rem] sm:w-full aspect-square">
                                 <label
                                     htmlFor="imageUpload"
-                                    className="block h-full self-center border-[1.5px] border-slate-400 rounded-lg
+                                    className="block h-full border-[1.5px] border-slate-400 rounded-lg
                                                 hover:cursor-pointer hover:bg-slate-100"
                                 >
                                     <div className="flex h-full justify-center items-center">
