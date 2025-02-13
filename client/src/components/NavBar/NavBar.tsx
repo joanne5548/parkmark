@@ -3,7 +3,6 @@ import Login from "./Login";
 import SearchBar from "./SearchBar";
 
 const NavBar = () => {
-
     const handleLogoClick = () => {
         window.location.reload();
     };
