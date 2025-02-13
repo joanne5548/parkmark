@@ -59,7 +59,7 @@ const ProfilePage = () => {
     return (
         <div className="flex flex-col gap-4 sm:gap-8 p-2 sm:p-6">
             <NavBar />
-            <div className="flex flex-row gap-12 p-4 pr-0">
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 p-4 sm:pr-0">
                 <ProfileTile userData={userData} />
                 <ProfileTabs tabs={[
 					{
