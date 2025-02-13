@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useAtomValue } from "jotai";
 import SelectStars from "./SelectStars";
 import { logInUserAtom, selectedParkAtom } from "@lib/atoms/atoms";
-import { UserData } from "@lib/interfaces";
+import { Review, UserData } from "@lib/interfaces";
 import { formatDate } from "@lib/dates";
 import { postReview } from "@lib/APIs/reviewApi";
 import { FaImage } from "react-icons/fa6";
@@ -17,7 +17,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
 
     const [ratingStars, setRatingStars] = useState<number>(0);
     const reviewContentRef = useRef<HTMLTextAreaElement>(null);
-    const [imageFile, setImageFile] = useState<File | null>(null);
+    const [imageFileList, setImageFileList] = useState<FileList | null>(null);
     const [imagePreviewUrl, setImagePreviewUrl] = useState<string | null>(null);
 
     const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +25,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
             return;
         }
 
-        setImageFile(event.target.files[0]);
+        setImageFileList(event.target.files);
     };
 
     const handlePostButtonClick = async () => {
@@ -43,31 +43,35 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
             return;
         }
 
-        const formData = new FormData();
-        formData.append("user_sub_id", logInUser.sub_id);
-        formData.append("park_id", selectedPark.id);
-        formData.append("rating", ratingStars.toString());
-        formData.append("content", reviewContentRef.current.value);
-
-        if (imageFile) {
-            formData.append("img_file", imageFile);
+        const reviewData: Review = {
+            user_sub_id: logInUser.sub_id,
+            park_id: selectedPark.id,
+            rating: ratingStars,
+            content: reviewContentRef.current.value,
         }
 
-        await postReview(formData);
+        const imageFormData = new FormData();
+        if (imageFileList) {
+            Array.from(imageFileList).forEach((file) => {
+                imageFormData.append("img_file", file);
+            })
+        }
+        await postReview(reviewData, imageFormData);
 
         resetCreatingNewReview();
     };
 
     useEffect(() => {
-        if (!imageFile) {
+        if (!imageFileList) {
             return;
         }
 
-        const imageUrl = URL.createObjectURL(imageFile);
+        // After basic functionalities done, show all image previews
+        const imageUrl = URL.createObjectURL(imageFileList[imageFileList.length - 1]);
         setImagePreviewUrl(imageUrl);
 
         return () => URL.revokeObjectURL(imageUrl);
-    }, [imageFile]);
+    }, [imageFileList]);
 
     return (
         <div className="h-full">
@@ -84,10 +88,10 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                     {logInUser.name}
                                 </div>
                             </div>
-                            <div className="relative size-24 sm:size-32 self-center">
+                            <div className="relative w-[8.5rem] sm:w-full aspect-square">
                                 <label
                                     htmlFor="imageUpload"
-                                    className="block h-full self-center border-[1.5px] border-slate-400 rounded-lg
+                                    className="block h-full border-[1.5px] border-slate-400 rounded-lg
                                                 hover:cursor-pointer hover:bg-slate-100"
                                 >
                                     <div className="flex h-full justify-center items-center">
@@ -100,11 +104,12 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                                         id="imageUpload"
                                         onChange={handleImageUpload}
                                         className="hidden"
+                                        multiple
                                     />
                                     {imagePreviewUrl && (
                                         <img
                                             src={imagePreviewUrl}
-                                            className="absolute top-0 left-0 size-24 sm:size-32 rounded-lg object-cover opacity-65"
+                                            className="absolute top-0 left-0 w-full aspect-square rounded-lg object-cover opacity-65"
                                         />
                                     )}
                                 </label>

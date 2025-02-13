@@ -21,7 +21,6 @@ const RatingsCardList = () => {
             logInUser ? logInUser.sub_id : ""
         );
 
-        console.log(fetchedReviewList);
         setSelectedParkReviewList(fetchedReviewList);
     };
 

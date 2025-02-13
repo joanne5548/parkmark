@@ -34,4 +34,7 @@ INSERT INTO NationalPark(name, park_info) VALUES(
 -- We will use a separate table for images. So
 -- 1) Create the ReviewImage table
 -- 2) Get all reviews from Review table and insert into ReviewImage
+-- You don't need VALUES if you're doing SELECT!
+INSERT INTO ReviewImage(review_id, img_url) SELECT id, img_url FROM Review;
 -- 3) Drop img_url column in Review table
+ALTER TABLE Review DROP COLUMN img_url;

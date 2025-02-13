@@ -30,7 +30,6 @@ export interface Review {
     park_id: string;
     rating: number;
     content: string;
-    img_url: string | null;
     created_at?: string;
 }
 
@@ -45,8 +44,8 @@ export interface ReviewWithUserData {
     park_id: string;
     rating: number;
     content: string;
-    img_url: string;
     created_at: string;
+    img_url_list?: string[];
 
     user_sub_id: string;
     user_name: string;

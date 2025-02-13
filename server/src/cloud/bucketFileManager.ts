@@ -57,6 +57,16 @@ export const uploadImage = async (file: Express.Multer.File) => {
     }
 };
 
+export const uploadImageList = (fileList: Express.Multer.File[]) => {
+    let imgUrlList: string[] = [];
+    fileList.forEach(async (file) => {
+        const imgUrl = await uploadImage(file);
+        imgUrlList.push(imgUrl);
+    });
+
+    return imgUrlList;
+}
+
 export const deleteImage = async (filePathToPublic: string) => {
     try {
         const fileName = filePathToPublic.substring(
