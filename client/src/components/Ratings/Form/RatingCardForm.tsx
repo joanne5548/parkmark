@@ -67,7 +67,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
         }
 
         // After basic functionalities done, show all image previews
-        const imageUrl = URL.createObjectURL(imageFileList[0]);
+        const imageUrl = URL.createObjectURL(imageFileList[imageFileList.length - 1]);
         setImagePreviewUrl(imageUrl);
 
         return () => URL.revokeObjectURL(imageUrl);

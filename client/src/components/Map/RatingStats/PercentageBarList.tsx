@@ -18,6 +18,7 @@ const PercentageBarList = ({
 
                 return (
                     <PercentageBar
+                        key={i}
                         star={i}
                         starPercentage={Math.round(percentage * 100) / 100}
                     />

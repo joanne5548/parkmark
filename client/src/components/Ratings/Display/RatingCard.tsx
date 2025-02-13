@@ -6,6 +6,7 @@ import { useAtomValue } from "jotai";
 import { logInUserAtom } from "@lib/atoms/atoms";
 import { IoClose } from "react-icons/io5";
 import { deleteReview } from "@lib/APIs/reviewApi";
+import ImageCarousel from "./ImageCarousel";
 
 interface RatingCardProps {
     review: ReviewWithUserData;
@@ -13,7 +14,11 @@ interface RatingCardProps {
     initialThumbsUpBool: boolean;
 }
 
-const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews, initialThumbsUpBool }) => {
+const RatingCard: React.FC<RatingCardProps> = ({
+    review,
+    fetchReviews,
+    initialThumbsUpBool,
+}) => {
     const logInUser = useAtomValue(logInUserAtom);
 
     const handleDeleteRatingButtonOnClick = async () => {
@@ -26,7 +31,7 @@ const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews, initialTh
         await deleteReview(review.review_id);
 
         await fetchReviews();
-    }
+    };
 
     return (
         <div className="flex flex-row sm:gap-4 py-4 sm:py-5 border-b-2">
@@ -36,16 +41,13 @@ const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews, initialTh
                         src={review.user_profile_picture_url}
                         className="size-8 sm:size-10 rounded-xl object-cover"
                     />
-                    <div className="text-[0.95rem] sm:text-base font-medium">{review.user_name}</div>
+                    <div className="text-[0.95rem] sm:text-base font-medium">
+                        {review.user_name}
+                    </div>
                 </div>
-                <div className="w-full">
-                    {review.img_url && (
-                        <img
-                            src={review.img_url}
-                            className="w-full aspect-square object-cover rounded-lg"
-                        />
-                    )}
-                </div>
+                {review.img_url_list && review.img_url_list.length > 0 && (
+                    <ImageCarousel imgUrlList={review.img_url_list} />
+                )}
             </div>
             <div className="flex flex-col w-full min-h-28">
                 <div className="flex flex-row gap-1 sm:gap-2 pb-2 items-start justify-between">
@@ -55,17 +57,23 @@ const RatingCard: React.FC<RatingCardProps> = ({ review, fetchReviews, initialTh
                             {formatDate(review.created_at)}
                         </div>
                     </div>
-                    {logInUser?.sub_id === review.user_sub_id && 
-                        <button onClick={handleDeleteRatingButtonOnClick} className="bg-none outline-none">
+                    {logInUser?.sub_id === review.user_sub_id && (
+                        <button
+                            onClick={handleDeleteRatingButtonOnClick}
+                            className="bg-none outline-none"
+                        >
                             <IoClose className="text-lg text-slate-500" />
                         </button>
-                    }
+                    )}
                 </div>
                 <div className="h-full text-[0.95rem] sm:text-base pb-4 sm:pb-1 text-slate-700">
                     {review.content}
                 </div>
                 <div className="flex justify-end">
-                    <ThumbsUpButton reviewId={review.review_id} initialThumbsUpBool={initialThumbsUpBool} />
+                    <ThumbsUpButton
+                        reviewId={review.review_id}
+                        initialThumbsUpBool={initialThumbsUpBool}
+                    />
                 </div>
             </div>
         </div>

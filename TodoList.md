@@ -12,7 +12,7 @@
 -   [x] Display images correctly
     -   [x] Add image preview
 -   [ ] Implement multiple images
-    -   [ ] Create separate component for displaying multiple images
+    -   [x] Create separate component for displaying multiple images
     -   [ ] Modify form margin between image box and content
 -   [x] Handle delete review
     -   Delete button should do the following **In Order**
@@ -22,8 +22,10 @@
 
 #### Display Image Component
 
--   [ ] Make arrows that can slide through each image
-    -   [ ] Use image url list from backend
+-   [x] Make arrows that can slide through each image
+    -   [x] Use image url list from backend
+-   [ ] Add sliding animation
+-   [ ] Add click to view larger feature
 
 #### Next Steps...
 
@@ -65,6 +67,7 @@
 -   [x] Display user information upon login
 -   [x] Implement search functionality
     -   [x] Fix misaligned dropdown
+    -   [ ] Hovering to search result should display corresponding popup?!
 -   [x] Implement easier hovering over user information box popup
 -   [x] Implement Responsive Design (for mobile) - [x] Search bar - [x] Align popup - [x] Google Sign In button
 </details>
@@ -75,13 +78,14 @@
 
 -   [x] Look into Google Cloud
     -   Note: The relevant information is stored in secrets/index.js
--   [ ] Edit select query for fetching reviews to include image list
-    - Do I want 
+-   [x] Edit select query for fetching reviews to include image list
+    -   Actually solved with something cool - used Agg.Array from Postgres
 
 #### Database
 
 -   [x] Create a new table for images (ReviewImage)
-    -   [ ] Do I need to cascade on delete and update for review id??
+    -   [x] Do I need to cascade on delete and update for review id??
+        -   I think I should handle this separately, since the image deletion should be executed in certain order
 -   [x] Move all img_url data in Review to ReviewImage table
 -   [x] Drop img_url column in Review table
 
