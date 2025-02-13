@@ -74,6 +74,25 @@ export const fetchReviewsWithUserDataByParkId = async (
     }
 }
 
+export const fetchReviewsCreatedByUser = async (userSubId: string, logInUserSubId: string = "") => {
+    try {
+        const response = await fetch(`${backendUrl}/api/review/createdBy?user_sub_id=${userSubId}&login_user_sub_id=${logInUserSubId}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+        });
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network error: ${response.status}]`);
+        }
+
+        const fetchedReviewsCreatedByUser: ReviewWithUserData[] = await response.json();
+        return fetchedReviewsCreatedByUser;
+    }
+    catch (error) {
+        handleApiError(error);
+    }
+}
+
 const deleteReviewImage = async (reviewId: string) => {
     try {
         const response = await fetch(`${backendUrl}/api/review/image/review_id/${reviewId}`, {

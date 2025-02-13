@@ -10,6 +10,7 @@ export interface UserData {
     name: string;
     email: string;
     profile_picture_url: string;
+    created_at?: string;
 }
 
 export interface NationalPark {

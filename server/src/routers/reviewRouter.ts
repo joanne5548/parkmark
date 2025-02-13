@@ -71,6 +71,25 @@ reviewRouter.get("/", async (req: Request, res: Response) => {
     }
 });
 
+reviewRouter.get("/createdBy", async (req: Request, res: Response) => {
+    try {
+        const { user_sub_id, login_user_sub_id="" } = req.query;
+
+        const columns =
+            "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url, ThumbsUpList.id AS thumbs_up_id, (SELECT ARRAY_AGG(img_url) AS img_url_list FROM ReviewImage WHERE ReviewImage.review_id=Review.id)";
+
+        const selectQueryResult = await pool.query(
+            `SELECT ${columns} FROM REVIEW LEFT JOIN ThumbsUpList ON Review.id=ThumbsUpList.review_id AND ThumbsUpList.user_sub_id=$1 JOIN UserData ON Review.user_sub_id=UserData.sub_id WHERE Review.user_sub_id=$2 ORDER BY Review.created_at DESC`,
+            [login_user_sub_id, user_sub_id]
+        );
+
+        res.json(selectQueryResult.rows);
+    }
+    catch (error) {
+        handleError(error, res);
+    }
+})
+
 reviewRouter.get("/park_id/:park_id", async (req: Request, res: Response) => {
     try {
         const { park_id } = req.params;

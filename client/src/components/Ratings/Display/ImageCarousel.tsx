@@ -17,7 +17,7 @@ const ImageCarousel = ({ imgUrlList }: ImageCarouselProps) => {
     }
 
     return (
-        <div className="relative w-[8.5rem] sm:w-full rounded-xl bg-white">
+        <div className="relative w-[8.5rem] sm:w-full max-w-52 rounded-xl bg-white">
             <img
                 src={imgUrlList[imgIndex]}
                 className="w-full aspect-square object-cover rounded-lg"
@@ -26,7 +26,7 @@ const ImageCarousel = ({ imgUrlList }: ImageCarouselProps) => {
                     onClick={() => {
                         updateImgIndex(-1);
                     }}
-                    className="absolute left-1.5 top-14 sm:top-16 rounded-full bg-white opacity-75 hover:cursor-pointer"
+                    className="absolute left-1.5 top-[calc(50%-5px)] rounded-full bg-white opacity-75 hover:cursor-pointer"
                 >
                     <MdOutlineKeyboardArrowLeft className="size-[1.15rem] sm:size-5 text-slate-700" />
                 </button>}
@@ -34,7 +34,7 @@ const ImageCarousel = ({ imgUrlList }: ImageCarouselProps) => {
                     onClick={() => {
                         updateImgIndex(1);
                     }}
-                    className="absolute right-1.5 top-14 sm:top-16 rounded-full bg-white opacity-[60%] hover:cursor-pointer"
+                    className="absolute right-1.5 top-[calc(50%-5px)] rounded-full bg-white opacity-[60%] hover:cursor-pointer"
                 >
                     <MdOutlineKeyboardArrowRight className="size-[1.15rem] sm:size-5 text-slate-700" />
                 </button>}
