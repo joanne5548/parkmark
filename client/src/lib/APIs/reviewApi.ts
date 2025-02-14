@@ -93,6 +93,22 @@ export const fetchReviewsCreatedByUser = async (userSubId: string, logInUserSubI
     }
 }
 
+export const fetchReviewsLikedByUser = async (userSubId: string, logInUserSubId: string = "") => {
+    try {
+        const response = await fetch(`${backendUrl}/api/review/likedBy?user_sub_id=${userSubId}&login_user_sub_id=${logInUserSubId}`);
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network error: ${response.status}`);
+        }
+
+        const fetchedReviewsLikedByUser: ReviewWithUserData[] = await response.json();
+        return fetchedReviewsLikedByUser;
+    }
+    catch (error) {
+        handleApiError(error);
+    }
+}
+
 const deleteReviewImage = async (reviewId: string) => {
     try {
         const response = await fetch(`${backendUrl}/api/review/image/review_id/${reviewId}`, {

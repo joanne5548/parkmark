@@ -7,7 +7,7 @@ import { ReviewWithUserData, UserData } from "@lib/interfaces";
 import { getUser } from "@lib/APIs/userDataApi";
 import { useAtomValue } from "jotai";
 import { logInUserAtom } from "@lib/atoms/atoms";
-import { fetchReviewsCreatedByUser } from "@lib/APIs/reviewApi";
+import { fetchReviewsCreatedByUser, fetchReviewsLikedByUser } from "@lib/APIs/reviewApi";
 import RatingCard from "../components/Ratings/Display/RatingCard";
 
 const ProfilePage = () => {
@@ -17,6 +17,7 @@ const ProfilePage = () => {
     const [reviewsCreatedByUser, setReviewsCreatedByUser] = useState<
         ReviewWithUserData[]
     >([]);
+    const [reviewsLikedByUser, setReviewsLikedByUser] = useState<ReviewWithUserData[]>([]);
 
     const logInUser: UserData | null = useAtomValue(logInUserAtom);
 
@@ -42,9 +43,18 @@ const ProfilePage = () => {
             );
         }
 
-        console.log(fetchedReviewsCreatedByUser);
         setReviewsCreatedByUser(fetchedReviewsCreatedByUser);
     };
+
+    const fetchReviewLikedByUser = async () => {
+        const fetchedReviewsLikedByUser = await fetchReviewsLikedByUser(userSubId!, logInUser?.sub_id ?? "");
+
+        if (!fetchedReviewsLikedByUser) {
+            throw new Error("Something went wrong with fetched reviews liked by a user");
+        }
+
+        setReviewsLikedByUser(fetchedReviewsLikedByUser);
+    }
 
     useEffect(() => {
         if (!userSubId) {
@@ -54,6 +64,7 @@ const ProfilePage = () => {
 
         fetchUser(userSubId);
         fetchReviewPostedByUser();
+        fetchReviewLikedByUser();
     }, [logInUser]);
 
     return (
@@ -76,8 +87,15 @@ const ProfilePage = () => {
 					},
 					{
 						"title": "Likes",
-						"component": <div></div>,
-						"length": 0
+						"component": <div className="flex flex-col gap-2 max-w-[45rem]">
+                            {reviewsLikedByUser.map((review) => {
+                                return <RatingCard
+                                    review={review}
+                                    fetchReviews={fetchReviewLikedByUser}
+                                    initialThumbsUpBool={review.thumbs_up_id ? true : false} />
+                            })}
+                        </div>,
+						"length": reviewsLikedByUser.length
 					}
 				]}/>
             </div>
