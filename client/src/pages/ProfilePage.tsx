@@ -1,14 +1,14 @@
-import ProfileTile from "../components/ProfilePage/ProfileTile";
-import NavBar from "../components/NavBar/NavBar";
 import { useNavigate, useParams } from "react-router-dom";
-import ProfileTabs from "../components/ProfilePage/ProfileTabs";
 import { useEffect, useState } from "react";
+import NavBar from "../components/NavBar/NavBar";
+import ProfileTile from "../components/ProfilePage/ProfileTile";
+import ProfileTabs from "../components/ProfilePage/ProfileTabs";
+import RatingCard from "../components/Ratings/Display/RatingCard";
 import { ReviewWithUserData, UserData } from "@lib/interfaces";
 import { getUser } from "@lib/APIs/userDataApi";
-import { useAtomValue } from "jotai";
 import { logInUserAtom } from "@lib/atoms/atoms";
 import { fetchReviewsCreatedByUser, fetchReviewsLikedByUser } from "@lib/APIs/reviewApi";
-import RatingCard from "../components/Ratings/Display/RatingCard";
+import { useAtomValue } from "jotai";
 
 const ProfilePage = () => {
     const navigate = useNavigate();
@@ -70,26 +70,29 @@ const ProfilePage = () => {
     return (
         <div className="flex flex-col gap-4 sm:gap-8 p-2 sm:p-6">
             <NavBar />
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 p-4 sm:pr-0">
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 p-4 sm:pr-0">
                 <ProfileTile userData={userData} />
                 <ProfileTabs tabs={[
 					{
 						"title": "Reviews",
-						"component": <div className="flex flex-col gap-2 max-w-[45rem]">
-							{reviewsCreatedByUser.map((review) => {
+						"component": <div key="reviewsTab" className="flex flex-col gap-2 max-w-[45rem]">
+							{reviewsCreatedByUser.map((review, index) => {
+                                console.log(review);
 								return <RatingCard
-									review={review}
-									fetchReviews={fetchReviewPostedByUser}
-									initialThumbsUpBool={review.thumbs_up_id ? true : false} />
+                                    key={`reviewsTabRating-${index}`}
+                                    review={review}
+                                    fetchReviews={fetchReviewPostedByUser}
+                                    initialThumbsUpBool={review.thumbs_up_id ? true : false} />
 							})}
 						</div>,
 						"length": reviewsCreatedByUser.length
 					},
 					{
-						"title": "Likes",
-						"component": <div className="flex flex-col gap-2 max-w-[45rem]">
-                            {reviewsLikedByUser.map((review) => {
+                        "title": "Likes",
+						"component": <div key="likesTab" className="flex flex-col gap-2 max-w-[45rem]">
+                            {reviewsLikedByUser.map((review, index) => {
                                 return <RatingCard
+                                    key={`likedTabRating-${index}`}
                                     review={review}
                                     fetchReviews={fetchReviewLikedByUser}
                                     initialThumbsUpBool={review.thumbs_up_id ? true : false} />

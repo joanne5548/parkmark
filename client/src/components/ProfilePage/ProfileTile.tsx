@@ -8,12 +8,12 @@ interface ProfileTileProps {
 
 const ProfileTile = ({ userData }: ProfileTileProps) => {
     return (
-        <div className="self-center sm:self-start">
-            {userData ? (
-                <div className="flex flex-col items-center gap-4 w-48">
+        <div>
+            {userData && (
+                <div className="flex flex-col justify-center items-center gap-4 sm:w-72">
                     <img
                         src={userData.profile_picture_url}
-                        className="rounded-full self-center w-32 sm:w-28 aspect-square object-cover"
+                        className="rounded-full self-center w-32 aspect-square object-cover"
                     />
                     <div className="text-lg font-medium text-center">
                         {userData.name}
@@ -23,8 +23,6 @@ const ProfileTile = ({ userData }: ProfileTileProps) => {
                         User Since {formatDate(userData.created_at)}
                     </div>
                 </div>
-            ) : (
-                <></>
             )}
         </div>
     );
