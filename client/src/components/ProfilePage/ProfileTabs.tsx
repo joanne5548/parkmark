@@ -4,6 +4,7 @@ import { ReactElement, useState } from "react";
 interface Tab {
     title: string;
     component: ReactElement;
+    fetchFunction: () => Promise<void>;
     length: number;
 }
 
@@ -16,6 +17,7 @@ const ProfileTabs = ({ tabs }: ProfileReviewTileProps) => {
 
     const handleTabClick = (index: number) => {
         setSelectedTab(index);
+        tabs[index].fetchFunction();
     };
 
     return (

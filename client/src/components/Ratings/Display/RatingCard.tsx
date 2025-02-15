@@ -7,6 +7,7 @@ import { logInUserAtom } from "@lib/atoms/atoms";
 import { IoClose } from "react-icons/io5";
 import { deleteReview } from "@lib/APIs/reviewApi";
 import ImageCarousel from "./ImageCarousel";
+import { useNavigate } from "react-router-dom";
 
 interface RatingCardProps {
     review: ReviewWithUserData;
@@ -19,6 +20,7 @@ const RatingCard: React.FC<RatingCardProps> = ({
     fetchReviews,
     initialThumbsUpBool,
 }) => {
+    const navigate = useNavigate();
     const logInUser = useAtomValue(logInUserAtom);
 
     const handleDeleteRatingButtonOnClick = async () => {
@@ -33,17 +35,21 @@ const RatingCard: React.FC<RatingCardProps> = ({
         await fetchReviews();
     };
 
+    const handleReviewUserNameClick = () => {
+        navigate(`/profile/${review.user_sub_id}`);
+    }
+
     return (
         <div className="flex flex-row sm:gap-4 py-4 sm:py-5 border-b-2">
             <div className="flex flex-col gap-3.5 sm:gap-4 w-5/12 min-w-36">
-                <div className="flex flex-row gap-3">
+                <div className="flex flex-row gap-3 items-start">
                     <img
                         src={review.user_profile_picture_url}
                         className="size-8 sm:size-10 rounded-xl object-cover"
                     />
-                    <div className="text-[0.95rem] sm:text-base font-medium">
+                    <button onClick={handleReviewUserNameClick} className="text-[0.95rem] sm:text-base font-medium hover:underline">
                         {review.user_name}
-                    </div>
+                    </button>
                 </div>
                 {review.img_url_list && review.img_url_list.length > 0 && (
                     <ImageCarousel imgUrlList={review.img_url_list} />
@@ -73,6 +79,7 @@ const RatingCard: React.FC<RatingCardProps> = ({
                     <ThumbsUpButton
                         reviewId={review.review_id}
                         initialThumbsUpBool={initialThumbsUpBool}
+                        fetchReviews={fetchReviews}
                     />
                 </div>
             </div>

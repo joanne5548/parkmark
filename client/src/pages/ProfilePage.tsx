@@ -57,7 +57,7 @@ const ProfilePage = () => {
     }
 
     useEffect(() => {
-        if (!userSubId) {
+        if (!userSubId || userSubId === "") {
             navigate("/error");
             return;
         }
@@ -76,27 +76,29 @@ const ProfilePage = () => {
 					{
 						"title": "Reviews",
 						"component": <div key="reviewsTab" className="flex flex-col gap-2 pr-1 sm:pr-4 w-full max-w-[49rem] overflow-y-auto">
-							{reviewsCreatedByUser.map((review, index) => {
+							{reviewsCreatedByUser.map(review => {
 								return <RatingCard
-                                    key={`reviewsTabRating-${index}`}
+                                    key={`reviewsTabRating-${review.review_id}`}
                                     review={review}
                                     fetchReviews={fetchReviewPostedByUser}
                                     initialThumbsUpBool={review.thumbs_up_id ? true : false} />
 							})}
 						</div>,
+                        "fetchFunction": fetchReviewPostedByUser,
 						"length": reviewsCreatedByUser.length
 					},
 					{
                         "title": "Likes",
 						"component": <div key="likesTab" className="flex flex-col gap-2 pr-1 sm:pr-4 w-full max-w-[49rem] overflow-y-auto">
-                            {reviewsLikedByUser.map((review, index) => {
+                            {reviewsLikedByUser.map(review => {
                                 return <RatingCard
-                                    key={`likedTabRating-${index}`}
+                                    key={`likedTabRating-${review.review_id}`}
                                     review={review}
                                     fetchReviews={fetchReviewLikedByUser}
                                     initialThumbsUpBool={review.thumbs_up_id ? true : false} />
                             })}
                         </div>,
+                        "fetchFunction": fetchReviewLikedByUser,
 						"length": reviewsLikedByUser.length
 					}
 				]}/>
