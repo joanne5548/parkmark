@@ -79,11 +79,11 @@ Placed in `/server` directory.
 7. `GOOGLE_CLOUD_BUCKET_NAME`: Bucket name to use to store the images uploaded by users.
 
 ## Roadmap
-- [ ] Create user information page
+- [x] Create user information page
     - [ ] Include full list of national park tiles that highlights ones that are already reviewed
-    - [ ] View past reviews
-    - [ ] Tab for liked reviews
-- [ ] Allow more than one image upload
+    - [x] View past reviews
+    - [x] Tab for liked reviews
+- [x] Allow more than one image upload
 - [ ] Allow edits to posts
 
 Previous items can be found at: [TodoList.md](./TodoList.md)

@@ -75,6 +75,10 @@ const ThumbsUpButton = ({ reviewId, initialThumbsUpBool }: ThumbsUpButtonProps) 
         calculateNumberOfThumbsUp();
     }, []);
 
+    useEffect(() => {
+        setThumbsUpBool(initialThumbsUpBool);
+    }, [initialThumbsUpBool]);
+
     return (
         <button onClick={handleThumbsUpButtonClick} className={buttonClassName}>
             <LuThumbsUp className={thumbsUpIconClassName} />
