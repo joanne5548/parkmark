@@ -38,6 +38,13 @@
 -   [x] Add image upload
 -   [x] Add image upload... More than one!
 
+### Profile Page
+
+-   [x] Fix inconsistent width for Reviews and Likes tab
+-   [x] Link the profile page to each users
+    -   [x] For log in user, and
+    -   [x] Users in each ratings
+
 <details>
 <summary>Past To-dos (Completed)</summary>
 

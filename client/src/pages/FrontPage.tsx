@@ -9,7 +9,7 @@ const FrontPage = () => {
 
     return (
         <div className="flex flex-col gap-2 sm:gap-4 p-2 sm:p-6 h-screen">
-            <NavBar />
+            <NavBar showSearchBar={true} />
             <div className="relative flex flex-row items-center gap-6 h-full">
                 <MapContainer />
                 {selectedPark && <RatingsSidePanel />}
