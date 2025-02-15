@@ -40,9 +40,10 @@
 
 ### Profile Page
 
-#### Tabs
-
 -   [ ] Fix inconsistent width for Reviews and Likes tab
+-   [ ] Link the profile page to each users
+    -   [ ] For log in user, and
+    -   [ ] Users in each ratings
 
 <details>
 <summary>Past To-dos (Completed)</summary>

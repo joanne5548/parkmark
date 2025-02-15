@@ -228,11 +228,11 @@ reviewRouter.get(
 reviewRouter.put("/review_id/:id", async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
-        const { rating, content, img_url } = req.body;
+        const { rating, content } = req.body;
 
         const updateQueryResult = await pool.query(
-            "UPDATE Review SET rating=$1, content=$2, img_url=$3 WHERE id=$4 RETURNING *",
-            [rating, content, img_url, id]
+            "UPDATE Review SET rating=$1, content=$2 WHERE id=$3 RETURNING *",
+            [rating, content, id]
         );
 
         res.json(updateQueryResult.rows[0]);

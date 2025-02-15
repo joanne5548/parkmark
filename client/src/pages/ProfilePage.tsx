@@ -71,11 +71,11 @@ const ProfilePage = () => {
         <div className="flex flex-col gap-4 sm:gap-8 p-4 sm:p-6 h-screen">
             <NavBar showSearchBar={false} />
             <div className="min-h-0 flex-1 flex flex-col sm:flex-row justify-center gap-8 sm:gap-24 py-4">
-                <ProfileTile userData={userData} />
+                <ProfileTile userData={userData} reviewCount={reviewsCreatedByUser.length} />
                 <ProfileTabs tabs={[
 					{
 						"title": "Reviews",
-						"component": <div key="reviewsTab" className="flex flex-col gap-2 pr-1 sm:pr-4 max-w-[49rem] overflow-y-scroll">
+						"component": <div key="reviewsTab" className="flex flex-col gap-2 pr-1 sm:pr-4 w-full max-w-[49rem] overflow-y-auto">
 							{reviewsCreatedByUser.map((review, index) => {
 								return <RatingCard
                                     key={`reviewsTabRating-${index}`}
@@ -88,7 +88,7 @@ const ProfilePage = () => {
 					},
 					{
                         "title": "Likes",
-						"component": <div key="likesTab" className="flex flex-col gap-2 pr-1 sm:pr-4 max-w-[49rem] overflow-y-scroll">
+						"component": <div key="likesTab" className="flex flex-col gap-2 pr-1 sm:pr-4 w-full max-w-[49rem] overflow-y-auto">
                             {reviewsLikedByUser.map((review, index) => {
                                 return <RatingCard
                                     key={`likedTabRating-${index}`}
