@@ -10,7 +10,7 @@ const ProfileTile = ({ userData }: ProfileTileProps) => {
     return (
         <div>
             {userData && (
-                <div className="flex flex-col justify-center items-center gap-4 sm:w-72">
+                <div className="flex flex-col justify-center items-center gap-4">
                     <img
                         src={userData.profile_picture_url}
                         className="rounded-full self-center w-32 aspect-square object-cover"

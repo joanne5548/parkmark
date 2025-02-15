@@ -58,10 +58,7 @@ const ThumbsUpButton = ({ reviewId, initialThumbsUpBool }: ThumbsUpButtonProps) 
         const thumbsUpList = await fetchThumbsUpListByReviewId(reviewId);
 
         if (thumbsUpList === undefined) {
-            console.log(
-                `undefined number of thumbs up at review id: ${reviewId}`
-            );
-            return;
+            throw new Error(`undefined number of thumbs up at review id: ${reviewId}`);
         }
 
         if (thumbsUpList.length === 0) {

@@ -19,7 +19,7 @@ const ProfileTabs = ({ tabs }: ProfileReviewTileProps) => {
     };
 
     return (
-        <div className="flex flex-col w-full">
+        <div className="min-h-0 flex-1 sm:flex-initial flex flex-col">
             <div className="flex flex-row border-b-[1px] border-slate-400">
                 {tabs.map((tab, index) => {
                     const currentTabIsSelected = index === selectedTab;
@@ -29,7 +29,7 @@ const ProfileTabs = ({ tabs }: ProfileReviewTileProps) => {
                             className={clsx(
                                 "flex flex-row gap-2 px-6 py-2 items-center",
                                 currentTabIsSelected &&
-                                    "border-b-[1px] border-blue-600"
+                                    "border-b-[1px] border-amber-900"
                             )}
                         >
                             <div
@@ -46,7 +46,7 @@ const ProfileTabs = ({ tabs }: ProfileReviewTileProps) => {
                                 className={clsx(
                                     "text-[10px] font-semibold px-2 py-[1px] rounded-md",
                                     currentTabIsSelected
-                                        ? "text-white bg-blue-600"
+                                        ? "text-white bg-amber-900"
                                         : "border-[1px] border-slate-300"
                                 )}
                             >

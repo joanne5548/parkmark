@@ -38,6 +38,12 @@
 -   [x] Add image upload
 -   [x] Add image upload... More than one!
 
+### Profile Page
+
+#### Tabs
+
+-   [ ] Fix inconsistent width for Reviews and Likes tab
+
 <details>
 <summary>Past To-dos (Completed)</summary>
 
