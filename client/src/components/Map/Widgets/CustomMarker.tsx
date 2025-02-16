@@ -4,18 +4,10 @@ import CustomPopup from "./CustomPopup";
 import { HiMapPin } from "react-icons/hi2";
 import { useAtom } from "jotai";
 import { selectedParkAtom } from "@lib/atoms/atoms";
+import { ParkInfoJson } from "@lib/interfaces";
 
 interface CustomMarkerProps {
-    parkInfoJson: {
-        id: string;
-        name: string;
-        park_info: {
-            coordinates: {
-                longitude: number;
-                latitude: number;
-            };
-        };
-    };
+    parkInfoJson: ParkInfoJson
 }
 
 const CustomMarker: React.FC<CustomMarkerProps> = ({

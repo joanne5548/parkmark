@@ -62,3 +62,18 @@ export interface StarRatingPercentageList {
     "4": number;
     "5": number;
 }
+
+export interface ParkInfoJson {
+    id: string;
+    name: string;
+    park_info: {
+        coordinates: {
+            longitude: number;
+            latitude: number;
+        };
+        states: string;
+        nps_url: string;
+        description?: string;
+        img_urls?: string[];
+    };
+}

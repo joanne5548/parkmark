@@ -4,20 +4,10 @@ import { Popup } from "react-map-gl";
 import { selectedParkAtom } from "@lib/atoms/atoms";
 import RatingStatistics from "../RatingStats/RatingStatistics";
 import { FiExternalLink } from "react-icons/fi";
+import { ParkInfoJson } from "@lib/interfaces";
 
 interface CustomPopupProps {
-    parkInfoJson: {
-        id: string;
-        name: string;
-        park_info: {
-            coordinates: {
-                longitude: number;
-                latitude: number;
-            };
-            states: string;
-            nps_url: string;
-        };
-    };
+    parkInfoJson: ParkInfoJson
     handlePopupClose: () => void;
 }
 
