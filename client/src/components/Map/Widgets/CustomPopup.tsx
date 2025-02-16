@@ -3,6 +3,7 @@ import React from "react";
 import { Popup } from "react-map-gl";
 import { selectedParkAtom } from "@lib/atoms/atoms";
 import RatingStatistics from "../RatingStats/RatingStatistics";
+import { FiExternalLink } from "react-icons/fi";
 
 interface CustomPopupProps {
     parkInfoJson: {
@@ -13,6 +14,8 @@ interface CustomPopupProps {
                 longitude: number;
                 latitude: number;
             };
+            states: string;
+            nps_url: string;
         };
     };
     handlePopupClose: () => void;
@@ -23,10 +26,6 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
     handlePopupClose,
 }) => {
     const setSelectedPark = useSetAtom(selectedParkAtom);
-
-    const handleParkNameButtonOnClick = () => {
-        setSelectedPark(parkInfoJson);
-    };
 
     return (
         <Popup
@@ -41,12 +40,17 @@ const CustomPopup: React.FC<CustomPopupProps> = ({
             }}
         >
             <div className="flex flex-col gap-1 sm:gap-2 items-center">
-                <button
-                    onClick={handleParkNameButtonOnClick}
-                    className="w-full text-center text-lg sm:text-xl font-medium border-none hover:underline"
+                <a
+                    href={parkInfoJson.park_info.nps_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-center text-lg sm:text-xl font-medium hover:underline"
                 >
-                    {parkInfoJson.name}
-                </button>
+                    <span>
+                        {parkInfoJson.name}{" "}
+                        <FiExternalLink className="text-lg inline align-baseline" />
+                    </span>
+                </a>
                 <RatingStatistics parkId={parkInfoJson.id} />
             </div>
         </Popup>
