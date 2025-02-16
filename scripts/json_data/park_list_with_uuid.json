@@ -7,7 +7,8 @@
                 "longitude": -68.24411197733804,
                 "latitude": 44.350751388328206
             },
-            "states": "Maine"
+            "states": "Maine",
+            "nps_url": "https://www.nps.gov/acad/index.htm"
         }
     },
     {
@@ -18,7 +19,8 @@
                 "longitude": -109.59545602760868,
                 "latitude": 38.707917632251544
             },
-            "states": "Utah"
+            "states": "Utah",
+            "nps_url": "https://www.nps.gov/arch/index.htm"
         }
     },
     {
@@ -29,7 +31,8 @@
                 "longitude": -102.39394509554067,
                 "latitude": 43.8340624087368
             },
-            "states": "South Dakota"
+            "states": "South Dakota",
+            "nps_url": "https://www.nps.gov/badl/index.htm"
         }
     },
     {
@@ -40,7 +43,8 @@
                 "longitude": -103.22978967302261,
                 "latitude": 29.298177668897967
             },
-            "states": "Texas"
+            "states": "Texas",
+            "nps_url": "https://www.nps.gov/bibe/index.htm"
         }
     },
     {
@@ -51,7 +55,8 @@
                 "longitude": -80.21830159269447,
                 "latitude": 25.469689246647114
             },
-            "states": "Florida"
+            "states": "Florida",
+            "nps_url": "https://www.nps.gov/bisc/index.htm"
         }
     },
     {
@@ -62,7 +67,8 @@
                 "longitude": -107.72398016641485,
                 "latitude": 38.577392252894334
             },
-            "states": "Colorado"
+            "states": "Colorado",
+            "nps_url": "https://www.nps.gov/blca/index.htm"
         }
     },
     {
@@ -73,7 +79,8 @@
                 "longitude": -112.18266888744083,
                 "latitude": 37.58399143875251
             },
-            "states": "Utah"
+            "states": "Utah",
+            "nps_url": "https://www.nps.gov/brca/index.htm"
         }
     },
     {
@@ -84,7 +91,8 @@
                 "longitude": -109.88314625527481,
                 "latitude": 38.272072876214835
             },
-            "states": "Utah"
+            "states": "Utah",
+            "nps_url": "https://www.nps.gov/cany/index.htm"
         }
     },
     {
@@ -95,7 +103,8 @@
                 "longitude": -111.00329294577273,
                 "latitude": 37.795992535017426
             },
-            "states": "Utah"
+            "states": "Utah",
+            "nps_url": "https://www.nps.gov/care/index.htm"
         }
     },
     {
@@ -106,7 +115,8 @@
                 "longitude": -104.52776563457927,
                 "latitude": 32.15234275399143
             },
-            "states": "New Mexico"
+            "states": "New Mexico",
+            "nps_url": "https://www.nps.gov/cave/index.htm"
         }
     },
     {
@@ -117,7 +127,8 @@
                 "longitude": -119.7251698451474,
                 "latitude": 34.00392978229205
             },
-            "states": "California"
+            "states": "California",
+            "nps_url": "https://www.nps.gov/chis/index.htm"
         }
     },
     {
@@ -128,7 +139,8 @@
                 "longitude": -80.81835232616444,
                 "latitude": 33.8062043146765
             },
-            "states": "South Carolina"
+            "states": "South Carolina",
+            "nps_url": "https://www.nps.gov/cong/index.htm"
         }
     },
     {
@@ -139,7 +151,8 @@
                 "longitude": -122.13525870459277,
                 "latitude": 42.94443605194011
             },
-            "states": "Oregon"
+            "states": "Oregon",
+            "nps_url": "https://www.nps.gov/crla/index.htm"
         }
     },
     {
@@ -150,7 +163,8 @@
                 "longitude": -81.5690344075238,
                 "latitude": 41.26071335500069
             },
-            "states": "Ohio"
+            "states": "Ohio",
+            "nps_url": "https://www.nps.gov/cuva/index.htm"
         }
     },
     {
@@ -161,7 +175,8 @@
                 "longitude": -117.13511154435771,
                 "latitude": 36.48741910067162
             },
-            "states": "California, Nevada"
+            "states": "California, Nevada",
+            "nps_url": "https://www.nps.gov/deva/index.htm"
         }
     },
     {
@@ -172,7 +187,8 @@
                 "longitude": -151.05263550282112,
                 "latitude": 63.29777436004586
             },
-            "states": "Alaska"
+            "states": "Alaska",
+            "nps_url": "https://www.nps.gov/dena/index.htm"
         }
     },
     {
@@ -183,7 +199,8 @@
                 "longitude": -82.86655423155601,
                 "latitude": 24.654395618647623
             },
-            "states": "Florida"
+            "states": "Florida",
+            "nps_url": "https://www.nps.gov/drto/index.htm"
         }
     },
     {
@@ -194,7 +211,8 @@
                 "longitude": -80.95349638622787,
                 "latitude": 25.27225616404826
             },
-            "states": "Florida"
+            "states": "Florida",
+            "nps_url": "https://www.nps.gov/ever/index.htm"
         }
     },
     {
@@ -205,7 +223,8 @@
                 "longitude": -153.26413231698794,
                 "latitude": 67.9192854407937
             },
-            "states": "Alaska"
+            "states": "Alaska",
+            "nps_url": "https://www.nps.gov/gaar/index.htm"
         }
     },
     {
@@ -216,7 +235,8 @@
                 "longitude": -136.84071732838277,
                 "latitude": 58.80086474447531
             },
-            "states": "Alaska"
+            "states": "Alaska",
+            "nps_url": "https://www.nps.gov/glba/index.htm"
         }
     },
     {
@@ -227,7 +247,8 @@
                 "longitude": -113.80079159548487,
                 "latitude": 48.68426876066877
             },
-            "states": "Montana"
+            "states": "Montana",
+            "nps_url": "https://www.nps.gov/glac/index.htm"
         }
     },
     {
@@ -238,7 +259,8 @@
                 "longitude": -112.19586332050201,
                 "latitude": 36.186683141213514
             },
-            "states": "Arizona"
+            "states": "Arizona",
+            "nps_url": "https://www.nps.gov/grca/index.htm"
         }
     },
     {
@@ -249,7 +271,8 @@
                 "longitude": -110.70546656038158,
                 "latitude": 43.81853565368195
             },
-            "states": "Wyoming"
+            "states": "Wyoming",
+            "nps_url": "https://www.nps.gov/grte/index.htm"
         }
     },
     {
@@ -260,7 +283,8 @@
                 "longitude": -114.25797817448695,
                 "latitude": 38.946173783127065
             },
-            "states": "Nevada"
+            "states": "Nevada",
+            "nps_url": "https://www.nps.gov/grba/index.htm"
         }
     },
     {
@@ -271,7 +295,8 @@
                 "longitude": -105.57832630519154,
                 "latitude": 37.759942701007226
             },
-            "states": "Colorado"
+            "states": "Colorado",
+            "nps_url": "https://www.nps.gov/grsa/index.htm"
         }
     },
     {
@@ -282,7 +307,8 @@
                 "longitude": -83.77104780772574,
                 "latitude": 35.53381126341195
             },
-            "states": "North Carolina, Tennessee"
+            "states": "North Carolina, Tennessee",
+            "nps_url": "https://www.nps.gov/grsm/index.htm"
         }
     },
     {
@@ -293,7 +319,8 @@
                 "longitude": -104.88434717034703,
                 "latitude": 31.923384209391674
             },
-            "states": "Texas"
+            "states": "Texas",
+            "nps_url": "https://www.nps.gov/gumo/index.htm"
         }
     },
     {
@@ -304,7 +331,8 @@
                 "longitude": -156.14709314319208,
                 "latitude": 20.704512129332194
             },
-            "states": "Hawaii"
+            "states": "Hawaii",
+            "nps_url": "https://www.nps.gov/hale/index.htm"
         }
     },
     {
@@ -315,7 +343,8 @@
                 "longitude": -155.2118228719388,
                 "latitude": 19.32614215615518
             },
-            "states": "Hawaii"
+            "states": "Hawaii",
+            "nps_url": "https://www.nps.gov/havo/index.htm"
         }
     },
     {
@@ -326,7 +355,8 @@
                 "longitude": -93.08972185108273,
                 "latitude": 34.51113822506357
             },
-            "states": "Arkansas"
+            "states": "Arkansas",
+            "nps_url": "https://www.nps.gov/hosp/index.htm"
         }
     },
     {
@@ -337,7 +367,8 @@
                 "longitude": -89.10441847731086,
                 "latitude": 47.900839582369585
             },
-            "states": "Michigan"
+            "states": "Michigan",
+            "nps_url": "https://www.nps.gov/isro/index.htm"
         }
     },
     {
@@ -348,7 +379,8 @@
                 "longitude": -116.15907084356105,
                 "latitude": 33.98096522850808
             },
-            "states": "California"
+            "states": "California",
+            "nps_url": "https://www.nps.gov/jotr/index.htm"
         }
     },
     {
@@ -359,7 +391,8 @@
                 "longitude": -155.01341050350874,
                 "latitude": 58.622573966764584
             },
-            "states": "Alaska"
+            "states": "Alaska",
+            "nps_url": "https://www.nps.gov/katm/index.htm"
         }
     },
     {
@@ -370,18 +403,8 @@
                 "longitude": -149.88152448868524,
                 "latitude": 59.95389688763184
             },
-            "states": "Alaska"
-        }
-    },
-    {
-        "id": "de777c1e-0301-4172-a7dd-717bebda7c4b",
-        "name": "Kings Canyon National Park",
-        "park_info": {
-            "coordinates": {
-                "longitude": -118.59384064032848,
-                "latitude": 36.8749421087923
-            },
-            "states": "California"
+            "states": "Alaska",
+            "nps_url": "https://www.nps.gov/kefj/index.htm"
         }
     },
     {
@@ -392,7 +415,8 @@
                 "longitude": -159.06308334658615,
                 "latitude": 67.28263652770183
             },
-            "states": "Alaska"
+            "states": "Alaska",
+            "nps_url": "https://www.nps.gov/kova/index.htm"
         }
     },
     {
@@ -403,7 +427,8 @@
                 "longitude": -153.6018441528228,
                 "latitude": 60.64679690935658
             },
-            "states": "Alaska"
+            "states": "Alaska",
+            "nps_url": "https://www.nps.gov/lacl/index.htm"
         }
     },
     {
@@ -414,7 +439,8 @@
                 "longitude": -121.41212664904383,
                 "latitude": 40.48622026090819
             },
-            "states": "California"
+            "states": "California",
+            "nps_url": "https://www.nps.gov/lavo/index.htm"
         }
     },
     {
@@ -425,7 +451,8 @@
                 "longitude": -86.13090198191068,
                 "latitude": 37.197604576779035
             },
-            "states": "Kentucky"
+            "states": "Kentucky",
+            "nps_url": "https://www.nps.gov/maca/index.htm"
         }
     },
     {
@@ -436,7 +463,8 @@
                 "longitude": -108.50092888589481,
                 "latitude": 37.22351315320654
             },
-            "states": "Colorado"
+            "states": "Colorado",
+            "nps_url": "https://www.nps.gov/meve/index.htm"
         }
     },
     {
@@ -447,7 +475,8 @@
                 "longitude": -121.70574507946985,
                 "latitude": 46.86055919903173
             },
-            "states": "Washington"
+            "states": "Washington",
+            "nps_url": "https://www.nps.gov/mora/index.htm"
         }
     },
     {
@@ -458,7 +487,8 @@
                 "longitude": -169.45380760526996,
                 "latitude": -14.239727732693918
             },
-            "states": "American Samoa"
+            "states": "American Samoa",
+            "nps_url": "https://www.nps.gov/npsa/index.htm"
         }
     },
     {
@@ -469,7 +499,8 @@
                 "longitude": -121.34755778363238,
                 "latitude": 48.83303940981537
             },
-            "states": "Washington"
+            "states": "Washington",
+            "nps_url": "https://www.nps.gov/noca/index.htm"
         }
     },
     {
@@ -480,7 +511,8 @@
                 "longitude": -123.6194451629227,
                 "latitude": 47.79453520449651
             },
-            "states": "Washington"
+            "states": "Washington",
+            "nps_url": "https://www.nps.gov/olym/index.htm"
         }
     },
     {
@@ -491,7 +523,8 @@
                 "longitude": -109.67471774572405,
                 "latitude": 34.98868180401879
             },
-            "states": "Arizona"
+            "states": "Arizona",
+            "nps_url": "https://www.nps.gov/pefo/index.htm"
         }
     },
     {
@@ -502,7 +535,8 @@
                 "longitude": -105.69838532231373,
                 "latitude": 40.35579839722149
             },
-            "states": "Colorado"
+            "states": "Colorado",
+            "nps_url": "https://www.nps.gov/romo/index.htm"
         }
     },
     {
@@ -513,7 +547,8 @@
                 "longitude": -110.60831406159426,
                 "latitude": 32.178836085393556
             },
-            "states": "Arizona"
+            "states": "Arizona",
+            "nps_url": "https://www.nps.gov/sagu/index.htm"
         }
     },
     {
@@ -524,7 +559,8 @@
                 "longitude": -118.5752011004094,
                 "latitude": 36.50785282265928
             },
-            "states": "California"
+            "states": "California",
+            "nps_url": "https://www.nps.gov/seki/index.htm"
         }
     },
     {
@@ -535,7 +571,8 @@
                 "longitude": -78.67619962877342,
                 "latitude": 38.28108210674896
             },
-            "states": "Virginia"
+            "states": "Virginia",
+            "nps_url": "https://www.nps.gov/shen/index.htm"
         }
     },
     {
@@ -546,7 +583,8 @@
                 "longitude": -103.45925080636415,
                 "latitude": 46.953620966658086
             },
-            "states": "North Dakota"
+            "states": "North Dakota",
+            "nps_url": "https://www.nps.gov/thro/index.htm"
         }
     },
     {
@@ -557,7 +595,8 @@
                 "longitude": -64.77111048899694,
                 "latitude": 18.353798617233704
             },
-            "states": "United States Virgin Islands"
+            "states": "United States Virgin Islands",
+            "nps_url": "https://www.nps.gov/viis/index.htm"
         }
     },
     {
@@ -568,7 +607,8 @@
                 "longitude": -92.98057129969759,
                 "latitude": 48.51716932219992
             },
-            "states": "Minnesota"
+            "states": "Minnesota",
+            "nps_url": "https://www.nps.gov/voya/index.htm"
         }
     },
     {
@@ -579,7 +619,8 @@
                 "longitude": -103.42877641689412,
                 "latitude": 43.60787178123641
             },
-            "states": "South Dakota"
+            "states": "South Dakota",
+            "nps_url": "https://www.nps.gov/wica/index.htm"
         }
     },
     {
@@ -590,7 +631,8 @@
                 "longitude": -77.26355410163892,
                 "latitude": 38.93793199647512
             },
-            "states": "Virginia"
+            "states": "Virginia",
+            "nps_url": "https://www.nps.gov/wotr/index.htm"
         }
     },
     {
@@ -601,7 +643,8 @@
                 "longitude": -142.60357111369407,
                 "latitude": 61.41843937955613
             },
-            "states": "Alaska"
+            "states": "Alaska",
+            "nps_url": "https://www.nps.gov/wrst/index.htm"
         }
     },
     {
@@ -612,7 +655,8 @@
                 "longitude": -110.49008302275851,
                 "latitude": 44.583032217213656
             },
-            "states": "Wyoming, Montana, Idaho"
+            "states": "Wyoming, Montana, Idaho",
+            "nps_url": "https://www.nps.gov/yell/index.htm"
         }
     },
     {
@@ -623,7 +667,8 @@
                 "longitude": -119.55600729459782,
                 "latitude": 37.84893656911814
             },
-            "states": "California"
+            "states": "California",
+            "nps_url": "https://www.nps.gov/yose/index.htm"
         }
     },
     {
@@ -634,7 +679,8 @@
                 "longitude": -112.95443162869537,
                 "latitude": 37.255709497131065
             },
-            "states": "Utah"
+            "states": "Utah",
+            "nps_url": "https://www.nps.gov/zion/index.htm"
         }
     },
     {
@@ -645,7 +691,8 @@
                 "longitude": -90.1857939618164,
                 "latitude": 38.625143035481344
             },
-            "states": "Missouri"
+            "states": "Missouri",
+            "nps_url": "https://www.nps.gov/gaar/index.htm"
         }
     },
     {
@@ -656,7 +703,8 @@
                 "longitude": -87.05243146934447,
                 "latitude": 41.654384302554455
             },
-            "states": "Indiana"
+            "states": "Indiana",
+            "nps_url": "https://www.nps.gov/indu/index.htm"
         }
     },
     {
@@ -667,7 +715,8 @@
                 "longitude": -81.0514289750282,
                 "latitude": 37.87534462108355
             },
-            "states": "West Virginia"
+            "states": "West Virginia",
+            "nps_url": "https://www.nps.gov/neri/index.htm"
         }
     },
     {
@@ -678,7 +727,8 @@
                 "longitude": -121.17987431816847,
                 "latitude": 36.49510423649378
             },
-            "states": "California"
+            "states": "California",
+            "nps_url": "https://www.nps.gov/pinn/index.htm"
         }
     },
     {
@@ -689,7 +739,8 @@
                 "longitude": -124.0327795204255,
                 "latitude": 41.408483998552235
             },
-            "states": "California"
+            "states": "California",
+            "nps_url": "https://www.nps.gov/redw/index.htm"
         }
     },
     {
@@ -700,7 +751,8 @@
                 "longitude": -106.32159655948601,
                 "latitude": 32.800789133820935
             },
-            "states": "New Mexico"
+            "states": "New Mexico",
+            "nps_url": "https://www.nps.gov/whsa/index.htm"
         }
     }
 ]
