@@ -1,10 +1,10 @@
-import { NationalPark } from "@lib/interfaces";
+import { ParkInfoJson } from "@lib/interfaces";
 
 export const generateSuggestedPark = (
     input: string,
-    parkList: NationalPark[]
+    parkList: ParkInfoJson[]
 ) => {
-    let suggestedParkList: NationalPark[] = [];
+    let suggestedParkList: ParkInfoJson[] = [];
     const prefixMatches = new Set();
 
     parkList.forEach((park) => {

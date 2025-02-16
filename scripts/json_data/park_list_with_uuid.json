@@ -8,7 +8,12 @@
                 "latitude": 44.350751388328206
             },
             "states": "Maine",
-            "nps_url": "https://www.nps.gov/acad/index.htm"
+            "nps_url": "https://www.nps.gov/acad/index.htm",
+            "description": {
+                "title": "Crown Jewel of the North Atlantic Coast",
+                "content": "Acadia National Park protects the natural beauty of the highest rocky headlands along the Atlantic coastline of the United States, an abundance of habitats, and a rich cultural heritage. At 4 million visits a year, it's one of the top 10 most-visited national parks in the United States. Visitors enjoy 27 miles of historic motor roads, 158 miles of hiking trails, and 45 miles of carriage roads."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/ner/homepage/6B1F4159-F010-E2C4-5AD7D3C0ED65EC07.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -20,7 +25,12 @@
                 "latitude": 38.707917632251544
             },
             "states": "Utah",
-            "nps_url": "https://www.nps.gov/arch/index.htm"
+            "nps_url": "https://www.nps.gov/arch/index.htm",
+            "description": {
+                "title": "A red-rock wonderland",
+                "content": "Discover a landscape of contrasting colors, land forms, and textures unlike any other. The park has over 2,000 natural stone arches, hundreds of soaring pinnacles, massive rock fins, and giant balanced rocks. This red-rock wonderland will amaze you with its formations, refresh you with its trails, and inspire you with its sunsets."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/438D2599-B433-F166-9A6156C1B2F148D8.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -32,7 +42,12 @@
                 "latitude": 43.8340624087368
             },
             "states": "South Dakota",
-            "nps_url": "https://www.nps.gov/badl/index.htm"
+            "nps_url": "https://www.nps.gov/badl/index.htm",
+            "description": {
+                "title": "Land of Stone and Light",
+                "content": "The rugged beauty of the Badlands draws visitors from around the world. These striking geologic deposits contain one of the world\u2019s richest fossil beds. Ancient horses and rhinos once roamed here. The park\u2019s 244,000 acres protect an expanse of mixed-grass prairie where bison, bighorn sheep, prairie dogs, and black-footed ferrets live today."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/C4524107-A9DF-29E3-80B8554266867C06.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -44,7 +59,12 @@
                 "latitude": 29.298177668897967
             },
             "states": "Texas",
-            "nps_url": "https://www.nps.gov/bibe/index.htm"
+            "nps_url": "https://www.nps.gov/bibe/index.htm",
+            "description": {
+                "title": "Splendid Isolation: Big Bend",
+                "content": "There is a place in Far West Texas where night skies are dark as coal and rivers carve temple-like canyons in ancient limestone. Here, at the end of the road, hundreds of bird species take refuge in a solitary mountain range surrounded by weather-beaten desert. Tenacious cactus bloom in sublime southwestern sun, and species diversity is the best in the country. This magical place is Big Bend..."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/F69740AB-1DD8-B71B-0BF4CCD783D01EDD.JPG?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -56,7 +76,12 @@
                 "latitude": 25.469689246647114
             },
             "states": "Florida",
-            "nps_url": "https://www.nps.gov/bisc/index.htm"
+            "nps_url": "https://www.nps.gov/bisc/index.htm",
+            "description": {
+                "title": "A Watery Wonderland",
+                "content": "Within sight of Miami, yet worlds away, Biscayne protects a rare combination of aquamarine waters, emerald islands, and fish-bejeweled coral reefs. Evidence of 10,000 years of human history is here too; from prehistoric tribes to shipwrecks, and pineapple farmers to presidents. For many, the park is a boating, fishing, and diving destination, while others enjoy a warm breeze and peaceful scenery."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/1FCA9BB2-C027-31FF-D77F060FFA94ABBD.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -68,7 +93,12 @@
                 "latitude": 38.577392252894334
             },
             "states": "Colorado",
-            "nps_url": "https://www.nps.gov/blca/index.htm"
+            "nps_url": "https://www.nps.gov/blca/index.htm",
+            "description": {
+                "title": "Deep, Steep, and Narrow",
+                "content": "Big enough to be overwhelming, yet still intimate enough to feel the pulse of time. Come see some of the steepest cliffs, oldest rock, and craggiest spires in North America. Forces of nature and the Gunnison River sculpted this canyon over two million years. The result is a vertical wilderness of rock, water, and sky."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/11150253-9B4C-6FD5-D2F96FF7BC67798A.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -80,7 +110,12 @@
                 "latitude": 37.58399143875251
             },
             "states": "Utah",
-            "nps_url": "https://www.nps.gov/brca/index.htm"
+            "nps_url": "https://www.nps.gov/brca/index.htm",
+            "description": {
+                "title": "Red Rocks, Pink Cliffs, and Endless Vistas",
+                "content": "Hoodoos (irregular columns of rock) exist on every continent, but here is the largest concentration found anywhere on Earth. Situated along a high plateau at the top of the Grand Staircase, the park's high elevations include numerous life communities, fantastic dark skies, and geological wonders that defy description."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/334938EE-DF36-7899-A0A5AA5362B1B7BA.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -92,7 +127,12 @@
                 "latitude": 38.272072876214835
             },
             "states": "Utah",
-            "nps_url": "https://www.nps.gov/cany/index.htm"
+            "nps_url": "https://www.nps.gov/cany/index.htm",
+            "description": {
+                "title": "A Lifetime of Exploration Awaits",
+                "content": "Canyonlands invites you to explore a wilderness of countless canyons and fantastically formed buttes carved by the Colorado River and its tributaries. Rivers divide the park into four districts: Island in the Sky, The Needles, The Maze, and the rivers themselves. These areas share a primitive desert atmosphere, but each offers different opportunities for sightseeing and adventure."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/48CFD420-1DD8-B71B-0B3250F8209F782D.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -104,7 +144,12 @@
                 "latitude": 37.795992535017426
             },
             "states": "Utah",
-            "nps_url": "https://www.nps.gov/care/index.htm"
+            "nps_url": "https://www.nps.gov/care/index.htm",
+            "description": {
+                "title": "Discover the Waterpocket Fold, a geologic wrinkle on Earth!",
+                "content": "Located in south-central Utah in the heart of red rock country, Capitol Reef National Park is a hidden treasure filled with cliffs, canyons, domes, and bridges in the Waterpocket Fold, a geologic monocline (a wrinkle on the earth) extending almost 100 miles."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/4278897C-E561-2333-807608024BC97BFB.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -116,7 +161,12 @@
                 "latitude": 32.15234275399143
             },
             "states": "New Mexico",
-            "nps_url": "https://www.nps.gov/cave/index.htm"
+            "nps_url": "https://www.nps.gov/cave/index.htm",
+            "description": {
+                "title": "Beauty and Wonder; Above and Below",
+                "content": "High ancient sea ledges, deep rocky canyons, flowering cactus, and desert wildlife\u2014treasures above the ground in the Chihuahuan Desert. Hidden beneath the surface are more than 119 caves\u2014formed when sulfuric acid dissolved limestone leaving behind caverns of all sizes."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/07CA762D-1DD8-B71B-0B5263929F1AEAC2.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -128,7 +178,12 @@
                 "latitude": 34.00392978229205
             },
             "states": "California",
-            "nps_url": "https://www.nps.gov/chis/index.htm"
+            "nps_url": "https://www.nps.gov/chis/index.htm",
+            "description": {
+                "title": "Close to the California Mainland...Yet Worlds Apart",
+                "content": "Channel Islands National Park encompasses five remarkable islands and their ocean environment, preserving and protecting a wealth of natural and cultural resources. Isolation over thousands of years has created unique animals, plants, and archeological resources found nowhere else on Earth and helped preserve a place where visitors can experience coastal southern California as it once was."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/8B1831DF-1DD8-B71B-0BF9865C590EE5A5.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -140,7 +195,12 @@
                 "latitude": 33.8062043146765
             },
             "states": "South Carolina",
-            "nps_url": "https://www.nps.gov/cong/index.htm"
+            "nps_url": "https://www.nps.gov/cong/index.htm",
+            "description": {
+                "title": "Home of Champions",
+                "content": "Astonishing biodiversity exists in Congaree National Park, the largest intact expanse of old growth bottomland hardwood forest remaining in the southeastern United States. Waters from the Congaree and Wateree Rivers sweep through the floodplain, carrying nutrients and sediments that nourish and rejuvenate this ecosystem and support the growth of national and state champion trees."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/4E73B87D-FAA7-4272-FA3498E5C56C628F.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -152,7 +212,12 @@
                 "latitude": 42.94443605194011
             },
             "states": "Oregon",
-            "nps_url": "https://www.nps.gov/crla/index.htm"
+            "nps_url": "https://www.nps.gov/crla/index.htm",
+            "description": {
+                "title": "Deep Water in a Sleeping Volcano",
+                "content": "Crater Lake inspires awe. Native Americans witnessed its formation 7,700 years ago, when a violent eruption triggered the collapse of a tall peak. Scientists marvel at its purity\u2014fed by rain and snow, it\u2019s the deepest lake in the USA and one of the most pristine on Earth. Artists, photographers, and sightseers gaze in wonder at its blue water and stunning setting atop the Cascade Mountain Range."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/6B97B34B-1DD8-B71B-0B609E4FF8532FE9.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -164,7 +229,12 @@
                 "latitude": 41.26071335500069
             },
             "states": "Ohio",
-            "nps_url": "https://www.nps.gov/cuva/index.htm"
+            "nps_url": "https://www.nps.gov/cuva/index.htm",
+            "description": {
+                "title": "A River Renewed",
+                "content": "Though a short distance from the urban areas of Cleveland and Akron, Cuyahoga Valley National Park seems worlds away. The park is a refuge for native plants and wildlife, and provides routes of discovery for visitors. The winding Cuyahoga River gives way to deep forests, rolling hills, and open farmlands. Walk or ride the Towpath Trail to follow the historic route of the Ohio & Erie Canal."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/581E3F8A-1DD8-B71B-0B1D325CB27A1A5D.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -176,7 +246,12 @@
                 "latitude": 36.48741910067162
             },
             "states": "California, Nevada",
-            "nps_url": "https://www.nps.gov/deva/index.htm"
+            "nps_url": "https://www.nps.gov/deva/index.htm",
+            "description": {
+                "title": "Hottest, Driest and Lowest National Park",
+                "content": "In this below-sea-level basin, steady drought and record summer heat make Death Valley a land of extremes. Yet, each extreme has a striking contrast. Towering peaks are frosted with winter snow. Rare rainstorms bring vast fields of wildflowers. Lush oases harbor tiny fish and refuge for wildlife and humans. Despite its morbid name, a great diversity of life thrives in Death Valley."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/35B0E361-EC08-67D0-4721B91DCF1B1D0F.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -188,7 +263,12 @@
                 "latitude": 63.29777436004586
             },
             "states": "Alaska",
-            "nps_url": "https://www.nps.gov/dena/index.htm"
+            "nps_url": "https://www.nps.gov/dena/index.htm",
+            "description": {
+                "title": "More than a Mountain",
+                "content": "Denali is six million acres of wild land, bisected by one ribbon of road. Travelers along it see the relatively low-elevation taiga forest give way to high alpine tundra and snowy mountains, culminating in North America's tallest peak, 20,310' Mount McKinley. Wild animals large and small roam un-fenced lands, living as they have for ages. Solitude, tranquility and wilderness await."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/ECE79510-155D-9421-1FCF6F833BD84413.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -200,7 +280,12 @@
                 "latitude": 24.654395618647623
             },
             "states": "Florida",
-            "nps_url": "https://www.nps.gov/drto/index.htm"
+            "nps_url": "https://www.nps.gov/drto/index.htm",
+            "description": {
+                "title": "Explore a 19th Century Fort and Snorkel Crystal Clear Water with Incredible Marine Life",
+                "content": "Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. This 100-square mile park is mostly open water with seven small islands.\u00a0 Accessible only by boat or seaplane, the park is known the world over as the home of magnificent Fort Jefferson, picturesque blue waters, superlative coral reefs and marine life, and the vast assortment of bird life that frequents the area."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/B8CF5C7E-1DD8-B71B-0B62F152705DCACA.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -212,7 +297,12 @@
                 "latitude": 25.27225616404826
             },
             "states": "Florida",
-            "nps_url": "https://www.nps.gov/ever/index.htm"
+            "nps_url": "https://www.nps.gov/ever/index.htm",
+            "description": {
+                "title": "America's Everglades - The largest subtropical wilderness in the United States",
+                "content": "Everglades National Park protects an unparalleled landscape that provides important habitat for numerous rare and endangered species like the manatee,\u00a0 American crocodile, and the elusive Florida panther.An international treasure as well -\u00a0 a World Heritage Site, International Biosphere Reserve, a Wetland of International Importance, and a specially protected area under the Cartagena Treaty."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/29DCD268-EA83-A59B-BDBF9AB3877B9E60.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -224,7 +314,12 @@
                 "latitude": 67.9192854407937
             },
             "states": "Alaska",
-            "nps_url": "https://www.nps.gov/gaar/index.htm"
+            "nps_url": "https://www.nps.gov/gaar/index.htm",
+            "description": {
+                "title": "Discover a Premier Wilderness",
+                "content": "This vast landscape does not contain any roads or trails. Visitors discover intact ecosystems where people have lived with the land for over ten thousand years. Wild rivers meander through glacier-carved valleys, caribou migrate along age-old trails, endless summer light fades into aurora-lit night skies of winter. Virtually unchanged, except by the forces of nature."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/80BF2CBB-1DD8-B71B-0B0EE177F0BF9659.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -236,7 +331,12 @@
                 "latitude": 58.80086474447531
             },
             "states": "Alaska",
-            "nps_url": "https://www.nps.gov/glba/index.htm"
+            "nps_url": "https://www.nps.gov/glba/index.htm",
+            "description": {
+                "title": "Southeast Alaskan Wilderness",
+                "content": "Covering 3.3 million acres of rugged mountains, dynamic glaciers, temperate rainforest, wild coastlines and deep sheltered fjords, Glacier Bay National Park and Preserve is known as Homeland to the Huna and Yakutat \u0141ing\u00edt, and is a highlight of Alaska's Inside Passage. From sea to summit, Glacier Bay offers limitless opportunities for adventure and inspiration."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/5FE9C2B9-9FA1-E04F-23EE3DEF3EBDA3DD.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -248,7 +348,12 @@
                 "latitude": 48.68426876066877
             },
             "states": "Montana",
-            "nps_url": "https://www.nps.gov/glac/index.htm"
+            "nps_url": "https://www.nps.gov/glac/index.htm",
+            "description": {
+                "title": "Crown of the Continent",
+                "content": "A showcase of melting glaciers, alpine meadows, carved valleys, and spectacular lakes. With over 700 miles of trails, Glacier is a paradise for adventurous visitors seeking a landscape steeped in human culture. Relive the days of old through historic chalets, lodges, and the famous Going-to-the-Sun Road."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/C5A56E57-BB50-A74E-C7FA6F9F2218D91F.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -260,7 +365,12 @@
                 "latitude": 36.186683141213514
             },
             "states": "Arizona",
-            "nps_url": "https://www.nps.gov/grca/index.htm"
+            "nps_url": "https://www.nps.gov/grca/index.htm",
+            "description": {
+                "title": "Geologic Wonder and Ancestral Homeland",
+                "content": "Entirely within the state of Arizona, the park encompasses 278 miles (447 km) of the Colorado River and adjacent uplands. Located on the ancestral homelands of 11 present day Tribal Communities, Grand Canyon is one of the most spectacular examples of erosion anywhere in the world\u2014a mile deep canyon unmatched in the incomparable vistas it offers visitors from both north and south rims."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/5BA1ECAE-E61F-57F3-548778A6E12A987C.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -272,7 +382,12 @@
                 "latitude": 43.81853565368195
             },
             "states": "Wyoming",
-            "nps_url": "https://www.nps.gov/grte/index.htm"
+            "nps_url": "https://www.nps.gov/grte/index.htm",
+            "description": {
+                "title": "Mountains of the Imagination",
+                "content": "Soaring over a landscape rich with wildlife, pristine lakes, and majestic alpine vistas, the Teton Range stands as a testament to generations of stewards. For over 11,000 years, communities have thrived in the valley known as Jackson Hole, turning these mountains into more than just peaks\u2014they embody imagination and enduring human connection."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/B3CF0402-0C72-2247-816D63B41D1B3300.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -284,7 +399,12 @@
                 "latitude": 38.946173783127065
             },
             "states": "Nevada",
-            "nps_url": "https://www.nps.gov/grba/index.htm"
+            "nps_url": "https://www.nps.gov/grba/index.htm",
+            "description": {
+                "title": "From Caves to the Cosmos",
+                "content": "From the 13,063-foot summit of Wheeler Peak to the sagebrush-covered foothills, Great Basin National Park hosts a sample of the incredible diversity of the larger Great Basin region. Come and partake of the solitude of the wilderness, walk among ancient bristlecone pines, bask in the darkest of night skies, and explore mysterious subterranean passages. There's a lot more than just desert here."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/201FE384-F8DF-7A67-F799282C9034E8B1.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -296,7 +416,12 @@
                 "latitude": 37.759942701007226
             },
             "states": "Colorado",
-            "nps_url": "https://www.nps.gov/grsa/index.htm"
+            "nps_url": "https://www.nps.gov/grsa/index.htm",
+            "description": {
+                "title": "Dunes Among a Diverse Landscape",
+                "content": "Open 24/7 year round! There are no timed entries or reservations to visit. The tallest dunes in North America are the centerpiece in a diverse landscape of grasslands, wetlands, forests, alpine lakes, and tundra. Stay on a moonless night to experience countless stars in this International Dark Sky Park!"
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/6427905B-FF1D-D650-14FAC11B82A47C0B.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -308,7 +433,12 @@
                 "latitude": 35.53381126341195
             },
             "states": "North Carolina, Tennessee",
-            "nps_url": "https://www.nps.gov/grsm/index.htm"
+            "nps_url": "https://www.nps.gov/grsm/index.htm",
+            "description": {
+                "title": "A Wondrous Diversity of Life",
+                "content": "Ridge upon ridge of forest straddles the border between North Carolina and Tennessee in Great Smoky Mountains National Park. World renowned for its diversity of plant and animal life, the beauty of its ancient mountains, and the quality of its remnants of Southern Appalachian mountain culture, this is America's most visited national park. Plan your visit today!"
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/747B3819-F172-2AEA-B362B1FC038D2106.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -320,7 +450,12 @@
                 "latitude": 31.923384209391674
             },
             "states": "Texas",
-            "nps_url": "https://www.nps.gov/gumo/index.htm"
+            "nps_url": "https://www.nps.gov/gumo/index.htm",
+            "description": {
+                "title": "Find Your Peak",
+                "content": "Come experience mountains and canyons, desert and dunes, night skies and spectacular vistas within a place unlike any other. Guadalupe Mountains National Park protects the world's most extensive Permian fossil reef, the four highest peaks in Texas, an environmentally diverse collection of flora and fauna, and the stories of lives shaped through conflict, cooperation and survival."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/80E2D888-F25A-75F0-639ADEB893018593.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -332,7 +467,12 @@
                 "latitude": 20.704512129332194
             },
             "states": "Hawaii",
-            "nps_url": "https://www.nps.gov/hale/index.htm"
+            "nps_url": "https://www.nps.gov/hale/index.htm",
+            "description": {
+                "title": "A Rare and Sacred Landscape",
+                "content": "This special place vibrates with stories of ancient and modern Hawaiian culture and protects the bond between the land and its people. The park also cares for endangered species, some of which exist nowhere else. Come visit this special place - renew your spirit amid stark volcanic landscapes and sub-tropical rain forest with an unforgettable hike through the backcountry."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/357AE736-1DD8-B71B-0B099C77F75FF816.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -344,7 +484,12 @@
                 "latitude": 19.32614215615518
             },
             "states": "Hawaii",
-            "nps_url": "https://www.nps.gov/havo/index.htm"
+            "nps_url": "https://www.nps.gov/havo/index.htm",
+            "description": {
+                "title": "Born of Fire, Born of the Sea",
+                "content": "Hawai\u2018i Volcanoes National Park protects some of the most unique geological, biological, and cherished cultural landscapes in the world. Extending from sea level to 13,680 feet, the park encompasses the summits of two of the world's most active volcanoes - K\u012blauea and Mauna Loa - and is a designated International Biosphere Reserve and UNESCO World Heritage Site."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/36C3E97C-965A-0FBC-49F40566687E9E0E.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -356,7 +501,12 @@
                 "latitude": 34.51113822506357
             },
             "states": "Arkansas",
-            "nps_url": "https://www.nps.gov/hosp/index.htm"
+            "nps_url": "https://www.nps.gov/hosp/index.htm",
+            "description": {
+                "title": "Where History and Nature Meet.",
+                "content": "Hot Springs National Park has a rich cultural past. The grand architecture of our historic bathhouses is equally matched by the natural curiosities that have been drawing people here for hundreds of years. Ancient thermal springs, mountain views, incredible geology, forested hikes, and abundant creeks \u2013 all in the middle of town \u2013 make Hot Springs National Park a unique and beautiful destination."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/EC804E3D-DA2E-8D80-414AD1E55DF95EE6.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -368,7 +518,12 @@
                 "latitude": 47.900839582369585
             },
             "states": "Michigan",
-            "nps_url": "https://www.nps.gov/isro/index.htm"
+            "nps_url": "https://www.nps.gov/isro/index.htm",
+            "description": {
+                "title": "Your Invitation to a Superior Wilderness",
+                "content": "Explore a rugged, isolated island far from our connected communities. Isle Royale offers adventures for backpackers, hikers, boaters, paddlers, and divers. Cross Lake Superior and make a commitment: Become a part of this island, and let it become a part of you. Find peace and refuge in island wilderness \u2013 because Isle Royale, in turn, finds refuge in us. Help Isle Royale stay wild."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/8F411C5F-CB0E-0571-59908EF0002B0D8D.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -380,7 +535,12 @@
                 "latitude": 33.98096522850808
             },
             "states": "California",
-            "nps_url": "https://www.nps.gov/jotr/index.htm"
+            "nps_url": "https://www.nps.gov/jotr/index.htm",
+            "description": {
+                "title": "Where Two Deserts Meet",
+                "content": "Two distinct desert ecosystems, the Mojave and the Colorado, come together in Joshua Tree National Park. A fascinating variety of plants and animals make their homes in a land sculpted by strong winds and occasional torrents of rain. Dark night skies, a rich cultural history, and surreal geologic features add to the wonder of this vast wilderness in southern California. Come explore for yourself!"
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/DDAB86C3-CBAA-9B52-10E7FCF2839C3321.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -392,7 +552,12 @@
                 "latitude": 58.622573966764584
             },
             "states": "Alaska",
-            "nps_url": "https://www.nps.gov/katm/index.htm"
+            "nps_url": "https://www.nps.gov/katm/index.htm",
+            "description": {
+                "title": "Welcome to Katmai Country",
+                "content": "A landscape is alive underneath our feet, filled with creatures that remind us what it is to be wild.Katmai was established in 1918 to protect the volcanically devastated region surrounding Novarupta and the Valley of Ten Thousand Smokes. Today, Katmai National Park and Preserve also protects 9,000 years of human history and important habitat for salmon and thousands of brown bears."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/C301C0A0-E8BC-CDBD-4CD5634EA8A02059.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -404,7 +569,12 @@
                 "latitude": 59.95389688763184
             },
             "states": "Alaska",
-            "nps_url": "https://www.nps.gov/kefj/index.htm"
+            "nps_url": "https://www.nps.gov/kefj/index.htm",
+            "description": {
+                "title": "Where Mountains, Ice, and Ocean Meet",
+                "content": "At the edge of the Kenai Peninsula lies a land where the ice age lingers. Nearly 40 glaciers flow from the Harding Icefield, Kenai Fjords' crowning feature. Wildlife thrives in icy waters and lush forests along the fjords once carved by the vast expanse of ice. Today, shrinking glaciers bear witness to the effects of our changing climate."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/479F536C-0578-CA8B-EA9306523C814E70.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -416,7 +586,12 @@
                 "latitude": 67.28263652770183
             },
             "states": "Alaska",
-            "nps_url": "https://www.nps.gov/kova/index.htm"
+            "nps_url": "https://www.nps.gov/kova/index.htm",
+            "description": {
+                "title": "Land of the Living Sand Dunes",
+                "content": "Caribou, sand dunes, the Kobuk River, Onion Portage - just some of the facets of Kobuk Valley National Park. Thousands of caribou migrate through, their tracks crisscrossing sculpted dunes. The Kobuk River is an ancient and current corridor for people and wildlife. For 9000 years, people came to Onion Portage to harvest caribou as they swam the river. Even today, that rich tradition continues."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/3AA12CC6-E6E6-9F7D-79DA7C33936C11AC.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -428,7 +603,12 @@
                 "latitude": 60.64679690935658
             },
             "states": "Alaska",
-            "nps_url": "https://www.nps.gov/lacl/index.htm"
+            "nps_url": "https://www.nps.gov/lacl/index.htm",
+            "description": {
+                "title": "Stunning Wilderness",
+                "content": "Lake Clark National Park and Preserve is a land of stunning beauty. Volcanoes steam, salmon run, bears forage, and craggy mountains reflect in shimmering turquoise lakes. Here, too, local people and culture still depend on the land and water. Venture into the park to become part of the wilderness."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/9D511285-1DD8-B71B-0B39C127CBF6FD5D.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -440,7 +620,12 @@
                 "latitude": 40.48622026090819
             },
             "states": "California",
-            "nps_url": "https://www.nps.gov/lavo/index.htm"
+            "nps_url": "https://www.nps.gov/lavo/index.htm",
+            "description": {
+                "title": "From One Beautiful Form into Another",
+                "content": "Lassen Volcanic National Park is home to steaming fumaroles, meadows freckled with wildflowers, clear mountain lakes, and numerous volcanoes. Jagged peaks tell the story of its eruptive past while hot water continues to shape the land."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/4092E028-988D-C75D-56E62D51A83D26C7.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -452,7 +637,12 @@
                 "latitude": 37.197604576779035
             },
             "states": "Kentucky",
-            "nps_url": "https://www.nps.gov/maca/index.htm"
+            "nps_url": "https://www.nps.gov/maca/index.htm",
+            "description": {
+                "title": "More Than A Cave",
+                "content": "Rolling hills, deep river valleys, and the world's longest known cave system. Mammoth Cave National Park is home to thousands of years of human history and a rich diversity of plant and animal life, earning it the title of UNESCO World Heritage Site and International Biosphere Region."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/0E2033EC-9C99-C8C7-A8BF29BB1EA11146.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -464,7 +654,12 @@
                 "latitude": 37.22351315320654
             },
             "states": "Colorado",
-            "nps_url": "https://www.nps.gov/meve/index.htm"
+            "nps_url": "https://www.nps.gov/meve/index.htm",
+            "description": {
+                "title": "A Sacred Place",
+                "content": "For over 700 years, the Ancestral Pueblo people built thriving communities on the mesas and in the cliffs of Mesa Verde. Today, the park protects the rich cultural heritage of 27 Pueblos and Tribes and offers visitors a spectacular window into the past. This World Heritage Site and International Dark Sky Park is home to over a thousand species, including several that live nowhere else on earth."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/49412770-0F02-5CAF-A5D5A6585822C556.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -476,7 +671,12 @@
                 "latitude": 46.86055919903173
             },
             "states": "Washington",
-            "nps_url": "https://www.nps.gov/mora/index.htm"
+            "nps_url": "https://www.nps.gov/mora/index.htm",
+            "description": {
+                "title": "An Icon on the Horizon",
+                "content": "Ascending to 14,410 feet above sea level, Mount Rainier stands as an icon in the Washington landscape. An active volcano, Mount Rainier is the most glaciated peak in the contiguous U.S.A., spawning five major rivers. Subalpine wildflower meadows ring the icy volcano while ancient forest cloaks Mount Rainier\u2019s lower slopes. Wildlife abounds in the park\u2019s ecosystems. A lifetime of discovery awaits."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/EFEE6DC6-1DD8-B71B-0B9A2188BE6539A9.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -488,7 +688,12 @@
                 "latitude": -14.239727732693918
             },
             "states": "American Samoa",
-            "nps_url": "https://www.nps.gov/npsa/index.htm"
+            "nps_url": "https://www.nps.gov/npsa/index.htm",
+            "description": {
+                "title": "Explore the Islands of Sacred Earth",
+                "content": "The National Park of American Samoa invites you to discover the vibrant culture and stunning landscapes of the South Pacific. Experience a world unlike any other, where natural beauty and cultural heritage are protected for future generations. Join us in exploring these islands of sacred earth!"
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/25FAA5B5-1DD8-B71B-0B96C6CD4CEB4517.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -500,7 +705,12 @@
                 "latitude": 48.83303940981537
             },
             "states": "Washington",
-            "nps_url": "https://www.nps.gov/noca/index.htm"
+            "nps_url": "https://www.nps.gov/noca/index.htm",
+            "description": {
+                "title": "\"The North Cascades are Calling!\"",
+                "content": "Less than three hours from Seattle, an alpine landscape beckons. Discover communities of life adapted to moisture in the west and recurring fire in the east. Explore jagged peaks crowned by more than 300 glaciers. Listen to cascading waters in forested valleys. Witness a landscape sensitive to the Earth's changing climate. Help steward the ecological heart of the Cascades."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/575C3B44-1DD8-B71B-0BD879DB3BC0AD69.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -512,7 +722,12 @@
                 "latitude": 47.79453520449651
             },
             "states": "Washington",
-            "nps_url": "https://www.nps.gov/olym/index.htm"
+            "nps_url": "https://www.nps.gov/olym/index.htm",
+            "description": {
+                "title": "A Dazzling, Dynamic Wonderland",
+                "content": "With its incredible range of precipitation and elevation, diversity is the hallmark of Olympic National Park. Encompassing nearly a million acres, the park protects a vast wilderness, thousands of years of human history, and several distinctly different ecosystems, including glacier-capped mountains, old-growth temperate rain forests, and over 70 miles of wild coastline. Come explore!"
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/9A2E620C-9B6B-C506-26F7E7199B8D73FA.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -524,7 +739,12 @@
                 "latitude": 34.98868180401879
             },
             "states": "Arizona",
-            "nps_url": "https://www.nps.gov/pefo/index.htm"
+            "nps_url": "https://www.nps.gov/pefo/index.htm",
+            "description": {
+                "title": "A Place for Discovery",
+                "content": "Park Hours: 8am to 5pm, MST. Don't forget that Arizona does not observe Daylight Savings.Petrified Forest is best known for its Triassic fossils. It's like having two parks in one, an ecosystem over 200 million years old with plants and animals now represented in the surreal landscape of the Painted Desert. There is also a living park with its own denizens adapted to a demanding environment."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/150EC131-05BF-1222-9FA407EC6101A8B7.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -536,7 +756,12 @@
                 "latitude": 40.35579839722149
             },
             "states": "Colorado",
-            "nps_url": "https://www.nps.gov/romo/index.htm"
+            "nps_url": "https://www.nps.gov/romo/index.htm",
+            "description": {
+                "title": "Welcome to a Land of Extremes!",
+                "content": "Rocky Mountain National Park's 415 square miles (265,807 acres) encompasses a spectacular range of mountain environments. From meadows found in the montane life zone to glistening alpine lakes and up to the towering mountain peaks, there is something for everyone to discover. Along the way explore over 300 miles of hiking trails and incredible wildlife viewing."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/83C2EA3F-C6D9-31F1-3E8285EC0DEC7119.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -548,7 +773,12 @@
                 "latitude": 32.178836085393556
             },
             "states": "Arizona",
-            "nps_url": "https://www.nps.gov/sagu/index.htm"
+            "nps_url": "https://www.nps.gov/sagu/index.htm",
+            "description": {
+                "title": "Icon of the Southwest",
+                "content": "Tucson, Arizona is home to the nation's largest cacti. The giant saguaro is the universal symbol of the American west. These majestic plants, found only in a small portion of the United States, are protected by Saguaro National Park, to the east and west of the modern city of Tucson. Here you have a chance to see these enormous cacti, silhouetted by the beauty of a magnificent desert sunset."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/1C976521-0AD0-8907-FE3BD6A56B096D89.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -560,7 +790,12 @@
                 "latitude": 36.50785282265928
             },
             "states": "California",
-            "nps_url": "https://www.nps.gov/seki/index.htm"
+            "nps_url": "https://www.nps.gov/seki/index.htm",
+            "description": {
+                "title": "A Land of Giants",
+                "content": "Huge mountains, rugged foothills, deep canyons, vast caverns, and the world\u2019s largest trees exemplify the diversity of landscapes, life, and beauty here. Explore these pages to plan your visit or to learn about the plants and animals here and the threats they face. Ancient giant sequoias may seem invincible, but they, too are vulnerable."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/14B0FC86-DB98-FED5-4605BEDEEB487B7B.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -572,7 +807,12 @@
                 "latitude": 38.28108210674896
             },
             "states": "Virginia",
-            "nps_url": "https://www.nps.gov/shen/index.htm"
+            "nps_url": "https://www.nps.gov/shen/index.htm",
+            "description": {
+                "title": "Nature's Calling!",
+                "content": "Just 75 miles from the bustle of Washington, D.C., Shenandoah National Park is a land bursting with cascading waterfalls, spectacular vistas, fields of wildflowers, and quiet wooded hollows. With over 200,000 acres of protected lands that are haven to deer, songbirds, and black bear, there's so much to explore...and your journey begins right here!"
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/ner/homepage/7F4360E8-CEB6-B39B-902373E4FF3FFC7C.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -584,7 +824,12 @@
                 "latitude": 46.953620966658086
             },
             "states": "North Dakota",
-            "nps_url": "https://www.nps.gov/thro/index.htm"
+            "nps_url": "https://www.nps.gov/thro/index.htm",
+            "description": {
+                "title": "In Honor of a President",
+                "content": "When Theodore Roosevelt came to Dakota Territory to hunt bison in 1883, he was a skinny, young, spectacled dude from New York. He could not have imagined how his adventure in this remote and unfamiliar place would forever alter the course of the nation. The rugged landscape and strenuous life that TR experienced here would help shape a conservation policy that we still benefit from today."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/2118F52C-1DD8-B71B-0B0713EA8F3E1AEA.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -596,7 +841,12 @@
                 "latitude": 18.353798617233704
             },
             "states": "United States Virgin Islands",
-            "nps_url": "https://www.nps.gov/viis/index.htm"
+            "nps_url": "https://www.nps.gov/viis/index.htm",
+            "description": {
+                "title": "Dive into St. John's 3,000 years of human history!",
+                "content": "Go beyond Virgin Islands National Park's stunning white-sand beaches. Hike to historic plantation sites to learn about a challenging past when sugar and enslaved labor dominated life on the island. Visit the Indigenous Taino's ancient petroglyphs. Snorkel coral reefs to discover hidden marine life. Two-thirds of the island of St. John is national park, making it a unique destination for visitors."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/9F5976B7-D4D2-3A7A-7B1B9359FB8E1FBB.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -608,7 +858,12 @@
                 "latitude": 48.51716932219992
             },
             "states": "Minnesota",
-            "nps_url": "https://www.nps.gov/voya/index.htm"
+            "nps_url": "https://www.nps.gov/voya/index.htm",
+            "description": {
+                "title": "A Park of Water, Islands, and Horizons",
+                "content": "Voyageurs National Park spans 218,000 acres of lakes, forests, and streams in northern Minnesota. Established in 1975, the park is named after the French-Canadian Voyageurs who once navigated these abundant waters. Voyageurs National Park provides exceptional opportunities for recreation and exploration amidst landscapes rich in natural beauty, history, and cultural heritage."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/C73409B8-A2E9-FFD1-1FFE7949CA129255.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -620,7 +875,12 @@
                 "latitude": 43.60787178123641
             },
             "states": "South Dakota",
-            "nps_url": "https://www.nps.gov/wica/index.htm"
+            "nps_url": "https://www.nps.gov/wica/index.htm",
+            "description": {
+                "title": "Discover Two Parks in One",
+                "content": "Wind Cave National Park protects two very different worlds - one deep within the earth, the other a sunlit world of many resources. Bison, elk, and other wildlife roam the rolling prairie grasslands and forested hillsides of one of America's oldest national parks. Below the remnant island of intact prairie sits Wind Cave, one of the longest and most complex caves in the world."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/CC25AAB0-1DD8-B71B-0B48DF48A0B8DE84.JPG?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -632,7 +892,12 @@
                 "latitude": 38.93793199647512
             },
             "states": "Virginia",
-            "nps_url": "https://www.nps.gov/wotr/index.htm"
+            "nps_url": "https://www.nps.gov/wotr/index.htm",
+            "description": {
+                "title": "The only national park dedicated to presenting the performing arts.",
+                "content": "No matter what your age or taste in shows, you'll find something you like onstage at Wolf Trap National Park for the Performing Arts. From May through September, multiple amphitheaters in the park present performances such as musicals, dance, opera, jazz, and popular and country music.A good time to explore the beauty and history of the park without the crowds is October - April."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/ncr/homepage/49ACF3F4-9FD4-248D-0EE63D5220F167BC.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -644,7 +909,12 @@
                 "latitude": 61.41843937955613
             },
             "states": "Alaska",
-            "nps_url": "https://www.nps.gov/wrst/index.htm"
+            "nps_url": "https://www.nps.gov/wrst/index.htm",
+            "description": {
+                "title": "America's Largest National Park",
+                "content": "Wrangell-St. Elias is a vast national park that rises from the ocean all the way up to 18,008 ft. At 13.2 million acres, the park is the same size as Yellowstone National Park, Yosemite National Park, and Switzerland combined! Within this wild landscape, people continue to live off the land as they have done for centuries. This rugged, beautiful land is filled with opportunities for adventure."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/F8805363-1DD8-B71B-0BE59C3D3428BD7B.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -656,7 +926,12 @@
                 "latitude": 44.583032217213656
             },
             "states": "Wyoming, Montana, Idaho",
-            "nps_url": "https://www.nps.gov/yell/index.htm"
+            "nps_url": "https://www.nps.gov/yell/index.htm",
+            "description": {
+                "title": "The World's First National Park",
+                "content": "On March 1, 1872, Yellowstone became the first national park for all to enjoy the unique hydrothermal and geologic features. Within Yellowstone's 2.2 million acres, visitors have unparalleled opportunities to observe wildlife in an intact ecosystem, explore geothermal areas that contain about half the world\u2019s active geysers, and view geologic wonders like the Grand Canyon of the Yellowstone River."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/DE60205D-00EB-E6E0-B5F691CCCC636D6C.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -668,7 +943,12 @@
                 "latitude": 37.84893656911814
             },
             "states": "California",
-            "nps_url": "https://www.nps.gov/yose/index.htm"
+            "nps_url": "https://www.nps.gov/yose/index.htm",
+            "description": {
+                "title": "Yosemite",
+                "content": "Not just a great valley, but a shrine to human foresight, the strength of granite, the power of glaciers, the persistence of life, and the tranquility of the High Sierra.First protected in 1864, Yosemite National Park is best known for its waterfalls, but within its nearly 1,200 square miles, you can find deep valleys, grand meadows, ancient giant sequoias, a vast wilderness area, and much more."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/36C683FE-1DD8-B71B-0B6B4AE9C34946B8.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -680,7 +960,12 @@
                 "latitude": 37.255709497131065
             },
             "states": "Utah",
-            "nps_url": "https://www.nps.gov/zion/index.htm"
+            "nps_url": "https://www.nps.gov/zion/index.htm",
+            "description": {
+                "title": "Utah's First National Park",
+                "content": "Follow the paths where people have walked for thousands of years. Gaze up at massive sandstone cliffs of cream, pink, and red that soar into a brilliant blue sky. Experience the tall, stretching walls of a narrow slot canyon. Zion\u2019s unique array of plants and animals will enchant you as you absorb the rich history of the past and enjoy the excitement of present-day adventures."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/47299690-C5E9-0C7F-0CF70CFE6625C0E7.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -692,7 +977,12 @@
                 "latitude": 38.625143035481344
             },
             "states": "Missouri",
-            "nps_url": "https://www.nps.gov/gaar/index.htm"
+            "nps_url": "https://www.nps.gov/gaar/index.htm",
+            "description": {
+                "title": "Discover a Premier Wilderness",
+                "content": "This vast landscape does not contain any roads or trails. Visitors discover intact ecosystems where people have lived with the land for over ten thousand years. Wild rivers meander through glacier-carved valleys, caribou migrate along age-old trails, endless summer light fades into aurora-lit night skies of winter. Virtually unchanged, except by the forces of nature."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/akr/homepage/80BF2CBB-1DD8-B71B-0B0EE177F0BF9659.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -704,7 +994,12 @@
                 "latitude": 41.654384302554455
             },
             "states": "Indiana",
-            "nps_url": "https://www.nps.gov/indu/index.htm"
+            "nps_url": "https://www.nps.gov/indu/index.htm",
+            "description": {
+                "title": "Finding Sand and Solitude",
+                "content": "Lake Michigan's might has influenced Indiana Dunes for millennia. Wind and waves have shaped the land, leaving a rich mosaic of habitats along these 15 miles of Indiana coast. Over 50 miles of trails lead through shifting sand dunes, quiet woodlands, sunny prairies and lush wetlands. Known for its striking plant and bird diversity, it's easy to find inspiration throughout the park\u2019s 15,000 acres."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/mwr/homepage/D861DCC5-D20D-94B1-BF92E14EA155A584.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -716,7 +1011,12 @@
                 "latitude": 37.87534462108355
             },
             "states": "West Virginia",
-            "nps_url": "https://www.nps.gov/neri/index.htm"
+            "nps_url": "https://www.nps.gov/neri/index.htm",
+            "description": {
+                "title": "A River Runs Through It",
+                "content": "A rugged, whitewater river flowing northward through deep canyons, the New River is among the oldest rivers on the continent. The park encompasses over 70,000 acres of land along the New River, is rich in cultural and natural history, and offers an abundance of scenic and recreational opportunities."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/ner/homepage/6AFE3811-DC0D-0DA3-B14E436B994AA19A.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -728,7 +1028,12 @@
                 "latitude": 36.49510423649378
             },
             "states": "California",
-            "nps_url": "https://www.nps.gov/pinn/index.htm"
+            "nps_url": "https://www.nps.gov/pinn/index.htm",
+            "description": {
+                "title": "A Landscape Forged by Volcanoes",
+                "content": "Around 23 million years ago, a series of volcanic eruptions shaped the landscape that is now Pinnacles National Park. The remnants of these ancient eruptions have formed a striking terrain of rocky spires and deep canyons. Visitors can explore diverse environments, from chaparral and oak woodlands to the cool, shaded depths of canyon floors."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/2913AF89-1DD8-B71B-0B428CC0594DA1F3.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -740,7 +1045,12 @@
                 "latitude": 41.408483998552235
             },
             "states": "California",
-            "nps_url": "https://www.nps.gov/redw/index.htm"
+            "nps_url": "https://www.nps.gov/redw/index.htm",
+            "description": {
+                "title": "Beyond the Giants: Explore Redwood\u2019s Many Wonders",
+                "content": "Renowned for the world\u2019s tallest trees, Redwood\u2019s landscapes span from open prairies and oak woodlands to pristine rivers and untamed coastline. This ancient home has supported people for thousands of years. The National Park Service and California State Parks now work to safeguard and rejuvenate these lands for everyone\u2019s enjoyment, learning, and inspiration."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/pwr/homepage/0FBA9AF8-1DD8-B71B-0BF72F798FF5BC7E.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     },
     {
@@ -752,7 +1062,12 @@
                 "latitude": 32.800789133820935
             },
             "states": "New Mexico",
-            "nps_url": "https://www.nps.gov/whsa/index.htm"
+            "nps_url": "https://www.nps.gov/whsa/index.htm",
+            "description": {
+                "title": "Like No Place Else on Earth",
+                "content": "Rising from the heart of the Tularosa Basin is one of the world's great natural wonders - the glistening white sands of New Mexico. Great wave-like dunes of gypsum sand have engulfed 275 square miles of desert, creating the world's largest gypsum dunefield. White Sands National Park preserves a major portion of this unique dunefield, along with the plants and animals that live here."
+            },
+            "img_url": "https://www.nps.gov/common/uploads/banner_image/imr/homepage/A16AAF73-C278-1129-5EB3056BED7BA85C.jpg?mode=crop&quality=90&width=1024&height=300"
         }
     }
 ]

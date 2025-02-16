@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import parkList from "@json_data/park_list_with_uuid.json";
-import { NationalPark } from "@lib/interfaces";
+import { ParkInfoJson } from "@lib/interfaces";
 import { generateSuggestedPark } from "@lib/searchBar";
 import { useSetAtom } from "jotai";
 import { selectedParkAtom } from "@lib/atoms/atoms";
@@ -13,7 +13,7 @@ interface SearchBarProps {
 const SearchBar = ({ showSearchBar }: SearchBarProps) => {
     const searchRef = useRef<HTMLInputElement>(null);
     const [searchIsActive, setSearchIsActive] = useState<boolean>(false);
-    const [suggestedParkList, setSuggestedParkList] = useState<NationalPark[]>(
+    const [suggestedParkList, setSuggestedParkList] = useState<ParkInfoJson[]>(
         []
     );
     const setSelectedParkAtom = useSetAtom(selectedParkAtom);
@@ -47,7 +47,7 @@ const SearchBar = ({ showSearchBar }: SearchBarProps) => {
         }
     };
 
-    const handleParkButtonClick = (park: NationalPark) => {
+    const handleParkButtonClick = (park: ParkInfoJson) => {
         setSelectedParkAtom(park);
         setSearchIsActive(false);
         setSearchBarExtraClasses("rounded-md");

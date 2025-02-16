@@ -73,7 +73,10 @@ export interface ParkInfoJson {
         };
         states: string;
         nps_url: string;
-        description?: string;
-        img_url?: string;
+        description: {
+            title: string;
+            content: string;
+        };
+        img_url: string;
     };
 }
