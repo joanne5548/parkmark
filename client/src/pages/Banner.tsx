@@ -1,5 +1,4 @@
 import { FaHome } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
 
 const Banner = () => {

@@ -12,7 +12,6 @@ import {
     fetchReviewsLikedByUser,
 } from "@lib/APIs/reviewApi";
 import { useAtomValue } from "jotai";
-import Banner from "./Banner";
 
 const ProfilePage = () => {
     const navigate = useNavigate();
