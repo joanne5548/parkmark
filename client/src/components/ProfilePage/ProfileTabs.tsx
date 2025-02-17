@@ -46,7 +46,7 @@ const ProfileTabs = ({ tabs }: ProfileReviewTileProps) => {
                             >
                                 {tab.title}
                             </div>
-                            {tab.length && (
+                            {(tab.length || tab.length === 0) && (
                                 <div
                                     className={clsx(
                                         "text-[10px] font-semibold px-2 py-[1px] rounded-md",
