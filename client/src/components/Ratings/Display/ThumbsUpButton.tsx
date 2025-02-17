@@ -12,9 +12,10 @@ import { LuThumbsUp } from "react-icons/lu";
 interface ThumbsUpButtonProps {
     reviewId: string;
     initialThumbsUpBool: boolean;
+    fetchReviews: () => Promise<void>;
 }
 
-const ThumbsUpButton = ({ reviewId, initialThumbsUpBool }: ThumbsUpButtonProps) => {
+const ThumbsUpButton = ({ reviewId, initialThumbsUpBool, fetchReviews }: ThumbsUpButtonProps) => {
     const [thumbsUpBool, setThumbsUpBool] = useState<boolean>(initialThumbsUpBool);
     const [thumbsUpCount, setThumbsUpCount] = useState<number>(0);
     const logInUser: UserData | null = useAtomValue(logInUserAtom);
@@ -52,16 +53,14 @@ const ThumbsUpButton = ({ reviewId, initialThumbsUpBool }: ThumbsUpButtonProps) 
 
         await calculateNumberOfThumbsUp();
         setThumbsUpBool(newThumbsUpBool);
+        fetchReviews();
     };
 
     const calculateNumberOfThumbsUp = async () => {
         const thumbsUpList = await fetchThumbsUpListByReviewId(reviewId);
 
         if (thumbsUpList === undefined) {
-            console.log(
-                `undefined number of thumbs up at review id: ${reviewId}`
-            );
-            return;
+            throw new Error(`undefined number of thumbs up at review id: ${reviewId}`);
         }
 
         if (thumbsUpList.length === 0) {
@@ -74,6 +73,10 @@ const ThumbsUpButton = ({ reviewId, initialThumbsUpBool }: ThumbsUpButtonProps) 
     useEffect(() => {
         calculateNumberOfThumbsUp();
     }, []);
+
+    useEffect(() => {
+        setThumbsUpBool(initialThumbsUpBool);
+    }, [initialThumbsUpBool]);
 
     return (
         <button onClick={handleThumbsUpButtonClick} className={buttonClassName}>

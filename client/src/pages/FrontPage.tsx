@@ -9,8 +9,8 @@ const FrontPage = () => {
 
     return (
         <div className="flex flex-col gap-2 sm:gap-4 p-2 sm:p-6 h-screen">
-            <NavBar />
-            <div className="flex-1 min-h-0 overflow-auto relative flex flex-row items-center gap-6">
+            <NavBar showSearchBar={true} />
+            <div className="relative flex flex-row items-center gap-6 h-full">
                 <MapContainer />
                 {selectedPark && <RatingsSidePanel />}
             </div>

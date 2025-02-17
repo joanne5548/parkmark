@@ -66,7 +66,7 @@ const Login = () => {
                     <GoogleLogin
                         onSuccess={handleLoginSuccess}
                         onError={() => {
-                            console.log("Login failed! :(");
+                            throw new Error("Login failed! :(");
                         }}
                         auto_select={true}
                         type={logInIconStyle}

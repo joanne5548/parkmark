@@ -10,6 +10,7 @@ export interface UserData {
     name: string;
     email: string;
     profile_picture_url: string;
+    created_at?: string;
 }
 
 export interface NationalPark {
@@ -60,4 +61,22 @@ export interface StarRatingPercentageList {
     "3": number;
     "4": number;
     "5": number;
+}
+
+export interface ParkInfoJson {
+    id: string;
+    name: string;
+    park_info: {
+        coordinates: {
+            longitude: number;
+            latitude: number;
+        };
+        states: string;
+        nps_url: string;
+        description: {
+            title: string;
+            content: string;
+        };
+        img_url: string;
+    };
 }
