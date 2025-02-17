@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useAtom, useAtomValue } from "jotai";
-import { selectedParkAtom, selectedParkReviewListAtom } from "@lib/atoms/atoms";
+import { useAtom } from "jotai";
+import { selectedParkAtom } from "@lib/atoms/atoms";
 import { IoClose } from "react-icons/io5";
 import { MdAdd } from "react-icons/md";
 import RatingsCardList from "./Display/RatingsCardList";
@@ -10,7 +10,7 @@ import ProfileTabs from "../ProfilePage/ProfileTabs";
 
 const RatingsSidePanel = () => {
     const [selectedPark, setSelectedPark] = useAtom(selectedParkAtom);
-    const selectedParkReviewList = useAtomValue(selectedParkReviewListAtom)
+    // const selectedParkReviewList = useAtomValue(selectedParkReviewListAtom)
     const [creatingNewReview, setCreatingNewReview] = useState<boolean>(false);
 
     const handleCloseButton = () => {
