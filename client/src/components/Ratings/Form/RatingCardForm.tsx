@@ -119,7 +119,7 @@ const RatingCardForm = ({ resetCreatingNewReview }: RatingCardFormProps) => {
                             <div className="flex flex-col sm:flex-row gap-2 pb-2 sm:items-center">
                                 <SelectStars
                                     ratingStars={ratingStars}
-                                    size={4}
+                                    size={5}
                                     setRatingStars={(i: number) =>
                                         setRatingStars(i)
                                     }
