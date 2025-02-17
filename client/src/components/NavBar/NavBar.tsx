@@ -16,7 +16,7 @@ const NavBar = ({ showSearchBar }: NavBarProps) => {
     };
 
     return (
-        <div className="flex flex-row justify-between gap-2 sm:gap-4">
+        <div className="flex flex-row justify-between gap-2 sm:gap-4 mb-3">
             <div className={clsx(
                 "flex-row gap-2 sm:gap-4 items-center",
                 showSearchBar ? "hidden sm:flex" : "flex"
