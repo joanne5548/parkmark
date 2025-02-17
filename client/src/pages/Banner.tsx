@@ -19,9 +19,9 @@ const Banner = () => {
             >
                 <FaHome className="size-3.5" />
             </a>
-            <a href="mailto:joanne.kim0328@gmail.com">
+            {/* <a href="mailto:joanne.kim0328@gmail.com">
                 <MdEmail className="size-3.5" />
-            </a>
+            </a> */}
             <a
                 target="_blank"
                 rel="noopener noreferrer"

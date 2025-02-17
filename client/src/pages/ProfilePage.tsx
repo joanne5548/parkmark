@@ -81,7 +81,7 @@ const ProfilePage = () => {
     return (
         <div className="flex flex-col gap-1 sm:gap-5 p-4 sm:p-6 sm:pr-3 sm:pb-3 h-screen">
             <NavBar showSearchBar={false} />
-            <div className="min-h-0 flex-1 flex flex-col sm:flex-row justify-center gap-8 sm:gap-24 py-4">
+            <div className="min-h-0 flex-1 flex flex-col sm:flex-row justify-center gap-4 sm:gap-24 pb-4 sm:py-4">
                 <ProfileTile
                     userData={userData}
                     reviewCount={reviewsCreatedByUser.length}
@@ -149,7 +149,6 @@ const ProfilePage = () => {
                     />
                 </div>
             </div>
-            <Banner />
         </div>
     );
 };
