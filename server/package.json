@@ -4,8 +4,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "node --files dist/src/index.js",
-    "dev": "nodemon --files src/index.ts"
+    "start": "node dist/src/index.js",
+    "dev": "nodemon src/index.ts"
   },
   "author": "",
   "license": "ISC",

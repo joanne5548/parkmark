@@ -9,7 +9,6 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
-RUN npm install -g ts-node typescript
 
 # Copy the rest of the application code
 COPY . .
@@ -21,4 +20,4 @@ RUN npm run build
 EXPOSE 5000
 
 # Start the application
-CMD ["ts-node", "--files", "dist/src/index.js"]
+CMD ["node", "dist/src/index.js"]
