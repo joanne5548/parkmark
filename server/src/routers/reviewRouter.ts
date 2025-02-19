@@ -1,9 +1,10 @@
 import { Request, RequestHandler, Response, Router } from "express";
 import pool from "../db";
-import { handleError } from "../../middleware/errorHandler";
+import { handleError } from "../lib/errorHandler";
 import { deleteImage, uploadImage } from "../cloud/bucketFileManager";
 import { upload } from "../multer/multer";
-import { authenticateUser } from "../../middleware/userAuth";
+import { authenticateUser } from "../middleware/userAuth";
+import { deleteImages } from "../lib/handleImages";
 
 export const reviewRouter = Router();
 
@@ -42,7 +43,6 @@ reviewRouter.post(
             await Promise.all(
                 fileList.map(async (file) => {
                     const img_url = await uploadImage(file);
-                    console.log(img_url);
 
                     await pool.query(
                         "INSERT INTO ReviewImage(review_id, img_url) VALUES ($1, $2)",
@@ -55,6 +55,7 @@ reviewRouter.post(
                 "SELECT img_url FROM ReviewImage WHERE review_id=$1",
                 [review_id]
             );
+
             const imgUrlList = selectQueryResult.rows.map((reviewImage) => {
                 return reviewImage["img_url"];
             });
@@ -102,19 +103,20 @@ reviewRouter.get("/likedBy", async (req: Request, res: Response) => {
         const { user_sub_id, login_user_sub_id = "" } = req.query;
 
         // Common Table Expression (CTE) :o is very cool and useful!
-        const cte = "WITH UserThumbedReviews AS (SELECT review_id FROM ThumbsUpList WHERE user_sub_id=$1)"
+        const cte =
+            "WITH UserThumbedReviews AS (SELECT review_id FROM ThumbsUpList WHERE user_sub_id=$1)";
 
         const columns =
             "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url, ThumbsUpList.id AS thumbs_up_id, (SELECT ARRAY_AGG(img_url) AS img_url_list FROM ReviewImage WHERE ReviewImage.review_id=Review.id)";
 
-            const selectQueryResult = await pool.query(
-                `${cte} SELECT ${columns} FROM Review
+        const selectQueryResult = await pool.query(
+            `${cte} SELECT ${columns} FROM Review
                     JOIN UserThumbedReviews ON UserThumbedReviews.review_id=Review.id
                     LEFT JOIN ThumbsUpList ON Review.id=ThumbsUpList.review_id AND ThumbsUpList.user_sub_id=$2
                     JOIN UserData ON Review.user_sub_id=UserData.sub_id
                     ORDER BY Review.created_at DESC`,
-                [user_sub_id, login_user_sub_id]
-            );
+            [user_sub_id, login_user_sub_id]
+        );
 
         res.json(selectQueryResult.rows);
     } catch (error) {
@@ -241,32 +243,38 @@ reviewRouter.put("/review_id/:id", async (req: Request, res: Response) => {
     }
 });
 
-reviewRouter.delete("/review_id/:id", authenticateUser, async (req: Request, res: Response) => {
-    try {
-        const { id } = req.params;
-        const decoded_sub_id = req.decoded_user?.sub_id;
+reviewRouter.delete(
+    "/review_id/:id",
+    authenticateUser,
+    async (req: Request, res: Response) => {
+        try {
+            const { id } = req.params;
+            const decoded_sub_id = req.decoded_user?.sub_id;
 
-        const selectQueryResult = await pool.query(
-            "SELECT user_sub_id FROM Review WHERE id=$1",
-            [id]
-        );
+            const selectQueryResult = await pool.query(
+                "SELECT user_sub_id FROM Review WHERE id=$1",
+                [id]
+            );
 
-        if (selectQueryResult.rows[0] && decoded_sub_id !== selectQueryResult.rows[0].user_sub_id) {
-            res.status(401).json({ message: "Unauthenticated Request"});
-            return;
+            if (
+                selectQueryResult.rows[0] &&
+                decoded_sub_id !== selectQueryResult.rows[0].user_sub_id
+            ) {
+                res.status(401).json({ message: "Unauthenticated Request" });
+                return;
+            }
+
+            const deleteQueryResult = await pool.query(
+                "DELETE FROM Review WHERE id=$1",
+                [id]
+            );
+
+            res.json(deleteQueryResult);
+        } catch (error) {
+            handleError(error, res);
         }
-
-        console.log("Passed review authentication");
-        const deleteQueryResult = await pool.query(
-            "DELETE FROM Review WHERE id=$1",
-            [id]
-        );
-
-        res.json(deleteQueryResult);
-    } catch (error) {
-        handleError(error, res);
     }
-});
+);
 
 reviewRouter.delete("/image/:id", async (req: Request, res: Response) => {
     try {
@@ -304,19 +312,15 @@ reviewRouter.delete(
             );
 
             // If the decoded user is not the same as the creator of the review
-            if (selectQueryResult.rows[0] && decoded_sub_id !== selectQueryResult.rows[0].user_sub_id) {
-                res.status(401).json({ message: "Unauthenticated Request"});
+            if (
+                selectQueryResult.rows[0] &&
+                decoded_sub_id !== selectQueryResult.rows[0].user_sub_id
+            ) {
+                res.status(401).json({ message: "Unauthenticated Request" });
                 return;
             }
 
-            console.log("Passed image authentication");
-            await Promise.all(
-                selectQueryResult.rows.map(async (reviewImage) => {
-                    const img_url = reviewImage["img_url"];
-
-                    await deleteImage(img_url);
-                })
-            );
+            await deleteImages(selectQueryResult.rows);
 
             const deleteQueryResult = await pool.query(
                 "DELETE FROM ReviewImage WHERE review_id=$1",

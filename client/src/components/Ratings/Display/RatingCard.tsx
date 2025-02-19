@@ -24,9 +24,9 @@ const RatingCard: React.FC<RatingCardProps> = ({
     const logInUser = useAtomValue(logInUserAtom);
 
     const handleDeleteRatingButtonOnClick = async () => {
-        const result = confirm("Are you sure you want to delete the review?");
+        const response = confirm("Are you sure you want to delete the review?");
 
-        if (!result) {
+        if (!response) {
             return;
         }
 
@@ -37,7 +37,7 @@ const RatingCard: React.FC<RatingCardProps> = ({
 
     const handleReviewUserNameClick = () => {
         navigate(`/profile/${review.user_sub_id}`);
-    }
+    };
 
     return (
         <div className="flex flex-row sm:gap-4 py-4 sm:py-5 border-b-2">
@@ -47,7 +47,10 @@ const RatingCard: React.FC<RatingCardProps> = ({
                         src={review.user_profile_picture_url}
                         className="size-8 sm:size-10 rounded-xl object-cover"
                     />
-                    <button onClick={handleReviewUserNameClick} className="text-[0.95rem] sm:text-base font-medium hover:underline">
+                    <button
+                        onClick={handleReviewUserNameClick}
+                        className="text-[0.95rem] sm:text-base font-medium hover:underline"
+                    >
                         {review.user_name}
                     </button>
                 </div>

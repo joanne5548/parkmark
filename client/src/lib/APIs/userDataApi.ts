@@ -13,6 +13,19 @@ export async function postNewUser(userData: UserData) {
     if (!response.ok) {
         throw new Error(`[Backend] Network response error: ${response.status}`);
     }
+
+    const data = await response.json();
+
+    if (!data) {
+        throw new Error("Error creating new user.");
+    }
+
+    if (data.token) {
+        localStorage.setItem("authToken", data.token);
+    }
+    else {
+        throw new Error("Authentication failed");
+    }
 }
 
 export async function getUser(sub_id: string) {
@@ -29,6 +42,11 @@ export async function getUser(sub_id: string) {
     }
 
     const data = await response.json();
+
+    // If user doesn't exist
+    if (!data) {
+        return null;
+    }
     
     // store auth token in local storage
     if (data.token) {
@@ -53,6 +71,26 @@ export const putUser = async (userData: UserData) => {
         if (!response.ok) {
             throw new Error(`[Backend] Network error: ${response.status}`);
         }
+    }
+    catch (error) {
+        handleApiError(error);
+    }
+}
+
+export const deleteUser = async (subId: string) => {
+    try {
+        const token = localStorage.getItem("authToken");
+
+        const response = await fetch(`${backendUrl}/api/userdata/${subId}`, {
+            method: "DELETE",
+            headers: { "Authorization": `Bearer ${token}` },
+        });
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network error: ${response.status}`);
+        }
+
+        return true;
     }
     catch (error) {
         handleApiError(error);

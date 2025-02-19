@@ -9,3 +9,9 @@ declare global {
         }
     }
 }
+
+export interface ReviewImage {
+    id: string;
+    review_id: string;
+    img_url: string;
+}
