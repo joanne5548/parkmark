@@ -1,8 +1,9 @@
-import { Request, Response, Router } from "express";
+import { Request, RequestHandler, Response, Router } from "express";
 import pool from "../db";
 import { handleError } from "../../middleware/errorHandler";
 import { deleteImage, uploadImage } from "../cloud/bucketFileManager";
 import { upload } from "../multer/multer";
+import { authenticateUser } from "../../middleware/userAuth";
 
 export const reviewRouter = Router();
 
@@ -143,6 +144,7 @@ reviewRouter.get("/reviewWithUserData", async (req: Request, res: Response) => {
         const columns =
             "Review.id AS review_id, Review.park_id, Review.rating, Review.content, Review.created_at, Review.user_sub_id, UserData.name AS user_name, UserData.profile_picture_url AS user_profile_picture_url, ThumbsUpList.id AS thumbs_up_id, (SELECT ARRAY_AGG(img_url) AS img_url_list FROM ReviewImage WHERE ReviewImage.review_id=Review.id)";
 
+        // img_urls is compiled as a list (array) using ARRAY_AGG
         const selectQueryResult = await pool.query(
             `SELECT ${columns} FROM Review
                 LEFT JOIN ThumbsUpList ON Review.id=ThumbsUpList.review_id AND ThumbsUpList.user_sub_id=$1
@@ -150,8 +152,6 @@ reviewRouter.get("/reviewWithUserData", async (req: Request, res: Response) => {
                 ORDER BY Review.created_at DESC`,
             [user_sub_id, park_id]
         );
-
-        // now it returns urls as list
 
         res.json(selectQueryResult.rows);
     } catch (error) {
@@ -241,10 +241,22 @@ reviewRouter.put("/review_id/:id", async (req: Request, res: Response) => {
     }
 });
 
-reviewRouter.delete("/review_id/:id", async (req: Request, res: Response) => {
+reviewRouter.delete("/review_id/:id", authenticateUser, async (req: Request, res: Response) => {
     try {
         const { id } = req.params;
+        const decoded_sub_id = req.decoded_user?.sub_id;
 
+        const selectQueryResult = await pool.query(
+            "SELECT user_sub_id FROM Review WHERE id=$1",
+            [id]
+        );
+
+        if (selectQueryResult.rows[0] && decoded_sub_id !== selectQueryResult.rows[0].user_sub_id) {
+            res.status(401).json({ message: "Unauthenticated Request"});
+            return;
+        }
+
+        console.log("Passed review authentication");
         const deleteQueryResult = await pool.query(
             "DELETE FROM Review WHERE id=$1",
             [id]
@@ -280,15 +292,24 @@ reviewRouter.delete("/image/:id", async (req: Request, res: Response) => {
 
 reviewRouter.delete(
     "/image/review_id/:review_id",
+    authenticateUser,
     async (req: Request, res: Response) => {
         try {
             const { review_id } = req.params;
+            const decoded_sub_id = req.decoded_user?.sub_id;
 
             const selectQueryResult = await pool.query(
-                "SELECT * FROM ReviewImage WHERE review_id=$1",
+                "SELECT ReviewImage.*, Review.user_sub_id FROM ReviewImage JOIN Review ON ReviewImage.review_id=Review.id WHERE review_id=$1",
                 [review_id]
             );
 
+            // If the decoded user is not the same as the creator of the review
+            if (selectQueryResult.rows[0] && decoded_sub_id !== selectQueryResult.rows[0].user_sub_id) {
+                res.status(401).json({ message: "Unauthenticated Request"});
+                return;
+            }
+
+            console.log("Passed image authentication");
             await Promise.all(
                 selectQueryResult.rows.map(async (reviewImage) => {
                     const img_url = reviewImage["img_url"];

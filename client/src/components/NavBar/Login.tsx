@@ -4,7 +4,6 @@ import { jwtDecode } from "jwt-decode";
 import { GoogleLoginCredential, UserData } from "@lib/interfaces";
 import {
     getUser,
-    handleApiError,
     postNewUser,
     putUser,
 } from "@lib/APIs/userDataApi";
@@ -12,6 +11,7 @@ import { useAtom } from "jotai";
 import { logInUserAtom } from "@lib/atoms/atoms";
 import { userDataMatchesFromDatabase } from "@lib/checkUserDataFromDb";
 import { useEffect, useState } from "react";
+import { handleApiError } from "@lib/apiHelpers";
 
 const Login = () => {
     const [logInUser, setLogInUser] = useAtom(logInUserAtom);

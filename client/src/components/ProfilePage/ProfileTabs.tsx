@@ -24,7 +24,7 @@ const ProfileTabs = ({ tabs }: ProfileReviewTileProps) => {
 
     return (
         <div className="h-full flex flex-col">
-            <div className="flex flex-row w-full border-b-2 border-slate-200">
+            <div className="relative flex flex-row w-full border-b-2 border-slate-200">
                 {tabs.map((tab, index) => {
                     const currentTabIsSelected = index === selectedTab;
                     return (

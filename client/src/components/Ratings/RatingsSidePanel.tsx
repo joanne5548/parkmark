@@ -80,10 +80,10 @@ const RatingsSidePanel = () => {
                         {
                             title: "Reviews",
                             component: (
-                                <div className="relative h-full px-5 overflow-y-auto">
+                                <div className="h-full px-5 overflow-y-auto">
                                     <button
                                         onClick={handleNewReviewButtonOnClick}
-                                        className="absolute right-5 top-3 sm:top-2.5 text-xl sm:text-2xl bg-amber-900 hover:bg-amber-800 rounded-md p-0.5"
+                                        className="absolute right-7 top-3 sm:top-2.5 text-xl sm:text-2xl bg-amber-900 hover:bg-amber-800 rounded-md p-0.5"
                                     >
                                         {creatingNewReview ? (
                                             <FiMinus className="text-amber-100" />

@@ -8,6 +8,7 @@ const UserInfoPopup = () => {
     const [logInUser, setLogInUser] = useAtom(logInUserAtom);
     
     const handleSignOut = () => {
+        localStorage.removeItem("authToken");
         googleLogout();
         setLogInUser(null);
     };

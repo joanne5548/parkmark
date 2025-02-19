@@ -4,8 +4,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/src/index.js",
-    "dev": "nodemon src/index.ts"
+    "start": "node --files dist/src/index.js",
+    "dev": "nodemon --files src/index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
     "pg": "^8.13.1",
     "uuid": "^11.0.5"
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.8",
     "@types/node": "^22.10.7",
     "@types/pg": "^8.11.10",
     "concurrently": "^9.1.2",

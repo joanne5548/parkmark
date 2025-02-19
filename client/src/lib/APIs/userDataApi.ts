@@ -1,3 +1,4 @@
+import { handleApiError } from "@lib/apiHelpers";
 import { UserData } from "@lib/interfaces";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -27,7 +28,17 @@ export async function getUser(sub_id: string) {
         throw new Error(`[Backend] Network response error: ${response.status}`);
     }
 
-    const userData: UserData | null = await response.json();
+    const data = await response.json();
+    
+    // store auth token in local storage
+    if (data.token) {
+        localStorage.setItem("authToken", data.token);
+    }
+    else {
+        throw new Error("Authentication failed");
+    }
+
+    const userData: UserData | null = data.userData;
     return userData;
 }
 
@@ -46,10 +57,4 @@ export const putUser = async (userData: UserData) => {
     catch (error) {
         handleApiError(error);
     }
-}
-
-export function handleApiError(error: any) {
-    console.error({
-        error: error instanceof Error ? error.message : "Default error message",
-    });
 }

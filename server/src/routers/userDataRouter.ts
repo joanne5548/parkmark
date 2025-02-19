@@ -1,6 +1,8 @@
 import { Request, Response, Router } from "express";
+import jwt from "jsonwebtoken";
 import pool from "../db";
 import { handleError } from "../../middleware/errorHandler";
+import { authenticateUser } from "../../middleware/userAuth";
 
 export const userDataRouter = Router();
 
@@ -13,7 +15,15 @@ userDataRouter.post("/", async (req: Request, res: Response) => {
             [sub_id, name, email, profile_picture_url]
         );
 
-        res.json(insertQueryResult.rows[0]);
+        const userData = insertQueryResult.rows[0];
+
+        const token = jwt.sign(
+            { sub_id: userData.sub_id },
+            process.env.JWT_SECRET as string,
+            { expiresIn: '1h' }
+        );
+
+        res.json({ token, userData });
     } catch (error) {
         handleError(error, res);
     }
@@ -45,7 +55,15 @@ userDataRouter.get("/:sub_id", async (req: Request, res: Response) => {
             return;
         }
 
-        res.json(selectQueryResult.rows[0]);
+        const userData = selectQueryResult.rows[0];
+
+        const token = jwt.sign(
+            { sub_id: userData.sub_id },
+            process.env.JWT_SECRET as string,
+            { expiresIn: '1h' }
+        );
+
+        res.json({ token, userData });
     }
     catch (error) {
         handleError(error, res);
@@ -69,9 +87,15 @@ userDataRouter.put("/:sub_id", async (req: Request, res: Response) => {
     }
 });
 
-userDataRouter.delete("/:sub_id", async (req: Request, res: Response) => {
+userDataRouter.delete("/:sub_id", authenticateUser, async (req: Request, res: Response) => {
     try {
         const { sub_id } = req.params;
+        const decoded_sub_id = req.decoded_user?.sub_id;
+
+        if (decoded_sub_id !== sub_id) {
+            res.status(401).json({ message: "Unauthenticated Request" });
+            return;
+        }
 
         const deleteQueryResult = await pool.query(
             "DELETE FROM UserData WHERE sub_id=$1",
