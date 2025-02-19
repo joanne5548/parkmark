@@ -7,7 +7,7 @@ You can access the website at: [ParkMark](https://parcomolo.vercel.app/) ðŸŒ³ðŸŒ
 ![frontpage](/assets/FrontPage.png)
 ![InfoPage](/assets/InfoPage.png)
 ![ReviewPage](/assets/ReviewPage.png)
-<img src="/assets/ProfilePageMobile.png" alt="ProfilePageMobile" width="200"/>
+<!-- <img src="/assets/ProfilePageMobile.png" alt="ProfilePageMobile" width="200"/> -->
 
 ## Features
 - [x] Interactive map with pins marking U.S. national parks

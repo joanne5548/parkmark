@@ -1,8 +1,9 @@
+import { getAuthToken, handleApiError } from "@lib/apiHelpers";
 import { Review, ReviewWithUserData } from "@lib/interfaces";
-import { handleApiError } from "./userDataApi";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
+// Do I need to check token here too?
 export const postReview = async (reviewData: Review, imageFormData: FormData | null = null) => {
     try {
         const response = await fetch(`${backendUrl}/api/review`, {
@@ -22,8 +23,6 @@ export const postReview = async (reviewData: Review, imageFormData: FormData | n
 
             await postImages(imageFormData);
         }
-
-        // return createdReview;
     }
     catch (error) {
         handleApiError(error);
@@ -109,10 +108,11 @@ export const fetchReviewsLikedByUser = async (userSubId: string, logInUserSubId:
     }
 }
 
-const deleteReviewImage = async (reviewId: string) => {
+const deleteReviewImage = async (authToken: string, reviewId: string) => {
     try {
         const response = await fetch(`${backendUrl}/api/review/image/review_id/${reviewId}`, {
             method: "DELETE",
+            headers: { "Authorization": `Bearer ${authToken}` },
         });
 
         if (!response.ok) {
@@ -126,10 +126,17 @@ const deleteReviewImage = async (reviewId: string) => {
 
 export const deleteReview = async (reviewId: string) => {
     try {
-        await deleteReviewImage(reviewId);
+        const authToken = getAuthToken();
 
+        if (!authToken) {
+            throw new Error("Authentication token is null");
+        }
+
+        await deleteReviewImage(authToken, reviewId);
+        
         const response = await fetch(`${backendUrl}/api/review/review_id/${reviewId}`, {
             method: "DELETE",
+            headers: { "Authorization": `Bearer ${authToken}`}
         });
         
         if (!response.ok) {

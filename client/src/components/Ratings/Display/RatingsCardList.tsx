@@ -36,7 +36,7 @@ const RatingsCardList = () => {
         <div className="h-full">
             {selectedParkReviewList.length === 0 ? (
                 <div className="flex justify-center items-center text-center text-slate-800 text-lg h-full">
-                    No Reviews Yet! Wanna be the first? :D
+                    No Reviews Yet! Want to be the first? :D
                 </div>
             ) : (
                 <div className="flex flex-col">

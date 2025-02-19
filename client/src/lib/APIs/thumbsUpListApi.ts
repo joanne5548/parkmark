@@ -1,5 +1,5 @@
+import { handleApiError } from "@lib/apiHelpers";
 import { ThumbsUpData } from "@lib/interfaces";
-import { handleApiError } from "./userDataApi";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 

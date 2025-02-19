@@ -1,6 +1,5 @@
 import { Response } from "express";
 
-
 export const handleError = (error: any, res: Response) => {
     if (error instanceof Error) {
         console.error("Database error:", error.message);

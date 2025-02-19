@@ -1,3 +1,4 @@
+import { handleApiError } from "@lib/apiHelpers";
 import { UserData } from "@lib/interfaces";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -11,6 +12,19 @@ export async function postNewUser(userData: UserData) {
 
     if (!response.ok) {
         throw new Error(`[Backend] Network response error: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!data) {
+        throw new Error("Error creating new user.");
+    }
+
+    if (data.token) {
+        localStorage.setItem("authToken", data.token);
+    }
+    else {
+        throw new Error("Authentication failed");
     }
 }
 
@@ -27,7 +41,22 @@ export async function getUser(sub_id: string) {
         throw new Error(`[Backend] Network response error: ${response.status}`);
     }
 
-    const userData: UserData | null = await response.json();
+    const data = await response.json();
+
+    // If user doesn't exist
+    if (!data) {
+        return null;
+    }
+    
+    // store auth token in local storage
+    if (data.token) {
+        localStorage.setItem("authToken", data.token);
+    }
+    else {
+        throw new Error("Authentication failed");
+    }
+
+    const userData: UserData | null = data.userData;
     return userData;
 }
 
@@ -48,8 +77,22 @@ export const putUser = async (userData: UserData) => {
     }
 }
 
-export function handleApiError(error: any) {
-    console.error({
-        error: error instanceof Error ? error.message : "Default error message",
-    });
+export const deleteUser = async (subId: string) => {
+    try {
+        const token = localStorage.getItem("authToken");
+
+        const response = await fetch(`${backendUrl}/api/userdata/${subId}`, {
+            method: "DELETE",
+            headers: { "Authorization": `Bearer ${token}` },
+        });
+
+        if (!response.ok) {
+            throw new Error(`[Backend] Network error: ${response.status}`);
+        }
+
+        return true;
+    }
+    catch (error) {
+        handleApiError(error);
+    }
 }

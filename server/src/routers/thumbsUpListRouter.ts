@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
 import pool from "../db";
-import { handleError } from "../../middleware/errorHandler";
+import { handleError } from "../lib/errorHandler";
 
 export const thumbsUpListRouter = Router();
 
